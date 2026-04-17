@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#20558a">
+  <meta name="referrer" content="origin-when-cross-origin">
+  <title>PubMed Evidence Viewer</title>
+
+  <link rel="preconnect" href="https://cdn.ncbi.nlm.nih.gov">
+  <link rel="preconnect" href="https://www.ncbi.nlm.nih.gov">
+  <link rel="stylesheet" href="https://cdn.ncbi.nlm.nih.gov/pubmed/9fea6d21-07b4-4726-b151-fb89a024b8ad/CACHE/css/output.8af684516550.css" type="text/css">
+  <link rel="stylesheet" href="https://cdn.ncbi.nlm.nih.gov/pubmed/9fea6d21-07b4-4726-b151-fb89a024b8ad/CACHE/css/output.452c70ce66f7.css" type="text/css">
+  <link rel="stylesheet" href="https://cdn.ncbi.nlm.nih.gov/pubmed/9fea6d21-07b4-4726-b151-fb89a024b8ad/CACHE/css/output.c71ac2b2c597.css" type="text/css">
+  <link rel="stylesheet" href="https://cdn.ncbi.nlm.nih.gov/pubmed/9fea6d21-07b4-4726-b151-fb89a024b8ad/CACHE/css/output.663ce5c6665c.css" type="text/css">
+  <link rel="stylesheet" href="https://cdn.ncbi.nlm.nih.gov/pubmed/9fea6d21-07b4-4726-b151-fb89a024b8ad/CACHE/css/output.b576742ffc3e.css" type="text/css">
+  <link rel="stylesheet" href="./styles.css?v=20260408f" type="text/css">
+</head>
+<body>
+  <a class="usa-skipnav" href="#article-details">Skip to main page content</a>
+
+  <section class="usa-banner">
+    <div class="usa-accordion">
+      <header class="usa-banner-header">
+        <div class="usa-grid usa-banner-inner">
+          <img src="https://cdn.ncbi.nlm.nih.gov/coreutils/uswds/img/favicons/favicon-57.png" alt="U.S. flag">
+          <p>An official website of the United States government</p>
+          <button class="usa-accordion-button usa-banner-button" aria-expanded="false" aria-controls="gov-banner-top" type="button">
+            <span class="usa-banner-button-text">Here's how you know</span>
+          </button>
+        </div>
+      </header>
+      <div class="usa-banner-content usa-grid usa-accordion-content" id="gov-banner-top">
+        <div class="usa-banner-guidance-gov usa-width-one-half">
+          <img class="usa-banner-icon usa-media_block-img" src="https://cdn.ncbi.nlm.nih.gov/coreutils/uswds/img/icon-dot-gov.svg" alt="Dot gov">
+          <div class="usa-media_block-body">
+            <p><strong>The .gov means it's official.</strong><br>Federal government websites often end in .gov or .mil.</p>
+          </div>
+        </div>
+        <div class="usa-banner-guidance-ssl usa-width-one-half">
+          <img class="usa-banner-icon usa-media_block-img" src="https://cdn.ncbi.nlm.nih.gov/coreutils/uswds/img/icon-https.svg" alt="Https">
+          <div class="usa-media_block-body">
+            <p><strong>The site is secure.</strong><br>The <strong>https://</strong> ensures that you are connecting to the official website.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="usa-overlay"></div>
+
+  <header class="ncbi-header" role="banner" data-section="Header">
+    <div class="usa-grid">
+      <div class="usa-width-one-whole">
+        <div class="ncbi-header__logo">
+          <a href="https://www.ncbi.nlm.nih.gov/" class="logo" aria-label="NCBI Logo">
+            <img src="https://cdn.ncbi.nlm.nih.gov/coreutils/nwds/img/logos/AgencyLogo.svg" alt="NIH NLM Logo">
+          </a>
+        </div>
+        <div class="ncbi-header__account">
+          <a href="https://account.ncbi.nlm.nih.gov" class="usa-button header-button">Log in</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <a id="maincontent" aria-label="Main page content below" role="navigation"></a>
+
+  <form action="./index.html" method="get" autocomplete="off" class="usa-search usa-search-big search-form content-page-layout viewer-search-form" id="search-form" role="search">
+    <div class="inner-wrap">
+      <a class="pubmed-logo" aria-label="PubMed Logo" href="./index.html">
+        <img src="https://cdn.ncbi.nlm.nih.gov/pubmed/9fea6d21-07b4-4726-b151-fb89a024b8ad/core/images/pubmed-logo-blue.svg" alt="pubmed logo">
+      </a>
+
+      <div role="search" class="search-input">
+        <div class="form-field">
+          <label class="usa-sr-only" for="id_term">Search:</label>
+          <input type="search" name="term" value="" class="term-input" id="id_term" readonly>
+          <button type="submit" class="search-btn" aria-label="Search" disabled>
+            <span class="usa-search-submit-text">Search</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="search-links-wrapper content-page-layout viewer-search-links">
+        <div class="search-links">
+          <span class="search-input-link viewer-static-link">Advanced</span>
+          <span class="search-input-link viewer-static-link">Create alert</span>
+          <span class="search-input-link viewer-static-link">Create RSS</span>
+        </div>
+        <span class="search-input-link user-guide-link">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/help/" target="_blank" rel="noopener">User Guide</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="viewer-page-tabs" aria-label="Viewer pages">
+      <a class="viewer-page-tab is-active" id="articleViewTabLink" href="./index.html">Article view</a>
+      <a class="viewer-page-tab" id="globalRankingLink" href="./statement_ranking.html">Statement rankings</a>
+      <a class="viewer-page-tab" id="articleRankingLink" href="./article_ranking.html">Article rankings</a>
+      <a class="viewer-page-tab" href="./pair_comparison.html">Pair comparison</a>
+    </div>
+    <div class="viewer-control-strip">
+      <div class="viewer-control">
+        <label for="datasetSelect">Dataset</label>
+        <select id="datasetSelect" aria-label="Dataset"></select>
+      </div>
+      <div class="viewer-control viewer-control--wide">
+        <label for="sourceSelect">Source article</label>
+        <select id="sourceSelect" aria-label="Source article"></select>
+      </div>
+    </div>
+  </form>
+
+  <div class="article-page" id="article-page" data-article-pmid="">
+    <aside class="page-sidebar">
+      <div class="inner-wrap">
+        <div class="actions-buttons sidebar">
+          <h3 class="title">Actions</h3>
+          <div class="inner-wrap">
+            <button class="citation-button viewer-action-button" type="button">
+              <span class="button-label">Cite</span>
+            </button>
+            <button class="collections-button viewer-action-button" type="button">
+              <span class="button-label">Collections</span>
+            </button>
+            <button class="permalink-button viewer-action-button" type="button">
+              <span class="button-label">Permalink</span>
+            </button>
+          </div>
+        </div>
+
+        <nav class="page-navigator" role="navigation" aria-label="Page navigation">
+          <div class="full-view">
+            <h3 class="title">Page navigation</h3>
+            <ul class="items-list">
+              <li class="heading"><a href="#heading" aria-label="navigate to Title and authors section">Title &amp; details</a></li>
+              <li class="abstract"><a href="#abstract" aria-label="navigate to Abstract section">Abstract</a></li>
+              <li class="statement-support"><a href="#statement-support" aria-label="navigate to Statement support section">Statement support</a></li>
+              <li class="similar-articles"><a href="#similar-articles" aria-label="navigate to Similar articles section">Similar articles</a></li>
+              <li class="cited-by"><a href="#cited-by" aria-label="navigate to Cited by section">Cited by</a></li>
+              <li class="publication-types"><a href="#publication-types" aria-label="navigate to Publication types section">Publication types</a></li>
+              <li class="mesh-terms"><a href="#mesh-terms" aria-label="navigate to MeSH terms section">MeSH terms</a></li>
+              <li class="substances"><a href="#substances" aria-label="navigate to Substances section">Substances</a></li>
+              <li class="grants"><a href="#grants" aria-label="navigate to Grants and funding section">Grants and funding</a></li>
+              <li class="linkout"><a href="#linkout" aria-label="navigate to LinkOut section">LinkOut - more resources</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="article-details" id="article-details">
+      <header class="heading" id="heading">
+        <div class="full-view" id="full-view-heading">
+          <h1 class="heading-title" id="headingTitle">Loading article...</h1>
+
+          <div class="inline-authors" id="authorsBlock" hidden>
+            <div class="authors">
+              <div class="authors-list" id="authorsList"></div>
+            </div>
+          </div>
+
+          <ul class="identifiers" id="full-view-identifiers">
+            <li>
+              <span class="identifier pubmed">
+                <span class="id-label">PMID:</span>
+                <strong class="current-id" id="identifierPmid">-</strong>
+              </span>
+            </li>
+            <li>
+              <span class="identifier doi">
+                <span class="id-label">Source:</span>
+                <a class="id-link usa-link--external" id="identifierPubmed" target="_blank" rel="noopener noreferrer">PubMed record</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="abstract" id="abstract">
+        <h2 class="title">Abstract</h2>
+        <div class="abstract-content selected" id="abstractContent"></div>
+      </div>
+
+      <section class="viewer-section viewer-inline-statement-support" id="statement-support">
+        <h2 class="title">Statement Support</h2>
+        <p class="viewer-section__intro">Review extracted statements below the abstract. Click a statement to expand its summary, then open related studies for that statement in a smaller dialog. In that dialog, each tab opens the related articles that support that side.</p>
+        <div class="viewer-card-list" id="statementList"></div>
+      </section>
+
+      <div class="similar-articles viewer-placeholder-section" id="similar-articles">
+        <h2 class="title">Similar articles</h2>
+        <p class="viewer-placeholder-text">Not available in the local viewer dataset.</p>
+      </div>
+
+      <div class="cited-by viewer-placeholder-section" id="cited-by">
+        <h2 class="title">Cited by</h2>
+        <p class="viewer-placeholder-text">Not available in the local viewer dataset.</p>
+      </div>
+
+      <div class="publication-types viewer-placeholder-section keywords-section" id="publication-types">
+        <h2 class="title">Publication types</h2>
+        <p class="viewer-placeholder-text">Not available in the local viewer dataset.</p>
+      </div>
+
+      <div class="mesh-terms viewer-placeholder-section keywords-section" id="mesh-terms">
+        <h2 class="title">MeSH terms</h2>
+        <p class="viewer-placeholder-text">Not available in the local viewer dataset.</p>
+      </div>
+
+      <div class="substances viewer-placeholder-section keywords-section" id="substances">
+        <h2 class="title">Substances</h2>
+        <p class="viewer-placeholder-text">Not available in the local viewer dataset.</p>
+      </div>
+
+      <div class="grants viewer-placeholder-section" id="grants">
+        <h2 class="title">Grants and funding</h2>
+        <p class="viewer-placeholder-text">Not available in the local viewer dataset.</p>
+      </div>
+
+      <div class="linkout viewer-placeholder-section" id="linkout">
+        <h2 class="title">LinkOut - more resources</h2>
+        <p class="viewer-placeholder-text">Not available in the local viewer dataset.</p>
+      </div>
+    </main>
+  </div>
+
+  <div class="viewer-overlay" id="statementEvidenceOverlay" aria-hidden="true" hidden>
+    <div class="dialog viewer-statement-support-dialog viewer-statement-evidence-dialog" role="dialog" aria-modal="true" aria-label="Related studies">
+      <button class="viewer-dialog-close" id="closeStatementEvidenceAction" type="button" aria-label="Close related studies">X</button>
+      <div class="viewer-dialog-body">
+        <div class="references viewer-section">
+          <h2 class="title" id="evidenceTitle">Support/Contradict related studies</h2>
+          <p class="viewer-section__intro" id="evidenceSubtitle">Choose a statement to inspect its related studies.</p>
+          <div class="viewer-evidence-toolbar">
+            <div class="viewer-filter-row" id="filterRow"></div>
+            <label class="viewer-sort-control" for="evidenceSortSelect">
+              <span class="viewer-sort-control__label">Sort articles</span>
+              <select id="evidenceSortSelect">
+                <option value="default">Default</option>
+                <option value="recent">Most recent PMID first</option>
+              </select>
+            </label>
+          </div>
+
+          <section class="viewer-evidence-group viewer-evidence-group--support">
+            <h3 class="viewer-group-title">Support</h3>
+            <div class="viewer-card-list" id="supportEvidenceList"></div>
+          </section>
+
+          <section class="viewer-evidence-group viewer-evidence-group--contradict">
+            <h3 class="viewer-group-title">Contradict</h3>
+            <div class="viewer-card-list" id="contradictEvidenceList"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <template id="statementTemplate">
+    <article class="viewer-statement-card viewer-statement-card--interactive" role="button" tabindex="0">
+      <div class="viewer-statement-card__header">
+        <span class="viewer-statement-card__index"></span>
+        <span class="viewer-statement-card__totals"></span>
+      </div>
+      <div class="viewer-statement-card__text"></div>
+      <div class="viewer-distribution" aria-hidden="true">
+        <span class="viewer-distribution__segment viewer-distribution__segment--support-strong"></span>
+        <span class="viewer-distribution__segment viewer-distribution__segment--support-partial"></span>
+        <span class="viewer-distribution__segment viewer-distribution__segment--contradict-partial"></span>
+        <span class="viewer-distribution__segment viewer-distribution__segment--contradict-strong"></span>
+      </div>
+      <div class="viewer-statement-card__legend"></div>
+    </article>
+  </template>
+
+  <template id="evidenceTemplate">
+    <article class="viewer-evidence-card">
+      <div class="viewer-evidence-card__header">
+        <div>
+          <h4 class="viewer-evidence-card__title"></h4>
+          <div class="viewer-evidence-card__meta"></div>
+        </div>
+        <span class="viewer-score-pill"></span>
+      </div>
+      <details class="viewer-evidence-card__details">
+        <summary>Abstract</summary>
+        <p class="viewer-evidence-card__abstract"></p>
+      </details>
+      <details class="viewer-evidence-card__details">
+        <summary>Explanation</summary>
+        <p class="viewer-evidence-card__rationale"></p>
+      </details>
+    </article>
+  </template>
+
+  <script src="./app.js?v=20260416a"></script>
+</body>
+</html>
