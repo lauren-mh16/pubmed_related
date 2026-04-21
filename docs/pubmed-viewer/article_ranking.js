@@ -1,14 +1,14 @@
 const DATASET_OPTIONS = [
   { file: "./viewer_data.json", label: "Retracted articles" },
   { file: "./viewer_data_amd.json", label: "AMD cases" },
-  { file: "./viewer_data_oph.json", label: "Ophthalmology cases" },
+  { file: "./viewer_data_oph1.json", label: "Ophthalmology cases" },
   { file: "./viewer_data_retracted_rand_matches.json", label: "retracted_rand_matches" },
   { file: "./viewer_data_retracted_rand.json", label: "retracted_rand" },
   { file: "./viewer_data_retracted_rand_litsense.json", label: "retracted_rand_litsense" },
   { file: "./viewer_data_cochrane.json", label: "cochrane" },
   { file: "./viewer_data_cochrane_litsense.json", label: "cochrane_litsense" },
 ];
-const VIEWER_CACHE_VERSION = "20260417c";
+const VIEWER_CACHE_VERSION = "20260421c";
 
 const state = {
   data: null,
