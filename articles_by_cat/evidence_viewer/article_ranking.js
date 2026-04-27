@@ -1,18 +1,20 @@
 const DATASET_OPTIONS = [
+  { file: "./viewer_data_demo_examples.json", label: "Demo examples" },
   { file: "./viewer_data.json", label: "Retracted articles" },
   { file: "./viewer_data_amd.json", label: "AMD cases" },
-  { file: "./viewer_data_oph.json", label: "Ophthalmology cases" },
+  { file: "./viewer_data_oph1.json", label: "Ophthalmology cases" },
+  { file: "./viewer_data_oph1_pubmed.json", label: "Ophthalmology cases (PubMed)" },
   { file: "./viewer_data_retracted_rand_matches.json", label: "retracted_rand_matches" },
   { file: "./viewer_data_retracted_rand.json", label: "retracted_rand" },
   { file: "./viewer_data_retracted_rand_litsense.json", label: "retracted_rand_litsense" },
   { file: "./viewer_data_cochrane.json", label: "cochrane" },
   { file: "./viewer_data_cochrane_litsense.json", label: "cochrane_litsense" },
 ];
-const VIEWER_CACHE_VERSION = "20260417c";
+const VIEWER_CACHE_VERSION = "20260421c";
 
 const state = {
   data: null,
-  dataPath: "./viewer_data.json",
+  dataPath: "./viewer_data_demo_examples.json",
   metric: "avg",
 };
 
@@ -22,7 +24,7 @@ function getQueryParam(name) {
 
 function normalizeDataPath(dataPath) {
   if (!dataPath) {
-    return "./viewer_data.json";
+    return "./viewer_data_demo_examples.json";
   }
   return dataPath.startsWith("./") ? dataPath : `./${dataPath}`;
 }
@@ -290,7 +292,7 @@ function renderArticleRanking() {
 }
 
 async function init() {
-  state.dataPath = normalizeDataPath(getQueryParam("data") || "./viewer_data.json");
+  state.dataPath = normalizeDataPath(getQueryParam("data") || "./viewer_data_demo_examples.json");
   state.metric = normalizeMetric(getQueryParam("metric"));
 
   state.data = await loadJsonWithSessionCache(state.dataPath);

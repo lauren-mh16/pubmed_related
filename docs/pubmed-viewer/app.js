@@ -1,7 +1,9 @@
 const DATASET_OPTIONS = [
+  { file: "./viewer_data_demo_examples.json", label: "Demo examples", summaryFile: "./demo_examples_summaries.jsonl" },
   { file: "./viewer_data.json", label: "Retracted articles", summaryFile: "./retracted_summaries.jsonl" },
   { file: "./viewer_data_amd.json", label: "AMD cases", summaryFile: "./amd_summaries.jsonl" },
   { file: "./viewer_data_oph1.json", label: "Ophthalmology cases", summaryFile: "./oph1_summaries.jsonl" },
+  { file: "./viewer_data_oph1_pubmed.json", label: "Ophthalmology cases (PubMed)", summaryFile: "./oph1_pubmed_summaries.jsonl" },
   { file: "./viewer_data_retracted_rand_matches.json", label: "retracted_rand_matches", summaryFile: "./retracted_rand_matches_summaries.jsonl" },
   { file: "./viewer_data_retracted_rand.json", label: "retracted_rand", summaryFile: "./retracted_rand_summaries.jsonl" },
   { file: "./viewer_data_retracted_rand_litsense.json", label: "retracted_rand_litsense", summaryFile: "./retracted_rand_litsense_summaries.jsonl" },
@@ -12,7 +14,7 @@ const VIEWER_CACHE_VERSION = "20260421c";
 
 const state = {
   data: null,
-  dataPath: "./viewer_data.json",
+  dataPath: "./viewer_data_demo_examples.json",
   authorsByPmid: {},
   statementSummariesByKey: {},
   sourceIndex: 0,
@@ -47,7 +49,7 @@ function comparePmidsAscending(a, b) {
 
 function normalizeDataPath(dataPath) {
   if (!dataPath) {
-    return "./viewer_data.json";
+    return "./viewer_data_demo_examples.json";
   }
   return dataPath.startsWith("./") ? dataPath : `./${dataPath}`;
 }
@@ -879,7 +881,7 @@ function render() {
 }
 
 async function init() {
-  state.dataPath = normalizeDataPath(getQueryParam("data") || "./viewer_data.json");
+  state.dataPath = normalizeDataPath(getQueryParam("data") || "./viewer_data_demo_examples.json");
   const [dataResponse, authorsResponse, statementSummariesByKey] = await Promise.all([
     loadJsonWithSessionCache(state.dataPath),
     loadJsonWithSessionCache("./authors_cache.json").catch(() => null),

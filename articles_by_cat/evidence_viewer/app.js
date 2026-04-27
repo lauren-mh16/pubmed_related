@@ -1,18 +1,20 @@
 const DATASET_OPTIONS = [
+  { file: "./viewer_data_demo_examples.json", label: "Demo examples", summaryFile: "./demo_examples_summaries.jsonl" },
   { file: "./viewer_data.json", label: "Retracted articles", summaryFile: "./retracted_summaries.jsonl" },
   { file: "./viewer_data_amd.json", label: "AMD cases", summaryFile: "./amd_summaries.jsonl" },
-  { file: "./viewer_data_oph.json", label: "Ophthalmology cases", summaryFile: "./oph_summaries.jsonl" },
+  { file: "./viewer_data_oph1.json", label: "Ophthalmology cases", summaryFile: "./oph1_summaries.jsonl" },
+  { file: "./viewer_data_oph1_pubmed.json", label: "Ophthalmology cases (PubMed)", summaryFile: "./oph1_pubmed_summaries.jsonl" },
   { file: "./viewer_data_retracted_rand_matches.json", label: "retracted_rand_matches", summaryFile: "./retracted_rand_matches_summaries.jsonl" },
   { file: "./viewer_data_retracted_rand.json", label: "retracted_rand", summaryFile: "./retracted_rand_summaries.jsonl" },
   { file: "./viewer_data_retracted_rand_litsense.json", label: "retracted_rand_litsense", summaryFile: "./retracted_rand_litsense_summaries.jsonl" },
   { file: "./viewer_data_cochrane.json", label: "cochrane", summaryFile: "./cochrane_summaries.jsonl" },
   { file: "./viewer_data_cochrane_litsense.json", label: "cochrane_litsense", summaryFile: "./cochrane_litsense_summaries.jsonl" },
 ];
-const VIEWER_CACHE_VERSION = "20260417c";
+const VIEWER_CACHE_VERSION = "20260421c";
 
 const state = {
   data: null,
-  dataPath: "./viewer_data.json",
+  dataPath: "./viewer_data_demo_examples.json",
   authorsByPmid: {},
   statementSummariesByKey: {},
   sourceIndex: 0,
@@ -47,7 +49,7 @@ function comparePmidsAscending(a, b) {
 
 function normalizeDataPath(dataPath) {
   if (!dataPath) {
-    return "./viewer_data.json";
+    return "./viewer_data_demo_examples.json";
   }
   return dataPath.startsWith("./") ? dataPath : `./${dataPath}`;
 }
@@ -96,6 +98,25 @@ function getSummaryKey(sourcePmid, statementIdx) {
   return `${sourcePmid}::${statementIdx}`;
 }
 
+function normalizeSummaryHighlights(value) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+  return value
+    .map((item) => {
+      if (!item || typeof item !== "object") {
+        return null;
+      }
+      const pmid = String(item.pmid || "").trim();
+      const snippet = String(item.snippet || "").trim();
+      if (!pmid || !snippet) {
+        return null;
+      }
+      return { pmid, snippet };
+    })
+    .filter(Boolean);
+}
+
 function getSummaryPathForDataPath(dataPath) {
   return DATASET_OPTIONS.find((dataset) => dataset.file === dataPath)?.summaryFile || null;
 }
@@ -139,6 +160,8 @@ async function loadStatementSummaries(summaryPath) {
       support_score: obj.support_score,
       contradict_score: obj.contradict_score,
       conclusion: String(obj.conclusion || obj.notes || "").trim(),
+      support_highlights: normalizeSummaryHighlights(obj.support_highlights),
+      contradict_highlights: normalizeSummaryHighlights(obj.contradict_highlights),
     };
   }
 
@@ -331,6 +354,111 @@ function createStatementSummaryDetails(statement) {
   `;
 
   return container;
+}
+
+function buildHighlightLookup(statement) {
+  const lookup = {
+    support: new Map(),
+    contradict: new Map(),
+  };
+  for (const item of statement?.summary?.support_highlights || []) {
+    if (!lookup.support.has(item.pmid)) {
+      lookup.support.set(item.pmid, []);
+    }
+    lookup.support.get(item.pmid).push(item.snippet);
+  }
+  for (const item of statement?.summary?.contradict_highlights || []) {
+    if (!lookup.contradict.has(item.pmid)) {
+      lookup.contradict.set(item.pmid, []);
+    }
+    lookup.contradict.get(item.pmid).push(item.snippet);
+  }
+  return lookup;
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function normalizeHighlightText(text) {
+  return String(text || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function splitAbstractIntoSentences(text) {
+  const baseText = String(text || "");
+  if (!baseText.trim()) {
+    return [];
+  }
+  return baseText.match(/[^.!?\n]+(?:[.!?]+|$)|\n+/g) || [baseText];
+}
+
+function getSentenceHighlightIndexes(abstract, snippets) {
+  const sentences = splitAbstractIntoSentences(abstract);
+  const normalizedSentences = sentences.map((sentence) => normalizeHighlightText(sentence));
+  const indexes = new Set();
+  const uniqueSnippets = [...new Set((snippets || []).filter(Boolean))];
+
+  for (const snippet of uniqueSnippets) {
+    const normalizedSnippet = normalizeHighlightText(snippet);
+    if (!normalizedSnippet) {
+      continue;
+    }
+
+    let bestIndex = -1;
+    let bestScore = 0;
+    const snippetTokens = new Set(normalizedSnippet.split(" ").filter(Boolean));
+
+    normalizedSentences.forEach((normalizedSentence, index) => {
+      if (!normalizedSentence) {
+        return;
+      }
+      if (normalizedSentence.includes(normalizedSnippet) || normalizedSnippet.includes(normalizedSentence)) {
+        indexes.add(index);
+        if (bestIndex === -1) {
+          bestIndex = index;
+          bestScore = Number.POSITIVE_INFINITY;
+        }
+        return;
+      }
+
+      let overlap = 0;
+      for (const token of snippetTokens) {
+        if (token.length >= 4 && normalizedSentence.includes(token)) {
+          overlap += 1;
+        }
+      }
+      const score = overlap / Math.max(snippetTokens.size, 1);
+      if (score > bestScore) {
+        bestScore = score;
+        bestIndex = index;
+      }
+    });
+
+    if (bestIndex >= 0 && bestScore >= 0.5) {
+      indexes.add(bestIndex);
+    }
+  }
+
+  return { sentences, indexes };
+}
+
+function highlightAbstractText(abstract, snippets) {
+  const baseText = abstract || "No abstract text was available in the scored row.";
+  const { sentences, indexes } = getSentenceHighlightIndexes(baseText, snippets);
+  if (!sentences.length || !indexes.size) {
+    return escapeHtml(baseText);
+  }
+  return sentences
+    .map((sentence, index) =>
+      indexes.has(index)
+        ? `<mark class="viewer-evidence-highlight">${escapeHtml(sentence)}</mark>`
+        : escapeHtml(sentence)
+    )
+    .join("");
 }
 
 function renderDatasetPicker() {
@@ -539,9 +667,10 @@ function renderStatements() {
   });
 }
 
-function renderEvidenceCard(listEl, item) {
+function renderEvidenceCard(listEl, item, highlightSnippets = []) {
   const template = document.getElementById("evidenceTemplate");
   const fragment = template.content.cloneNode(true);
+  const cardEl = fragment.querySelector(".viewer-evidence-card");
   const titleEl = fragment.querySelector(".viewer-evidence-card__title");
   const metaEl = fragment.querySelector(".viewer-evidence-card__meta");
   const abstractEl = fragment.querySelector(".viewer-evidence-card__abstract");
@@ -559,8 +688,12 @@ function renderEvidenceCard(listEl, item) {
   if (item.retrieval_score !== undefined && item.retrieval_score !== null) {
     metaParts.push(`similarity score ${escapeHtml(String(item.retrieval_score))}`);
   }
+  if (highlightSnippets.length) {
+    metaParts.push("LLM-highlighted");
+    cardEl.classList.add("viewer-evidence-card--highlighted");
+  }
   metaEl.textContent = metaParts.join(" • ");
-  abstractEl.textContent = item.abstract || "No abstract text was available in the scored row.";
+  abstractEl.innerHTML = highlightAbstractText(item.abstract, highlightSnippets);
   rationaleEl.textContent = item.rationale || "No rationale text was captured in the Med-V1 output.";
 
   pillEl.textContent = `${item.score_label} (${item.score ?? "?"})`;
@@ -642,6 +775,7 @@ function renderEvidenceOverlay() {
 
   const supportEvidence = [];
   const contradictEvidence = [];
+  const highlightLookup = buildHighlightLookup(statement);
 
   for (const item of statement.evidence || []) {
     if (item.bucket === "support") {
@@ -663,7 +797,15 @@ function renderEvidenceOverlay() {
     if (!mergedEvidence.length) {
       supportList.innerHTML = '<div class="viewer-empty-state">No related studies for this statement.</div>';
     } else {
-      mergedEvidence.forEach((item) => renderEvidenceCard(supportList, item));
+      mergedEvidence.forEach((item) =>
+        renderEvidenceCard(
+          supportList,
+          item,
+          item.bucket === "support"
+            ? highlightLookup.support.get(String(item.related_pmid || "")) || []
+            : highlightLookup.contradict.get(String(item.related_pmid || "")) || []
+        )
+      );
     }
     return;
   }
@@ -674,13 +816,17 @@ function renderEvidenceOverlay() {
   if (!supportEvidence.length) {
     supportList.innerHTML = '<div class="viewer-empty-state">No supporting related studies for this statement.</div>';
   } else {
-    sortEvidenceItems(supportEvidence).forEach((item) => renderEvidenceCard(supportList, item));
+    sortEvidenceItems(supportEvidence).forEach((item) =>
+      renderEvidenceCard(supportList, item, highlightLookup.support.get(String(item.related_pmid || "")) || [])
+    );
   }
 
   if (!contradictEvidence.length) {
     contradictList.innerHTML = '<div class="viewer-empty-state">No contradicting related studies for this statement.</div>';
   } else {
-    sortEvidenceItems(contradictEvidence).forEach((item) => renderEvidenceCard(contradictList, item));
+    sortEvidenceItems(contradictEvidence).forEach((item) =>
+      renderEvidenceCard(contradictList, item, highlightLookup.contradict.get(String(item.related_pmid || "")) || [])
+    );
   }
 }
 
@@ -735,7 +881,7 @@ function render() {
 }
 
 async function init() {
-  state.dataPath = normalizeDataPath(getQueryParam("data") || "./viewer_data.json");
+  state.dataPath = normalizeDataPath(getQueryParam("data") || "./viewer_data_demo_examples.json");
   const [dataResponse, authorsResponse, statementSummariesByKey] = await Promise.all([
     loadJsonWithSessionCache(state.dataPath),
     loadJsonWithSessionCache("./authors_cache.json").catch(() => null),
