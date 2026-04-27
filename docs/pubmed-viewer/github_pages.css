@@ -1189,15 +1189,18 @@ img {
   max-width: 1320px;
   margin: 0 auto;
   padding: 28px 42px 42px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
   gap: 32px;
-  align-items: start;
 }
 
 .page-sidebar {
+  width: 260px;
+  min-width: 260px;
+  flex: 0 0 260px;
   min-width: 0;
-  order: 2;
+  order: 2 !important;
 }
 
 .page-sidebar .inner-wrap {
@@ -1264,8 +1267,9 @@ img {
 }
 
 .article-details {
+  flex: 1 1 auto;
   min-width: 0;
-  order: 1;
+  order: 1 !important;
 }
 
 .full-view {
@@ -1426,7 +1430,7 @@ img {
 @media (max-width: 960px) {
   .viewer-search-form .inner-wrap,
   .article-page {
-    grid-template-columns: 1fr;
+    display: block !important;
   }
 
   .search-links-wrapper {

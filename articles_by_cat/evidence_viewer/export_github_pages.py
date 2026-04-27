@@ -257,15 +257,18 @@ img {
   max-width: 1320px;
   margin: 0 auto;
   padding: 28px 42px 42px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
   gap: 32px;
-  align-items: start;
 }
 
 .page-sidebar {
+  width: 260px;
+  min-width: 260px;
+  flex: 0 0 260px;
   min-width: 0;
-  order: 2;
+  order: 2 !important;
 }
 
 .page-sidebar .inner-wrap {
@@ -332,8 +335,9 @@ img {
 }
 
 .article-details {
+  flex: 1 1 auto;
   min-width: 0;
-  order: 1;
+  order: 1 !important;
 }
 
 .full-view {
@@ -494,7 +498,7 @@ img {
 @media (max-width: 960px) {
   .viewer-search-form .inner-wrap,
   .article-page {
-    grid-template-columns: 1fr;
+    display: block !important;
   }
 
   .search-links-wrapper {
@@ -567,6 +571,7 @@ def build_github_pages_css(src_dir: Path) -> str:
 def rewrite_html_for_github_pages(html_text: str) -> str:
     out_lines: list[str] = []
     inserted_stylesheet = False
+    skip_banner = False
     stylesheet_line = (
         f'  <link rel="stylesheet" href="./{GITHUB_PAGES_CSS_NAME}?v={GITHUB_PAGES_CSS_VERSION}" '
         'type="text/css">'
@@ -574,6 +579,15 @@ def rewrite_html_for_github_pages(html_text: str) -> str:
 
     for line in html_text.splitlines():
         stripped = line.strip()
+        if stripped.startswith('<section class="usa-banner"'):
+            skip_banner = True
+            continue
+        if skip_banner:
+            if stripped == "</section>":
+                skip_banner = False
+            continue
+        if stripped.startswith('<div class="usa-overlay"'):
+            continue
         if stripped.startswith('<link rel="stylesheet" href="https://cdn.ncbi.nlm.nih.gov/pubmed/'):
             continue
         if stripped.startswith('<link rel="stylesheet" href="./styles.css'):
