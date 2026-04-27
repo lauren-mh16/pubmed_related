@@ -75,9 +75,7 @@ img {
 }
 
 .usa-banner {
-  background: #edf3f9;
-  border-bottom: 1px solid var(--viewer-border);
-  font-size: 0.92rem;
+  display: none !important;
 }
 
 .usa-banner-header,
@@ -144,7 +142,7 @@ img {
 }
 
 .usa-overlay {
-  display: none;
+  display: none !important;
 }
 
 .ncbi-header {
@@ -260,19 +258,20 @@ img {
   margin: 0 auto;
   padding: 28px 42px 42px;
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 260px;
   gap: 32px;
   align-items: start;
 }
 
 .page-sidebar {
   min-width: 0;
+  order: 2;
 }
 
 .page-sidebar .inner-wrap {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
 }
 
 .page-sidebar .title,
@@ -287,21 +286,28 @@ img {
 }
 
 .actions-buttons,
-.page-navigator,
+.page-navigator {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+}
+
 .article-details > .heading,
 .article-details > .abstract,
 .article-details > .viewer-section,
 .article-details > .viewer-placeholder-section,
 .viewer-dialog-body .references {
-  border: 1px solid var(--viewer-border);
-  border-radius: 12px;
-  background: #fff;
-  padding: 20px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
 }
 
 .actions-buttons .inner-wrap {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 .items-list {
@@ -310,15 +316,24 @@ img {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .items-list a {
   text-decoration: none;
 }
 
+.page-sidebar .title {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--viewer-muted);
+  font-weight: 700;
+}
+
 .article-details {
   min-width: 0;
+  order: 1;
 }
 
 .full-view {
@@ -353,6 +368,29 @@ img {
   flex-wrap: wrap;
 }
 
+.viewer-action-button {
+  width: auto;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--viewer-link);
+  font: inherit;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.viewer-action-button .button-label {
+  display: inline;
+}
+
+.viewer-action-button:hover,
+.viewer-action-button:focus-visible {
+  text-decoration: underline;
+}
+
 .abstract-content,
 .viewer-placeholder-text,
 .viewer-section__intro,
@@ -366,6 +404,31 @@ img {
 
 .viewer-page-tab {
   font-size: 1rem;
+}
+
+.article-details > .heading,
+.article-details > .abstract,
+.article-details > .viewer-section,
+.article-details > .viewer-placeholder-section {
+  box-shadow: none;
+}
+
+.article-details > .heading {
+  margin-bottom: 20px;
+}
+
+.article-details > .abstract,
+.article-details > .viewer-section,
+.article-details > .viewer-placeholder-section {
+  margin-top: 24px;
+}
+
+.article-details > .abstract > .title,
+.article-details > .viewer-section > .title,
+.article-details > .viewer-placeholder-section > .title {
+  font-size: 1.25rem !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
 }
 
 .viewer-placeholder-text,
@@ -445,6 +508,7 @@ img {
 
   .page-sidebar {
     position: static;
+    order: 2;
   }
 }
 
