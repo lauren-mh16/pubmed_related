@@ -310,7 +310,7 @@ img {
 .actions-buttons .inner-wrap {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
 }
 
 .items-list {
@@ -319,11 +319,22 @@ img {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
+}
+
+.items-list li {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.items-list li + li {
+  border-top: 1px solid var(--viewer-border);
 }
 
 .items-list a {
+  display: block;
   text-decoration: none;
+  color: var(--viewer-text);
 }
 
 .page-sidebar .title {
@@ -376,7 +387,7 @@ img {
   width: auto;
   display: inline;
   margin: 0;
-  padding: 0;
+  padding: 8px 0;
   border: 0;
   background: transparent;
   color: var(--viewer-link);
@@ -388,6 +399,10 @@ img {
 
 .viewer-action-button .button-label {
   display: inline;
+}
+
+.actions-buttons .viewer-action-button + .viewer-action-button {
+  border-top: 1px solid var(--viewer-border);
 }
 
 .viewer-action-button:hover,
