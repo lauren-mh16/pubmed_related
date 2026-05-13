@@ -10,12 +10,13 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_cochrane.json", label: "cochrane" },
   { file: "./viewer_data_cochrane_litsense.json", label: "cochrane_litsense" },
 ];
-const VIEWER_CACHE_VERSION = "20260421c";
+const VIEWER_CACHE_VERSION = "20260513a";
 
 const state = {
   data: null,
   dataPath: "./viewer_data_demo_examples.json",
   metric: "avg",
+  minTotalArticles: 5,
 };
 
 function getQueryParam(name) {
@@ -31,6 +32,14 @@ function normalizeDataPath(dataPath) {
 
 function normalizeMetric(value) {
   return value === "max" ? "max" : "avg";
+}
+
+function normalizeNonNegativeInt(value, fallback = 0) {
+  const parsed = Number.parseInt(value, 10);
+  if (!Number.isFinite(parsed) || parsed < 0) {
+    return fallback;
+  }
+  return parsed;
 }
 
 function escapeHtml(text) {
@@ -90,6 +99,9 @@ function buildPageUrl(pagePath, extraParams = {}) {
   const url = new URL(pagePath, window.location.href);
   url.searchParams.set("data", state.dataPath.replace("./", ""));
   url.searchParams.set("metric", state.metric);
+  if (state.minTotalArticles > 0) {
+    url.searchParams.set("min_total", String(state.minTotalArticles));
+  }
 
   for (const [key, value] of Object.entries(extraParams)) {
     if (value === null || value === undefined || value === "") {
@@ -124,12 +136,17 @@ function getRankedArticles() {
   for (const source of state.data?.sources || []) {
     const statementProps = (source.statements || [])
       .map((statement) => {
+        const total = Number(statement?.counts?.total || 0);
+        if (!Number.isFinite(total) || total <= state.minTotalArticles) {
+          return null;
+        }
         const negProp = computeStatementNegProp(statement);
         return negProp === null
           ? null
           : {
               statement,
               negProp,
+              total,
             };
       })
       .filter(Boolean);
@@ -154,7 +171,7 @@ function getRankedArticles() {
       return best;
     }, null);
     const totalEvidenceCount = statementProps.reduce(
-      (sum, item) => sum + Number(item.statement?.counts?.total || 0),
+      (sum, item) => sum + item.total,
       0
     );
 
@@ -229,6 +246,24 @@ function renderMetricControl() {
   select.value = state.metric;
 }
 
+function renderThresholdControl() {
+  const input = document.getElementById("minTotalArticlesInput");
+  if (!input.dataset.bound) {
+    const updateThreshold = (event) => {
+      state.minTotalArticles = normalizeNonNegativeInt(event.target.value, 5);
+      input.value = String(state.minTotalArticles);
+      setQueryParam("min_total", String(state.minTotalArticles));
+      renderPageTabs();
+      renderArticleRanking();
+    };
+
+    input.addEventListener("input", updateThreshold);
+    input.addEventListener("change", updateThreshold);
+    input.dataset.bound = "true";
+  }
+  input.value = String(state.minTotalArticles);
+}
+
 function renderPageTabs() {
   const articleViewTabLink = document.getElementById("articleViewTabLink");
   const statementRankingLink = document.getElementById("statementRankingLink");
@@ -247,15 +282,17 @@ function renderArticleRanking() {
 
   const ranked = getRankedArticles();
   if (!ranked.length) {
-    summary.textContent = "No articles have statements with non-zero support/contradict evidence in this dataset.";
-    container.innerHTML = '<div class="viewer-empty-state">No article rankings are available for this dataset.</div>';
+    summary.textContent =
+      `No articles have statements with more than ${state.minTotalArticles} support/contradict articles in this dataset.`;
+    container.innerHTML =
+      '<div class="viewer-empty-state">Try lowering the minimum total articles threshold.</div>';
     return;
   }
 
   summary.textContent =
     state.metric === "max"
-      ? `${ranked.length} articles ranked by the maximum contradiction proportion reached by any statement.`
-      : `${ranked.length} articles ranked by the average contradiction proportion across their statements.`;
+      ? `${ranked.length} articles ranked by the maximum contradiction proportion reached by any statement with more than ${state.minTotalArticles} support/contradict articles.`
+      : `${ranked.length} articles ranked by the average contradiction proportion across statements with more than ${state.minTotalArticles} support/contradict articles.`;
 
   ranked.forEach((record, index) => {
     const fragment = template.content.cloneNode(true);
@@ -264,15 +301,16 @@ function renderArticleRanking() {
 
     fragment.querySelector(".viewer-statement-card__index").textContent = `Rank ${index + 1}`;
     fragment.querySelector(".viewer-statement-card__totals").textContent =
-      `${state.metric === "max" ? "Maximum statement score" : "Average across statements"} ${formatPercent(metricValue)}`;
+      `${state.metric === "max" ? "Maximum eligible statement score" : "Average across eligible statements"} ${formatPercent(metricValue)}`;
     fragment.querySelector(".viewer-ranking-card__source").innerHTML =
       `<strong>Source PMID ${escapeHtml(record.source.pmid)}</strong> • ${escapeHtml(record.source.title)}`;
 
     const metrics = fragment.querySelector(".viewer-article-ranking-card__metrics");
     [
-      `Average across statements ${formatPercent(record.avgProp)}`,
-      `Maximum statement score ${formatPercent(record.maxProp)}`,
-      `${record.rankedStatementCount} ranked statement${record.rankedStatementCount === 1 ? "" : "s"}`,
+      `Average across eligible statements ${formatPercent(record.avgProp)}`,
+      `Maximum eligible statement score ${formatPercent(record.maxProp)}`,
+      `${record.rankedStatementCount} eligible statement${record.rankedStatementCount === 1 ? "" : "s"}`,
+      `${record.totalEvidenceCount} total articles`,
     ].forEach((label) => {
       const chip = document.createElement("span");
       chip.className = "viewer-article-ranking-chip";
@@ -294,6 +332,7 @@ function renderArticleRanking() {
 async function init() {
   state.dataPath = normalizeDataPath(getQueryParam("data") || "./viewer_data_demo_examples.json");
   state.metric = normalizeMetric(getQueryParam("metric"));
+  state.minTotalArticles = normalizeNonNegativeInt(getQueryParam("min_total"), 5);
 
   state.data = await loadJsonWithSessionCache(state.dataPath);
   state.data.sources = [...(state.data.sources || [])].sort((a, b) =>
@@ -305,6 +344,7 @@ async function init() {
 
   renderDatasetPicker();
   renderMetricControl();
+  renderThresholdControl();
   renderPageTabs();
   renderArticleRanking();
 }

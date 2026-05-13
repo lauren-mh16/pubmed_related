@@ -10,7 +10,7 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_cochrane.json", label: "cochrane", summaryFile: "./cochrane_summaries.jsonl" },
   { file: "./viewer_data_cochrane_litsense.json", label: "cochrane_litsense", summaryFile: "./cochrane_litsense_summaries.jsonl" },
 ];
-const VIEWER_CACHE_VERSION = "20260421c";
+const VIEWER_CACHE_VERSION = "20260513b";
 
 const state = {
   data: null,
@@ -639,6 +639,9 @@ function getRankedStatementsAcrossSources() {
       if (aHasScore && bHasScore && a.directionalScore !== b.directionalScore) {
         return a.directionalScore - b.directionalScore;
       }
+    }
+    if (state.rankingMetric !== "contradict_rate" && b.total !== a.total) {
+      return b.total - a.total;
     }
     if (b.contradictRate !== a.contradictRate) {
       return b.contradictRate - a.contradictRate;

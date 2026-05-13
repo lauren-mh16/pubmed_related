@@ -78,6 +78,10 @@
           <option value="max">Maximum statement score</option>
         </select>
       </div>
+      <div class="viewer-control">
+        <label for="minTotalArticlesInput">Minimum total articles</label>
+        <input id="minTotalArticlesInput" type="number" min="0" step="1" value="5">
+      </div>
     </div>
   </form>
 
@@ -86,7 +90,7 @@
       <div class="full-view">
         <h1 class="heading-title">Article Rankings</h1>
         <p class="viewer-section__intro">
-          This page ranks source articles by either the average contradiction proportion across statements or the maximum contradiction proportion reached by any statement, using non-zero Med-V1 evidence only.
+          This page ranks source articles by either the average contradiction proportion across eligible statements or the maximum contradiction proportion reached by any eligible statement, using non-zero Med-V1 evidence only.
         </p>
       </div>
     </header>
@@ -111,6 +115,6 @@
     </button>
   </template>
 
-  <script src="./article_ranking.js?v=20260421c"></script>
+  <script src="./article_ranking.js?v=20260513a"></script>
 </body>
 </html>
