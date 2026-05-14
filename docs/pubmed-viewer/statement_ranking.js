@@ -10,7 +10,7 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_cochrane.json", label: "cochrane", summaryFile: "./cochrane_summaries.jsonl" },
   { file: "./viewer_data_cochrane_litsense.json", label: "cochrane_litsense", summaryFile: "./cochrane_litsense_summaries.jsonl" },
 ];
-const VIEWER_CACHE_VERSION = "20260513b";
+const VIEWER_CACHE_VERSION = "20260514a";
 
 const state = {
   data: null,
@@ -602,7 +602,7 @@ function getRankedStatementsAcrossSources() {
   for (const source of state.data?.sources || []) {
     for (const statement of source.statements || []) {
       const total = statement.counts?.total || 0;
-      if (total <= state.minTotalArticles) {
+      if (total < state.minTotalArticles) {
         continue;
       }
       const contradictCount = statement.counts?.contradict || 0;
@@ -827,7 +827,7 @@ function renderRanking() {
 
   const ranked = getRankedStatementsAcrossSources();
   if (!ranked.length) {
-    summary.textContent = `No statements have more than ${state.minTotalArticles} support/contradict articles in this dataset.`;
+    summary.textContent = `No statements have at least ${state.minTotalArticles} support/contradict articles in this dataset.`;
     container.innerHTML = '<div class="viewer-empty-state">Try lowering the minimum total articles threshold.</div>';
     return;
   }

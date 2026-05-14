@@ -10,7 +10,7 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_cochrane.json", label: "cochrane" },
   { file: "./viewer_data_cochrane_litsense.json", label: "cochrane_litsense" },
 ];
-const VIEWER_CACHE_VERSION = "20260513a";
+const VIEWER_CACHE_VERSION = "20260514a";
 
 const state = {
   data: null,
@@ -137,27 +137,32 @@ function getRankedArticles() {
     const statementProps = (source.statements || [])
       .map((statement) => {
         const total = Number(statement?.counts?.total || 0);
-        if (!Number.isFinite(total) || total <= state.minTotalArticles) {
-          return null;
-        }
         const negProp = computeStatementNegProp(statement);
-        return negProp === null
-          ? null
-          : {
-              statement,
-              negProp,
-              total,
-            };
-      })
-      .filter(Boolean);
+        return {
+          statement,
+          negProp,
+          total,
+        };
+      });
 
-    if (!statementProps.length) {
+    if (
+      !statementProps.length ||
+      statementProps.some(
+        (item) => !Number.isFinite(item.total) || item.total < state.minTotalArticles
+      )
+    ) {
+      continue;
+    }
+
+    const rankableStatementProps = statementProps.filter((item) => item.negProp !== null);
+    if (!rankableStatementProps.length) {
       continue;
     }
 
     const avgProp =
-      statementProps.reduce((sum, item) => sum + item.negProp, 0) / statementProps.length;
-    const maxItem = statementProps.reduce((best, item) => {
+      rankableStatementProps.reduce((sum, item) => sum + item.negProp, 0) /
+      rankableStatementProps.length;
+    const maxItem = rankableStatementProps.reduce((best, item) => {
       if (!best || item.negProp > best.negProp) {
         return item;
       }
@@ -170,7 +175,7 @@ function getRankedArticles() {
       }
       return best;
     }, null);
-    const totalEvidenceCount = statementProps.reduce(
+    const totalEvidenceCount = rankableStatementProps.reduce(
       (sum, item) => sum + item.total,
       0
     );
@@ -180,7 +185,7 @@ function getRankedArticles() {
       avgProp,
       maxProp: maxItem?.negProp ?? 0,
       totalEvidenceCount,
-      rankedStatementCount: statementProps.length,
+      rankedStatementCount: rankableStatementProps.length,
       maxStatement: maxItem?.statement || null,
     });
   }
@@ -283,7 +288,7 @@ function renderArticleRanking() {
   const ranked = getRankedArticles();
   if (!ranked.length) {
     summary.textContent =
-      `No articles have statements with more than ${state.minTotalArticles} support/contradict articles in this dataset.`;
+      `No articles have every statement with at least ${state.minTotalArticles} support/contradict articles in this dataset.`;
     container.innerHTML =
       '<div class="viewer-empty-state">Try lowering the minimum total articles threshold.</div>';
     return;
@@ -291,8 +296,8 @@ function renderArticleRanking() {
 
   summary.textContent =
     state.metric === "max"
-      ? `${ranked.length} articles ranked by the maximum contradiction proportion reached by any statement with more than ${state.minTotalArticles} support/contradict articles.`
-      : `${ranked.length} articles ranked by the average contradiction proportion across statements with more than ${state.minTotalArticles} support/contradict articles.`;
+      ? `${ranked.length} articles ranked by the maximum contradiction proportion reached by any statement. Every statement in each ranked article has at least ${state.minTotalArticles} support/contradict articles.`
+      : `${ranked.length} articles ranked by the average contradiction proportion across statements. Every statement in each ranked article has at least ${state.minTotalArticles} support/contradict articles.`;
 
   ranked.forEach((record, index) => {
     const fragment = template.content.cloneNode(true);
@@ -301,15 +306,15 @@ function renderArticleRanking() {
 
     fragment.querySelector(".viewer-statement-card__index").textContent = `Rank ${index + 1}`;
     fragment.querySelector(".viewer-statement-card__totals").textContent =
-      `${state.metric === "max" ? "Maximum eligible statement score" : "Average across eligible statements"} ${formatPercent(metricValue)}`;
+      `${state.metric === "max" ? "Maximum statement score" : "Average across statements"} ${formatPercent(metricValue)}`;
     fragment.querySelector(".viewer-ranking-card__source").innerHTML =
       `<strong>Source PMID ${escapeHtml(record.source.pmid)}</strong> • ${escapeHtml(record.source.title)}`;
 
     const metrics = fragment.querySelector(".viewer-article-ranking-card__metrics");
     [
-      `Average across eligible statements ${formatPercent(record.avgProp)}`,
-      `Maximum eligible statement score ${formatPercent(record.maxProp)}`,
-      `${record.rankedStatementCount} eligible statement${record.rankedStatementCount === 1 ? "" : "s"}`,
+      `Average across statements ${formatPercent(record.avgProp)}`,
+      `Maximum statement score ${formatPercent(record.maxProp)}`,
+      `${record.rankedStatementCount} ranked statement${record.rankedStatementCount === 1 ? "" : "s"}`,
       `${record.totalEvidenceCount} total articles`,
     ].forEach((label) => {
       const chip = document.createElement("span");
