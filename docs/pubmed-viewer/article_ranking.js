@@ -9,8 +9,9 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_retracted_rand_litsense.json", label: "retracted_rand_litsense" },
   { file: "./viewer_data_cochrane.json", label: "cochrane" },
   { file: "./viewer_data_cochrane_litsense.json", label: "cochrane_litsense" },
+  { file: "./viewer_data_vitb_general_claims_gpt54_medium.json", label: "vitamin b statements" },
 ];
-const VIEWER_CACHE_VERSION = "20260514a";
+const VIEWER_CACHE_VERSION = "20260515a";
 
 const state = {
   data: null,
