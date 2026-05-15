@@ -10,8 +10,9 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_cochrane.json", label: "cochrane", summaryFile: "./cochrane_summaries.jsonl" },
   { file: "./viewer_data_cochrane_litsense.json", label: "cochrane_litsense", summaryFile: "./cochrane_litsense_summaries.jsonl" },
   { file: "./viewer_data_vitb_general_claims_gpt54_medium.json", label: "vitamin b statements", summaryFile: "./vitb_general_claims_gpt54_medium_summaries.jsonl" },
+  { file: "./viewer_data_vitb_amd_general_claims_related_passages_gpt54_medium.json", label: "vitamin b passages", summaryFile: "./vitb_amd_general_claims_related_passages_summaries.jsonl", evidenceTextLabel: "Passage" },
 ];
-const VIEWER_CACHE_VERSION = "20260515a";
+const VIEWER_CACHE_VERSION = "20260515c";
 
 const state = {
   data: null,
@@ -120,6 +121,14 @@ function normalizeSummaryHighlights(value) {
 
 function getSummaryPathForDataPath(dataPath) {
   return DATASET_OPTIONS.find((dataset) => dataset.file === dataPath)?.summaryFile || null;
+}
+
+function getCurrentDatasetOption() {
+  return DATASET_OPTIONS.find((dataset) => dataset.file === state.dataPath) || null;
+}
+
+function getEvidenceTextLabel() {
+  return getCurrentDatasetOption()?.evidenceTextLabel || "Abstract";
 }
 
 async function loadStatementSummaries(summaryPath) {
@@ -448,7 +457,8 @@ function getSentenceHighlightIndexes(abstract, snippets) {
 }
 
 function highlightAbstractText(abstract, snippets) {
-  const baseText = abstract || "No abstract text was available in the scored row.";
+  const label = getEvidenceTextLabel().toLowerCase();
+  const baseText = abstract || `No ${label} text was available in the scored row.`;
   const { sentences, indexes } = getSentenceHighlightIndexes(baseText, snippets);
   if (!sentences.length || !indexes.size) {
     return escapeHtml(baseText);
@@ -677,6 +687,10 @@ function renderEvidenceCard(listEl, item, highlightSnippets = []) {
   const abstractEl = fragment.querySelector(".viewer-evidence-card__abstract");
   const rationaleEl = fragment.querySelector(".viewer-evidence-card__rationale");
   const pillEl = fragment.querySelector(".viewer-score-pill");
+  const abstractSummaryEl = abstractEl.closest("details")?.querySelector("summary");
+  if (abstractSummaryEl) {
+    abstractSummaryEl.textContent = getEvidenceTextLabel();
+  }
 
   titleEl.innerHTML = item.pubmed_url
     ? `<a href="${item.pubmed_url}" target="_blank" rel="noreferrer">${escapeHtml(item.title)}</a>`
