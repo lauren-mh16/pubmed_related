@@ -11,8 +11,9 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_cochrane_litsense.json", label: "cochrane_litsense", summaryFile: "./cochrane_litsense_summaries.jsonl" },
   { file: "./viewer_data_vitb_general_claims_gpt54_medium.json", label: "vitamin b statements", summaryFile: "./vitb_general_claims_gpt54_medium_summaries.jsonl" },
   { file: "./viewer_data_vitb_amd_general_claims_related_passages_gpt54_medium2.json", label: "vitamin b passages", summaryFile: "./vitb_amd_general_claims_related_passages_summaries2.jsonl", evidenceTextLabel: "Passage" },
+  { file: "./viewer_data_vitb_amd_general_claims_fulltext_gpt54_medium.json", label: "vitamin b full texts", summaryFile: "./vitb_amd_general_claims_fulltext_summaries.jsonl" },
 ];
-const VIEWER_CACHE_VERSION = "20260517a";
+const VIEWER_CACHE_VERSION = "20260518a";
 
 const state = {
   data: null,

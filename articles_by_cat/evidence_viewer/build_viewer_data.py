@@ -41,6 +41,14 @@ def split_article_text(article_text: str) -> Tuple[str, str]:
     return title.strip(), abstract.strip()
 
 
+def related_title_abstract(row: Dict[str, Any]) -> Tuple[str, str]:
+    title = str(row.get("title", "") or "").strip()
+    abstract = str(row.get("abstract", "") or "").strip()
+    if title or abstract:
+        return title, abstract
+    return split_article_text(row.get("source", ""))
+
+
 def score_bucket(score: Optional[int]) -> str:
     if score is None:
         return "unknown"
@@ -162,7 +170,7 @@ def build_viewer_data(
                 score = None
 
         related_pmid = str(row.get("related_pmid", "")).strip()
-        related_title, related_abstract = split_article_text(row.get("source", ""))
+        related_title, related_abstract = related_title_abstract(row)
 
         evidence_item = {
             "related_pmid": related_pmid,
