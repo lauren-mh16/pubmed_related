@@ -13,7 +13,7 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_vitb_amd_general_claims_related_passages_gpt54_medium2.json", label: "vitamin b passages" },
   { file: "./viewer_data_vitb_amd_general_claims_fulltext_gpt54_medium.json", label: "vitamin b full texts" },
 ];
-const VIEWER_CACHE_VERSION = "20260518a";
+const VIEWER_CACHE_VERSION = "20260518b";
 
 const state = {
   data: null,

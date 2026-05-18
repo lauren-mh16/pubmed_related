@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T16:11:44.814097+00:00",
+  "generated_at": "2026-05-18T16:48:13.315399+00:00",
   "source_count": 13,
   "sources": [
     {
@@ -318,11 +318,11 @@
           "idx": 0,
           "text": "Higher folate intake is associated with slower progression to geographic atrophy in AMD.",
           "counts": {
-            "support": 8,
+            "support": 7,
             "neutral": 0,
             "contradict": 0,
             "unknown": 0,
-            "total": 8
+            "total": 7
           },
           "evidence": [
             {
@@ -348,18 +348,6 @@
               "bucket": "support",
               "rationale": "The claim states that higher folate intake is associated with slower progression to geographic atrophy (GA) in AMD.\n\nThe article directly addresses this. In the combined AREDS/AREDS2 cohort, folate intake in higher quintiles was associated with reduced risk of progression to GA: Q4 vs Q1 HR 0.71 (95% CI 0.61–0.82), p<0.0001; Q5 vs Q1 HR 0.78 (0.67–0.91), p=0.002. The article also states in the discussion that a protective association between folate intake and progression to GA had previously been reported and that the current analyses were consistent with that finding.\n\nBecause the article explicitly reports a statistically significant association between higher folate intake and lower risk of GA progression in AMD, this strongly supports the claim.",
               "raw_output": "<think>The claim states that higher folate intake is associated with slower progression to geographic atrophy (GA) in AMD.\n\nThe article directly addresses this. In the combined AREDS/AREDS2 cohort, folate intake in higher quintiles was associated with reduced risk of progression to GA: Q4 vs Q1 HR 0.71 (95% CI 0.61–0.82), p<0.0001; Q5 vs Q1 HR 0.78 (0.67–0.91), p=0.002. The article also states in the discussion that a protective association between folate intake and progression to GA had previously been reported and that the current analyses were consistent with that finding.\n\nBecause the article explicitly reports a statistically significant association between higher folate intake and lower risk of GA progression in AMD, this strongly supports the claim.</think>\n<score>2</score>"
-            },
-            {
-              "related_pmid": "29147458",
-              "title": "Erratum to \"Nutritional and Lifestyle Interventions for Age-Related Macular Degeneration: A Review\".",
-              "abstract": "[This corrects the article DOI: 10.1155/2017/6469138.].",
-              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29147458/",
-              "retrieval_score": null,
-              "score": 2,
-              "score_label": "Strong support",
-              "bucket": "support",
-              "rationale": "The claim is: “Higher folate intake is associated with slower progression to geographic atrophy in AMD.”\n\nThe article directly addresses this point in the section discussing evidence on dietary factors. It states:\n\n- “Recently, it was reported that high dietary intake of folate was associated with a decreased risk of progression of geographic atrophy...”\n\nThis is closely aligned with the claim:\n- “high dietary intake of folate” matches “higher folate intake”\n- “decreased risk of progression of geographic atrophy” matches “slower progression to geographic atrophy”\n- the surrounding context is clearly AMD\n\nAlthough this is presented in a review and refers to an observational cohort rather than proving causation, the article text itself explicitly supports the association claimed.\n\nTherefore, this is strong agreement.",
-              "raw_output": "<think>\nThe claim is: “Higher folate intake is associated with slower progression to geographic atrophy in AMD.”\n\nThe article directly addresses this point in the section discussing evidence on dietary factors. It states:\n\n- “Recently, it was reported that high dietary intake of folate was associated with a decreased risk of progression of geographic atrophy...”\n\nThis is closely aligned with the claim:\n- “high dietary intake of folate” matches “higher folate intake”\n- “decreased risk of progression of geographic atrophy” matches “slower progression to geographic atrophy”\n- the surrounding context is clearly AMD\n\nAlthough this is presented in a review and refers to an observational cohort rather than proving causation, the article text itself explicitly supports the association claimed.\n\nTherefore, this is strong agreement.\n</think>\n<score>2</score>"
             },
             {
               "related_pmid": "28154734",
@@ -435,11 +423,11 @@
           "idx": 0,
           "text": "The relationship between folate intake and AMD risk or progression is modified by genetic susceptibility, including variation in the C3 genotype.",
           "counts": {
-            "support": 7,
+            "support": 6,
             "neutral": 0,
             "contradict": 0,
             "unknown": 0,
-            "total": 7
+            "total": 6
           },
           "evidence": [
             {
@@ -477,18 +465,6 @@
               "bucket": "support",
               "rationale": "The claim says that the association between folate intake and AMD risk/progression is modified by genetic susceptibility, including C3 genotype variation.\n\nThe article directly studies this question. It examines dietary folate and progression to geographic atrophy (an advanced form of AMD) and evaluates interaction with AMD-related genetic variants. In the results, folate is associated with lower risk of incident GA specifically among subjects with the C3 rs2230199 nonrisk genotype (CC), but not among carriers of the risk allele (G). The conclusion explicitly states that the folate relation \"could be modified by genetic susceptibility, particularly related to the C3 genotype.\"\n\nThis is a close match to the claim, though the article is specifically about progression to GA rather than all AMD outcomes broadly. Still, the claim’s wording (\"AMD risk or progression\") is satisfied by this progression outcome, and C3 modification is explicitly supported.",
               "raw_output": "<think>The claim says that the association between folate intake and AMD risk/progression is modified by genetic susceptibility, including C3 genotype variation.\n\nThe article directly studies this question. It examines dietary folate and progression to geographic atrophy (an advanced form of AMD) and evaluates interaction with AMD-related genetic variants. In the results, folate is associated with lower risk of incident GA specifically among subjects with the C3 rs2230199 nonrisk genotype (CC), but not among carriers of the risk allele (G). The conclusion explicitly states that the folate relation \"could be modified by genetic susceptibility, particularly related to the C3 genotype.\"\n\nThis is a close match to the claim, though the article is specifically about progression to GA rather than all AMD outcomes broadly. Still, the claim’s wording (\"AMD risk or progression\") is satisfied by this progression outcome, and C3 modification is explicitly supported.</think>\n<score>2</score>"
-            },
-            {
-              "related_pmid": "29147458",
-              "title": "Erratum to \"Nutritional and Lifestyle Interventions for Age-Related Macular Degeneration: A Review\".",
-              "abstract": "[This corrects the article DOI: 10.1155/2017/6469138.].",
-              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29147458/",
-              "retrieval_score": null,
-              "score": 2,
-              "score_label": "Strong support",
-              "bucket": "support",
-              "rationale": "The claim says that the relationship between folate intake and AMD risk or progression is modified by genetic susceptibility, including C3 genotype variation.\n\nThe article explicitly states: “high dietary intake of folate was associated with a decreased risk of progression of geographic atrophy... This association could be modified by genetic susceptibility, particularly associated with C3 alleles.”\n\nGeographic atrophy is an advanced form of AMD, so this directly addresses AMD progression. The mention of modification by genetic susceptibility, especially C3 alleles, matches the claim very closely.\n\nTherefore, the article strongly supports the claim.",
-              "raw_output": "<think>The claim says that the relationship between folate intake and AMD risk or progression is modified by genetic susceptibility, including C3 genotype variation.\n\nThe article explicitly states: “high dietary intake of folate was associated with a decreased risk of progression of geographic atrophy... This association could be modified by genetic susceptibility, particularly associated with C3 alleles.”\n\nGeographic atrophy is an advanced form of AMD, so this directly addresses AMD progression. The mention of modification by genetic susceptibility, especially C3 alleles, matches the claim very closely.\n\nTherefore, the article strongly supports the claim.</think>\n<score>2</score>"
             },
             {
               "related_pmid": "29288272",
@@ -995,9 +971,9 @@
           "counts": {
             "support": 4,
             "neutral": 0,
-            "contradict": 4,
+            "contradict": 3,
             "unknown": 0,
-            "total": 8
+            "total": 7
           },
           "evidence": [
             {
@@ -1011,18 +987,6 @@
               "bucket": "support",
               "rationale": "The claim is about vitamin B1 (thiamine) intake and reduced risk of progression to geographic atrophy (GA) in AMD.\n\nThe article directly studies dietary nutrient intake and progression to late AMD subtypes, including GA. In the results table for GA, thiamine shows hazard ratios below 1 for higher intake (Q4 vs Q1: 0.87; Q5 vs Q1: 0.85), with Q5 having a nominally significant P value (0.033). The text also states that for GA, thiamine was among the nutrients with a nominal association with decreased risk.\n\nSo:\n1. Same disease context: AMD.\n2. Same outcome: progression to GA.\n3. Same exposure: higher vitamin B1/thiamine intake.\n4. Direction matches: higher intake associated with lower risk.\n5. The support is somewhat tentative/nominal rather than very strong, but the claim itself uses cautious wording (“may be associated”).\n\nTherefore the article supports the claim directly and appropriately.",
               "raw_output": "<think>The claim is about vitamin B1 (thiamine) intake and reduced risk of progression to geographic atrophy (GA) in AMD.\n\nThe article directly studies dietary nutrient intake and progression to late AMD subtypes, including GA. In the results table for GA, thiamine shows hazard ratios below 1 for higher intake (Q4 vs Q1: 0.87; Q5 vs Q1: 0.85), with Q5 having a nominally significant P value (0.033). The text also states that for GA, thiamine was among the nutrients with a nominal association with decreased risk.\n\nSo:\n1. Same disease context: AMD.\n2. Same outcome: progression to GA.\n3. Same exposure: higher vitamin B1/thiamine intake.\n4. Direction matches: higher intake associated with lower risk.\n5. The support is somewhat tentative/nominal rather than very strong, but the claim itself uses cautious wording (“may be associated”).\n\nTherefore the article supports the claim directly and appropriately.</think>\n<score>2</score>"
-            },
-            {
-              "related_pmid": "29147458",
-              "title": "Erratum to \"Nutritional and Lifestyle Interventions for Age-Related Macular Degeneration: A Review\".",
-              "abstract": "[This corrects the article DOI: 10.1155/2017/6469138.].",
-              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29147458/",
-              "retrieval_score": null,
-              "score": -2,
-              "score_label": "Strong contradiction",
-              "bucket": "contradict",
-              "rationale": "The claim is about vitamin B1 (thiamin) intake and reduced risk of progression to geographic atrophy in AMD.\n\nThe article directly discusses this point in the section on dietary factors, stating:\n- “high dietary intake of folate was associated with a decreased risk of progression of geographic atrophy...”\n- but “thiamin, riboflavin, niacin, and vitamins B6 and B12 were not significantly related to progression.”\n\nSince vitamin B1 = thiamin, the article specifically indicates that thiamin was not significantly associated with progression. That directly goes against the claim that higher vitamin B1 intake may be associated with reduced risk of progression to geographic atrophy.\n\nBecause the article addresses the same condition and outcome and explicitly reports no significant relation for thiamin, this is a clear contradiction.",
-              "raw_output": "<think>The claim is about vitamin B1 (thiamin) intake and reduced risk of progression to geographic atrophy in AMD.\n\nThe article directly discusses this point in the section on dietary factors, stating:\n- “high dietary intake of folate was associated with a decreased risk of progression of geographic atrophy...”\n- but “thiamin, riboflavin, niacin, and vitamins B6 and B12 were not significantly related to progression.”\n\nSince vitamin B1 = thiamin, the article specifically indicates that thiamin was not significantly associated with progression. That directly goes against the claim that higher vitamin B1 intake may be associated with reduced risk of progression to geographic atrophy.\n\nBecause the article addresses the same condition and outcome and explicitly reports no significant relation for thiamin, this is a clear contradiction.</think>\n<score>-2</score>"
             },
             {
               "related_pmid": "28154734",
@@ -1112,9 +1076,9 @@
           "counts": {
             "support": 3,
             "neutral": 0,
-            "contradict": 4,
+            "contradict": 3,
             "unknown": 0,
-            "total": 7
+            "total": 6
           },
           "evidence": [
             {
@@ -1128,18 +1092,6 @@
               "bucket": "support",
               "rationale": "The claim is about vitamin B2 (riboflavin) intake and reduced risk of progression to geographic atrophy (GA) in AMD.\n\nThe article directly analyzes dietary nutrient intake and progression to late AMD subtypes, including GA. Riboflavin is listed in Table 2 for geographic atrophy, with hazard ratios below 1 for higher intake versus lowest intake:\n- Q4 vs Q1: 0.81 (0.70, 0.94), p=0.005\n- Q5 vs Q1: 0.81 (0.70, 0.95), p=0.008\n\nThe text also explicitly states that for progression to GA, riboflavin was among the nutrients with a nominal association with decreased risk.\n\nSo the article directly supports the specific nutrient, disease, and outcome in the claim. Because the association is observational and nominal rather than the strongest corrected-significance finding, the support is somewhat tentative—but the claim itself uses “may be associated,” which matches the article well.",
               "raw_output": "<think>The claim is about vitamin B2 (riboflavin) intake and reduced risk of progression to geographic atrophy (GA) in AMD.\n\nThe article directly analyzes dietary nutrient intake and progression to late AMD subtypes, including GA. Riboflavin is listed in Table 2 for geographic atrophy, with hazard ratios below 1 for higher intake versus lowest intake:\n- Q4 vs Q1: 0.81 (0.70, 0.94), p=0.005\n- Q5 vs Q1: 0.81 (0.70, 0.95), p=0.008\n\nThe text also explicitly states that for progression to GA, riboflavin was among the nutrients with a nominal association with decreased risk.\n\nSo the article directly supports the specific nutrient, disease, and outcome in the claim. Because the association is observational and nominal rather than the strongest corrected-significance finding, the support is somewhat tentative—but the claim itself uses “may be associated,” which matches the article well.</think>\n<score>2</score>"
-            },
-            {
-              "related_pmid": "29147458",
-              "title": "Erratum to \"Nutritional and Lifestyle Interventions for Age-Related Macular Degeneration: A Review\".",
-              "abstract": "[This corrects the article DOI: 10.1155/2017/6469138.].",
-              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29147458/",
-              "retrieval_score": null,
-              "score": -2,
-              "score_label": "Strong contradiction",
-              "bucket": "contradict",
-              "rationale": "The claim is about vitamin B2 (riboflavin) intake and reduced risk of progression to geographic atrophy in AMD.\n\nThe article directly addresses this topic in the section discussing vitamins and progression:\n- It states that **high dietary folate** was associated with a decreased risk of progression of geographic atrophy.\n- It then explicitly says that **thiamin, riboflavin, niacin, and vitamins B6 and B12 were not significantly related to progression**.\n\nBecause riboflavin is vitamin B2, the article specifically indicates that vitamin B2 intake was **not** associated with progression in the cited study. That is direct evidence against the claim.\n\nSo the article clearly refutes the claimed association rather than merely failing to mention it.",
-              "raw_output": "<think>The claim is about vitamin B2 (riboflavin) intake and reduced risk of progression to geographic atrophy in AMD.\n\nThe article directly addresses this topic in the section discussing vitamins and progression:\n- It states that **high dietary folate** was associated with a decreased risk of progression of geographic atrophy.\n- It then explicitly says that **thiamin, riboflavin, niacin, and vitamins B6 and B12 were not significantly related to progression**.\n\nBecause riboflavin is vitamin B2, the article specifically indicates that vitamin B2 intake was **not** associated with progression in the cited study. That is direct evidence against the claim.\n\nSo the article clearly refutes the claimed association rather than merely failing to mention it.</think>\n<score>-2</score>"
             },
             {
               "related_pmid": "28154734",
