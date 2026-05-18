@@ -14,7 +14,7 @@ INCLUDE_PATTERNS = [
     "*.js",
     "*.css",
     "viewer_data*.json",
-    "*_summaries.jsonl",
+    "*_summaries*.jsonl",
     "pair_comparison_retracted_rand.json",
     "authors_cache.json",
 ]

@@ -10,9 +10,9 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_cochrane.json", label: "cochrane" },
   { file: "./viewer_data_cochrane_litsense.json", label: "cochrane_litsense" },
   { file: "./viewer_data_vitb_general_claims_gpt54_medium.json", label: "vitamin b statements" },
-  { file: "./viewer_data_vitb_amd_general_claims_related_passages_gpt54_medium.json", label: "vitamin b passages" },
+  { file: "./viewer_data_vitb_amd_general_claims_related_passages_gpt54_medium2.json", label: "vitamin b passages" },
 ];
-const VIEWER_CACHE_VERSION = "20260515b";
+const VIEWER_CACHE_VERSION = "20260517a";
 
 const state = {
   data: null,
