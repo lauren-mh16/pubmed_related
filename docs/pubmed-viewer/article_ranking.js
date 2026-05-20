@@ -15,7 +15,7 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_gpt54_medium.json", label: "vitamin b litsense 1000" },
   { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_plus_systematic_meta_gpt54_medium.json", label: "vitamin b litsense 1000 with systematic reviews" },
 ];
-const VIEWER_CACHE_VERSION = "20260520b";
+const VIEWER_CACHE_VERSION = "20260520c";
 
 const state = {
   data: null,
