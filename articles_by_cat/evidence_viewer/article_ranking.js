@@ -12,8 +12,10 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_vitb_general_claims_gpt54_medium.json", label: "vitamin b statements" },
   { file: "./viewer_data_vitb_amd_general_claims_related_passages_gpt54_medium2.json", label: "vitamin b passages" },
   { file: "./viewer_data_vitb_amd_general_claims_fulltext_gpt54_medium.json", label: "vitamin b full texts" },
+  { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_gpt54_medium.json", label: "vitamin b litsense 1000" },
+  { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_plus_systematic_meta_gpt54_medium.json", label: "vitamin b litsense 1000 with systematic reviews" },
 ];
-const VIEWER_CACHE_VERSION = "20260518b";
+const VIEWER_CACHE_VERSION = "20260520b";
 
 const state = {
   data: null,
