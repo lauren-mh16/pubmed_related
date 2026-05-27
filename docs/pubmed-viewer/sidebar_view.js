@@ -213,7 +213,7 @@ function getContradictionProfileFromCounts(supportCount, contradictCount) {
   const ratio = contradict / denominator;
   const hue = Math.round(132 - ratio * 132);
   const percent = Math.round(ratio * 100);
-  const markerPercent = Math.min(98, Math.max(2, percent));
+  const markerPercent = Math.min(98, Math.max(2, 100 - percent));
   return {
     support,
     contradict,
@@ -345,8 +345,8 @@ function renderDistributionBar(statement) {
       ${profile.denominator ? '<span class="sidebar-view-distribution__marker"></span>' : ""}
     </div>
     <div class="viewer-statement-card__legend sidebar-view-legend">
-      <span class="viewer-legend-item">Support: ${profile.support}</span>
       <span class="viewer-legend-item">Concerns: ${profile.contradict}</span>
+      <span class="viewer-legend-item">Support: ${profile.support}</span>
     </div>
   `;
 }
