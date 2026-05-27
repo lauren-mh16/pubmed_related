@@ -555,7 +555,10 @@ function renderHeader() {
       source.pmid === state.data.sidebar_source.pmid
   );
   document.title = `${dataset?.label || "Evidence"} - Sidebar View`;
-  document.getElementById("id_term").value = source?.pmid || "";
+  const termInput = document.getElementById("id_term");
+  if (termInput) {
+    termInput.value = source?.pmid || "";
+  }
   document.getElementById("sidebarViewDataset").textContent = dataset?.label || state.dataPath.replace("./", "");
   const title = document.getElementById("sidebarViewTitle");
   title.textContent = source?.title || "Untitled source";
