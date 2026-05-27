@@ -8,6 +8,9 @@ from pathlib import Path
 
 GITHUB_PAGES_CSS_NAME = "github_pages.css"
 GITHUB_PAGES_CSS_VERSION = "20260427a"
+SIDEBAR_GITHUB_PAGES_ASSET_VERSION = "20260527b"
+PRESERVE_LOCAL_CSS_HTML = {"sidebar_view.html"}
+SIDEBAR_EXPORT_ONLY_HTML = {"sidebar_view.html"}
 
 INCLUDE_PATTERNS = [
     "*.html",
@@ -635,6 +638,54 @@ def rewrite_html_for_github_pages(html_text: str) -> str:
     return "\n".join(out_lines) + "\n"
 
 
+def rewrite_sidebar_for_github_pages(html_text: str) -> str:
+    out_lines: list[str] = []
+    skip_ncbi_header = False
+    skip_search_wrap = False
+    search_wrap_depth = 0
+
+    for line in html_text.splitlines():
+        stripped = line.strip()
+
+        if stripped.startswith('<header class="ncbi-header glp1-map-header"'):
+            skip_ncbi_header = True
+            continue
+        if skip_ncbi_header:
+            if stripped == "</header>":
+                skip_ncbi_header = False
+            continue
+
+        if stripped == '<div class="inner-wrap">':
+            skip_search_wrap = True
+            search_wrap_depth = 1
+            continue
+        if skip_search_wrap:
+            search_wrap_depth += stripped.count("<div")
+            search_wrap_depth -= stripped.count("</div>")
+            if search_wrap_depth <= 0:
+                skip_search_wrap = False
+            continue
+
+        if stripped.startswith('<link rel="stylesheet" href="./styles.css'):
+            out_lines.append(
+                f'  <link rel="stylesheet" href="./styles.css?v={SIDEBAR_GITHUB_PAGES_ASSET_VERSION}" type="text/css">'
+            )
+            continue
+
+        if stripped.startswith('<form action="./sidebar_view.html"'):
+            out_lines.append(line)
+            out_lines.append('    <input type="hidden" name="term" value="" id="id_term">')
+            continue
+
+        if stripped.startswith('<script src="./sidebar_view.js'):
+            out_lines.append(f'  <script src="./sidebar_view.js?v={SIDEBAR_GITHUB_PAGES_ASSET_VERSION}"></script>')
+            continue
+
+        out_lines.append(line)
+
+    return "\n".join(out_lines) + "\n"
+
+
 def copy_assets(src_dir: Path, dst_dir: Path) -> list[str]:
     copied: list[str] = []
     for pattern in INCLUDE_PATTERNS:
@@ -649,6 +700,15 @@ def copy_assets(src_dir: Path, dst_dir: Path) -> list[str]:
 def rewrite_exported_html(viewer_dir: Path) -> list[str]:
     rewritten: list[str] = []
     for html_path in sorted(viewer_dir.glob("*.html")):
+        if html_path.name in SIDEBAR_EXPORT_ONLY_HTML:
+            html_path.write_text(
+                rewrite_sidebar_for_github_pages(html_path.read_text(encoding="utf-8")),
+                encoding="utf-8",
+            )
+            rewritten.append(html_path.name)
+            continue
+        if html_path.name in PRESERVE_LOCAL_CSS_HTML:
+            continue
         html_path.write_text(
             rewrite_html_for_github_pages(html_path.read_text(encoding="utf-8")),
             encoding="utf-8",
