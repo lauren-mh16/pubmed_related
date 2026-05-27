@@ -65,6 +65,7 @@
       <a class="viewer-page-tab" id="articleViewTabLink" href="./index.html">Article view</a>
       <a class="viewer-page-tab" id="statementRankingLink" href="./statement_ranking.html">Statement rankings</a>
       <a class="viewer-page-tab is-active" id="articleRankingLink" href="./article_ranking.html">Article rankings</a>
+      <a class="viewer-page-tab" id="evidenceMapLink" href="./sidebar_view.html">Sidebar view</a>
     </div>
     <div class="viewer-control-strip">
       <div class="viewer-control">
@@ -74,8 +75,8 @@
       <div class="viewer-control">
         <label for="metricSelect">Ranking metric</label>
         <select id="metricSelect" aria-label="Ranking metric">
-          <option value="avg">Average across statements</option>
-          <option value="max">Maximum statement score</option>
+          <option value="avg">Average concerns score</option>
+          <option value="max">Maximum concerns score</option>
         </select>
       </div>
       <div class="viewer-control">
@@ -90,7 +91,7 @@
       <div class="full-view">
         <h1 class="heading-title">Article Rankings</h1>
         <p class="viewer-section__intro">
-          This page ranks source articles by either the average contradiction proportion across statements or the maximum contradiction proportion reached by any statement. Every statement in a ranked article must have at least the chosen number of support/contradict articles.
+          This page ranks source articles by either the average concerns proportion across statements or the maximum concerns proportion reached by any statement. Every statement in a ranked article must have at least the chosen number of support/concerns articles.
         </p>
       </div>
     </header>
@@ -110,7 +111,7 @@
       </div>
       <div class="viewer-ranking-card__source"></div>
       <div class="viewer-article-ranking-card__metrics"></div>
-      <p class="viewer-article-ranking-card__excerpt-label">Most contradicted statement</p>
+      <p class="viewer-article-ranking-card__excerpt-label">Highest-concern statement</p>
       <p class="viewer-article-ranking-card__excerpt"></p>
     </button>
   </template>

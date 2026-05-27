@@ -1,0 +1,126 @@
+{
+  "title": "GLP-1 receptor agonists and age-related macular degeneration",
+  "subtitle": "Evidence map for GLP-1 statements",
+  "pmid": "glp1_evidence_map",
+  "text_label": "Evidence synthesis text",
+  "text_segments": [
+    {
+      "id": "context_overview",
+      "text": "Human observational studies present heterogeneous, context-dependent evidence regarding the effect of GLP-1 receptor agonists (GLP-1 RAs) and similar weight-loss drugs on age-related macular degeneration (AMD) (PMID:41683853).",
+      "statement_ids": [],
+      "pmids": ["41683853"]
+    },
+    {
+      "id": "early_dry_amd",
+      "text": "In both diabetic and non-diabetic obese populations, GLP-1 RAs are consistently associated with a significantly reduced risk of developing early, nonexudative (dry) AMD and may slow its progression (PMID:41129133; PMID:40712124; PMID:39863057).",
+      "statement_ids": ["glp1_claim_01", "glp1_claim_02", "glp1_claim_03", "glp1_claim_04"],
+      "pmids": ["41129133", "40712124", "39863057"]
+    },
+    {
+      "id": "exudative_context",
+      "text": "However, evidence regarding exudative (neovascular) AMD is conflicting.",
+      "statement_ids": ["glp1_claim_05", "glp1_claim_06", "glp1_claim_07"],
+      "pmids": []
+    },
+    {
+      "id": "exudative_mixed",
+      "text": "While some studies report a reduced risk or no significant difference in exudative AMD progression (PMID:40712124; PMID:39863057; PMID:41129133; PMID:41453515), one large cohort study found a 2-fold increased risk of incident neovascular AMD in diabetic patients treated with GLP-1 RAs (PMID:40471562).",
+      "statement_ids": ["glp1_claim_05", "glp1_claim_06", "glp1_claim_07"],
+      "pmids": ["40712124", "39863057", "41129133", "41453515", "40471562"]
+    },
+    {
+      "id": "safety_monitoring",
+      "text": "Consequently, while GLP-1 RAs show promise for early AMD, their long-term ocular safety, particularly concerning neovascular AMD, requires individualized assessment and monitoring (PMID:41857480; PMID:41683853).",
+      "statement_ids": ["glp1_claim_07"],
+      "pmids": ["41857480", "41683853"]
+    }
+  ],
+  "statements": [
+    {
+      "id": "glp1_claim_01",
+      "label": "Claim 1",
+      "topic": "Diabetic obesity and early dry AMD",
+      "statement": "In diabetic obese populations, GLP-1 RAs are associated with a significantly reduced risk of developing early, nonexudative (dry) AMD.",
+      "highlight_segment_ids": ["early_dry_amd"],
+      "related_studies": [
+        {"pmid": "41129133", "note": "Cited for reduced early dry AMD risk and/or progression signal."},
+        {"pmid": "40712124", "note": "Cited for reduced early dry AMD risk and/or progression signal."},
+        {"pmid": "39863057", "note": "Cited for reduced early dry AMD risk and/or progression signal."}
+      ]
+    },
+    {
+      "id": "glp1_claim_02",
+      "label": "Claim 2",
+      "topic": "Non-diabetic obesity and early dry AMD",
+      "statement": "In non-diabetic obese populations, GLP-1 RAs are associated with a significantly reduced risk of developing early, nonexudative (dry) AMD.",
+      "highlight_segment_ids": ["early_dry_amd"],
+      "related_studies": [
+        {"pmid": "41129133", "note": "Cited for reduced early dry AMD risk and/or progression signal."},
+        {"pmid": "40712124", "note": "Cited for reduced early dry AMD risk and/or progression signal."},
+        {"pmid": "39863057", "note": "Cited for reduced early dry AMD risk and/or progression signal."}
+      ]
+    },
+    {
+      "id": "glp1_claim_03",
+      "label": "Claim 3",
+      "topic": "Non-diabetic obesity and dry AMD progression",
+      "statement": "In non-diabetic obese populations, GLP-1 RAs may slow the progression of dry AMD.",
+      "highlight_segment_ids": ["early_dry_amd"],
+      "related_studies": [
+        {"pmid": "41129133", "note": "Cited for dry AMD progression signal."},
+        {"pmid": "40712124", "note": "Cited for dry AMD progression signal."},
+        {"pmid": "39863057", "note": "Cited for dry AMD progression signal."}
+      ]
+    },
+    {
+      "id": "glp1_claim_04",
+      "label": "Claim 4",
+      "topic": "Diabetic obesity and dry AMD progression",
+      "statement": "In diabetic obese populations, GLP-1 RAs may slow the progression of dry AMD.",
+      "highlight_segment_ids": ["early_dry_amd"],
+      "related_studies": [
+        {"pmid": "41129133", "note": "Cited for dry AMD progression signal."},
+        {"pmid": "40712124", "note": "Cited for dry AMD progression signal."},
+        {"pmid": "39863057", "note": "Cited for dry AMD progression signal."}
+      ]
+    },
+    {
+      "id": "glp1_claim_05",
+      "label": "Claim 5",
+      "topic": "Reduced exudative AMD progression",
+      "statement": "There is a reduced risk of exudative AMD progression for GLP-1RA users.",
+      "highlight_segment_ids": ["exudative_context", "exudative_mixed"],
+      "related_studies": [
+        {"pmid": "40712124", "note": "Cited among studies reporting reduced risk or no significant difference."},
+        {"pmid": "39863057", "note": "Cited among studies reporting reduced risk or no significant difference."},
+        {"pmid": "41129133", "note": "Cited among studies reporting reduced risk or no significant difference."},
+        {"pmid": "41453515", "note": "Cited among studies reporting reduced risk or no significant difference."}
+      ]
+    },
+    {
+      "id": "glp1_claim_06",
+      "label": "Claim 6",
+      "topic": "No significant exudative AMD progression difference",
+      "statement": "There is no significant difference in risk of exudative AMD progression for GLP-1RA users.",
+      "highlight_segment_ids": ["exudative_context", "exudative_mixed"],
+      "related_studies": [
+        {"pmid": "40712124", "note": "Cited among studies reporting reduced risk or no significant difference."},
+        {"pmid": "39863057", "note": "Cited among studies reporting reduced risk or no significant difference."},
+        {"pmid": "41129133", "note": "Cited among studies reporting reduced risk or no significant difference."},
+        {"pmid": "41453515", "note": "Cited among studies reporting reduced risk or no significant difference."}
+      ]
+    },
+    {
+      "id": "glp1_claim_07",
+      "label": "Claim 7",
+      "topic": "Increased incident neovascular AMD",
+      "statement": "There is an increased risk of incident neovascular AMD in diabetic patients treated with GLP-1 RAs.",
+      "highlight_segment_ids": ["exudative_context", "exudative_mixed", "safety_monitoring"],
+      "related_studies": [
+        {"pmid": "40471562", "note": "Cited for a 2-fold increased incident neovascular AMD risk in diabetic GLP-1 RA users."},
+        {"pmid": "41857480", "note": "Cited for long-term ocular safety monitoring context."},
+        {"pmid": "41683853", "note": "Cited for heterogeneous, context-dependent evidence and monitoring context."}
+      ]
+    }
+  ]
+}

@@ -14,8 +14,10 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_vitb_amd_general_claims_fulltext_gpt54_medium.json", label: "vitamin b full texts", summaryFile: "./vitb_amd_general_claims_fulltext_summaries.jsonl" },
   { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_gpt54_medium.json", label: "vitamin b litsense 1000", summaryFile: "./vitb_amd_general_claims_litsense1000_noreviews_summaries.jsonl" },
   { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_plus_systematic_meta_gpt54_medium.json", label: "vitamin b litsense 1000 with systematic reviews", summaryFile: "./vitb_amd_general_claims_litsense1000_noreviews_sys_meta_no_abstract_summaries.jsonl" },
+  { file: "./viewer_data_glp1_out2.json", label: "GLP-1 statements", summaryFile: "./glp1_summaries2.jsonl" },
+  { file: "./viewer_data_covid_eg_out.json", label: "COVID example statements", summaryFile: "./covid_eg_noabstract_summaries.jsonl" },
 ];
-const VIEWER_CACHE_VERSION = "20260520c";
+const VIEWER_CACHE_VERSION = "20260527a";
 
 const state = {
   data: null,
@@ -61,6 +63,18 @@ function escapeHtml(text) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function formatConcernLabel(text) {
+  return String(text ?? "")
+    .replace(/\bContradicting\b/g, "Concerns")
+    .replace(/\bcontradicting\b/g, "concerns")
+    .replace(/\bContradicted\b/g, "Concern")
+    .replace(/\bcontradicted\b/g, "concerns")
+    .replace(/\bContradiction\b/g, "Concern")
+    .replace(/\bcontradiction\b/g, "concern")
+    .replace(/\bContradict\b/g, "Concerns")
+    .replace(/\bcontradict\b/g, "concerns");
 }
 
 function setQueryParam(name, value) {
@@ -267,7 +281,7 @@ function getRankingMetricLabel(metric = state.rankingMetric) {
   if (metric === "directional") {
     return "Directional score";
   }
-  return "Contradiction proportion";
+  return "Concerns proportion";
 }
 
 function formatRankingMetricValue(metric, record) {
@@ -333,8 +347,8 @@ function createStatementSummaryDetails(statement) {
               <p>${escapeHtml(supportSummary || "No support summary available.")}</p>
             </div>
             <div class="viewer-statement-summary__section">
-              <h4>Contradict summary${contradictScore !== undefined && contradictScore !== null ? ` • score ${escapeHtml(String(contradictScore))}` : ""}</h4>
-              <p>${escapeHtml(contradictSummary || "No contradict summary available.")}</p>
+              <h4>Concerns summary${contradictScore !== undefined && contradictScore !== null ? ` • score ${escapeHtml(String(contradictScore))}` : ""}</h4>
+              <p>${escapeHtml(contradictSummary || "No concerns summary available.")}</p>
             </div>
             <div class="viewer-statement-summary__section">
               <h4>Conclusion</h4>
@@ -499,7 +513,7 @@ function renderEvidenceCard(listEl, item, highlightSnippets = []) {
   abstractEl.innerHTML = highlightAbstractText(item.abstract, highlightSnippets);
   rationaleEl.textContent = item.rationale || "No rationale text was captured in the Med-V1 output.";
 
-  pillEl.textContent = `${item.score_label} (${item.score ?? "?"})`;
+  pillEl.textContent = `${formatConcernLabel(item.score_label || "Score")} (${item.score ?? "?"})`;
   pillEl.classList.add(item.bucket === "support" ? "viewer-score-pill--support" : "viewer-score-pill--contradict");
 
   listEl.appendChild(fragment);
@@ -535,10 +549,14 @@ function renderPageTabs() {
   const articleViewTabLink = document.getElementById("articleViewTabLink");
   const rankingViewTabLink = document.getElementById("rankingViewTabLink");
   const articleRankingLink = document.getElementById("articleRankingLink");
+  const evidenceMapLink = document.getElementById("evidenceMapLink");
   articleViewTabLink.href = buildPageUrl("./index.html");
   rankingViewTabLink.href = buildPageUrl("./statement_ranking.html");
   if (articleRankingLink) {
     articleRankingLink.href = buildPageUrl("./article_ranking.html");
+  }
+  if (evidenceMapLink) {
+    evidenceMapLink.href = buildPageUrl("./sidebar_view.html");
   }
 }
 
@@ -596,7 +614,7 @@ function renderOverlayFilters(record) {
   const options = [
     { key: "all", label: `All (${visibleTotal})` },
     { key: "support", label: `Support (${supportCount})` },
-    { key: "contradict", label: `Contradict (${contradictCount})` },
+    { key: "contradict", label: `Concerns (${contradictCount})` },
   ];
 
   for (const option of options) {
@@ -691,17 +709,17 @@ function renderOverlayEvidence() {
   contradictList.innerHTML = "";
 
   if (!record) {
-    document.getElementById("rankingEvidenceTitle").textContent = "Support/Contradict related studies";
+    document.getElementById("rankingEvidenceTitle").textContent = "Support/Concerns related studies";
     document.getElementById("rankingEvidenceSubtitle").textContent = "Select a statement to inspect its related studies.";
     document.getElementById("rankingFilterRow").innerHTML = "";
     supportSection.hidden = false;
     contradictSection.hidden = false;
     supportList.innerHTML = '<div class="viewer-empty-state">No support evidence available.</div>';
-    contradictList.innerHTML = '<div class="viewer-empty-state">No contradict evidence available.</div>';
+    contradictList.innerHTML = '<div class="viewer-empty-state">No concerns evidence available.</div>';
     return;
   }
 
-  document.getElementById("rankingEvidenceTitle").textContent = `Support/Contradict related studies for statement ${record.statement.idx + 1}`;
+  document.getElementById("rankingEvidenceTitle").textContent = `Support/Concerns related studies for statement ${record.statement.idx + 1}`;
   document.getElementById("rankingEvidenceSubtitle").textContent = record.statement.text;
   renderOverlayFilters(record);
   renderEvidenceSortControl();
@@ -719,7 +737,7 @@ function renderOverlayEvidence() {
 
   const mergeAllEvidence = shouldMergeAllEvidence();
   supportTitle.textContent = mergeAllEvidence ? "All" : "Support";
-  contradictTitle.textContent = "Contradict";
+  contradictTitle.textContent = "Concerns";
 
   if (mergeAllEvidence) {
     const mergedEvidence = sortEvidenceItems([...supportEvidence, ...contradictEvidence]);
@@ -754,7 +772,7 @@ function renderOverlayEvidence() {
   }
 
   if (!contradictEvidence.length) {
-    contradictList.innerHTML = '<div class="viewer-empty-state">No contradicting related studies for this statement.</div>';
+    contradictList.innerHTML = '<div class="viewer-empty-state">No concerns related studies for this statement.</div>';
   } else {
     sortEvidenceItems(contradictEvidence).forEach((item) =>
       renderEvidenceCard(contradictList, item, highlightLookup.contradict.get(String(item.related_pmid || "")) || [])
@@ -784,7 +802,7 @@ function renderSelectedStatementOverlay() {
     `Source PMID <a href="${sourceArticleUrl}"><strong>${escapeHtml(record.source.pmid)}</strong></a> • ${escapeHtml(record.source.title)}`;
   document.getElementById("rankingStatementIndex").textContent = `Statement ${record.statement.idx + 1}`;
   document.getElementById("rankingStatementTotals").textContent =
-    `${Math.round(record.contradictRate * 100)}% contradict • ${record.contradictCount}/${record.total} contradict`;
+    `${Math.round(record.contradictRate * 100)}% concerns • ${record.contradictCount}/${record.total} concerns`;
   document.getElementById("rankingStatementText").textContent = record.statement.text;
 
   document.getElementById("rankingSupportStrongSegment").style.width = `${(breakdown.supportStrong / total) * 100}%`;
@@ -845,17 +863,17 @@ function renderRanking() {
 
   const ranked = getRankedStatementsAcrossSources();
   if (!ranked.length) {
-    summary.textContent = `No statements have at least ${state.minTotalArticles} support/contradict articles in this dataset.`;
+    summary.textContent = `No statements have at least ${state.minTotalArticles} support/concerns articles in this dataset.`;
     container.innerHTML = '<div class="viewer-empty-state">Try lowering the minimum total articles threshold.</div>';
     return;
   }
 
   if (state.rankingMetric === "controversy") {
-    summary.textContent = `${ranked.length} statements currently meet the threshold and are ranked by highest controversy score. Statements without support/contradict summary scores fall to the bottom.`;
+    summary.textContent = `${ranked.length} statements currently meet the threshold and are ranked by highest controversy score. Statements without support/concerns summary scores fall to the bottom.`;
   } else if (state.rankingMetric === "directional") {
-    summary.textContent = `${ranked.length} statements currently meet the threshold and are ranked by lowest directional score first, so the most contradiction-leaning statements appear first.`;
+    summary.textContent = `${ranked.length} statements currently meet the threshold and are ranked by lowest directional score first, so the most concerns-leaning statements appear first.`;
   } else {
-    summary.textContent = `${ranked.length} statements currently meet the threshold and are ranked by contradiction proportion. Click any statement to inspect its support and contradict studies here.`;
+    summary.textContent = `${ranked.length} statements currently meet the threshold and are ranked by concerns proportion. Click any statement to inspect its support and concerns studies here.`;
   }
 
   ranked.forEach(({ source, statement, total, contradictCount, contradictRate, controversyScore, directionalScore }, index) => {
@@ -884,8 +902,8 @@ function renderRanking() {
     };
     fragment.querySelector(".viewer-statement-card__totals").textContent =
       state.rankingMetric === "contradict_rate"
-        ? `${formatRankingMetricValue(state.rankingMetric, metricRecord)} contradict`
-        : `${getRankingMetricLabel()} ${formatRankingMetricValue(state.rankingMetric, metricRecord)} • ${contradictCount}/${total} contradict`;
+        ? `${formatRankingMetricValue(state.rankingMetric, metricRecord)} concerns`
+        : `${getRankingMetricLabel()} ${formatRankingMetricValue(state.rankingMetric, metricRecord)} • ${contradictCount}/${total} concerns`;
     fragment.querySelector(".viewer-ranking-card__source").innerHTML =
       `<strong>Source PMID ${escapeHtml(source.pmid)}</strong> • ${escapeHtml(source.title)} • Statement ${statement.idx + 1}`;
     fragment.querySelector(".viewer-statement-card__text").textContent = statement.text;

@@ -63,7 +63,7 @@ function createStatementCard(statement) {
   const article = document.createElement("article");
   article.className = "viewer-compare-statement";
 
-  const countsText = `${statement.support_count || 0} support • ${statement.contradict_count || 0} contradict`;
+  const countsText = `${statement.support_count || 0} support • ${statement.contradict_count || 0} concerns`;
   const hasSummaryContent = Boolean(
     statement.support_summary ||
       statement.contradict_summary ||
@@ -85,7 +85,7 @@ function createStatementCard(statement) {
         ? `
           <div class="viewer-compare-statement__scores">
             <span class="viewer-article-ranking-chip">Support score ${escapeHtml(formatScore(statement.support_score))}</span>
-            <span class="viewer-article-ranking-chip">Contradict score ${escapeHtml(formatScore(statement.contradict_score))}</span>
+            <span class="viewer-article-ranking-chip">Concerns score ${escapeHtml(formatScore(statement.contradict_score))}</span>
             <span class="viewer-article-ranking-chip">Controversy ${escapeHtml(formatDerivedScore(statement.controversy_score))}</span>
             <span class="viewer-article-ranking-chip">Directional ${escapeHtml(formatDerivedScore(statement.directional_score))}</span>
           </div>
@@ -96,8 +96,8 @@ function createStatementCard(statement) {
                 <p>${escapeHtml(statement.support_summary || "No support summary available.")}</p>
               </div>
               <div class="viewer-statement-summary__section">
-                <h4>Contradict summary</h4>
-                <p>${escapeHtml(statement.contradict_summary || "No contradict summary available.")}</p>
+                <h4>Concerns summary</h4>
+                <p>${escapeHtml(statement.contradict_summary || "No concerns summary available.")}</p>
               </div>
               <div class="viewer-statement-summary__section">
                 <h4>Conclusion</h4>
@@ -148,8 +148,8 @@ function createArticleDetails(article, label) {
       <span class="viewer-compare-article__title">${escapeHtml(article.title || "Untitled article")}</span>
       <span class="viewer-compare-article__meta">PMID ${escapeHtml(article.pmid)} • ${statements.length} statement${statements.length === 1 ? "" : "s"}</span>
       <div class="viewer-compare-article__scores">
-        <span class="viewer-article-ranking-chip">Average ${escapeHtml(formatProportion(metrics.avg_contradiction_prop))}</span>
-        <span class="viewer-article-ranking-chip">Maximum ${escapeHtml(formatProportion(metrics.max_contradiction_prop))}</span>
+        <span class="viewer-article-ranking-chip">Average concerns ${escapeHtml(formatProportion(metrics.avg_contradiction_prop))}</span>
+        <span class="viewer-article-ranking-chip">Maximum concerns ${escapeHtml(formatProportion(metrics.max_contradiction_prop))}</span>
         <span class="viewer-article-ranking-chip">Total articles ${escapeHtml(String(metrics.total_evidence_count ?? 0))}</span>
         <span class="viewer-article-ranking-chip">Top controversy ${escapeHtml(formatDerivedScore(metrics.top_statement_controversy_score))}</span>
         <span class="viewer-article-ranking-chip">Top directional ${escapeHtml(formatDerivedScore(metrics.top_statement_directional_score))}</span>

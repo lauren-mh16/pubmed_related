@@ -14,8 +14,10 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_vitb_amd_general_claims_fulltext_gpt54_medium.json", label: "vitamin b full texts" },
   { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_gpt54_medium.json", label: "vitamin b litsense 1000" },
   { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_plus_systematic_meta_gpt54_medium.json", label: "vitamin b litsense 1000 with systematic reviews" },
+  { file: "./viewer_data_glp1_out2.json", label: "GLP-1 statements" },
+  { file: "./viewer_data_covid_eg_out.json", label: "COVID example statements" },
 ];
-const VIEWER_CACHE_VERSION = "20260520c";
+const VIEWER_CACHE_VERSION = "20260527a";
 
 const state = {
   data: null,
@@ -278,10 +280,14 @@ function renderPageTabs() {
   const articleViewTabLink = document.getElementById("articleViewTabLink");
   const statementRankingLink = document.getElementById("statementRankingLink");
   const articleRankingLink = document.getElementById("articleRankingLink");
+  const evidenceMapLink = document.getElementById("evidenceMapLink");
 
   articleViewTabLink.href = buildPageUrl("./index.html");
   statementRankingLink.href = buildPageUrl("./statement_ranking.html");
   articleRankingLink.href = buildPageUrl("./article_ranking.html");
+  if (evidenceMapLink) {
+    evidenceMapLink.href = buildPageUrl("./sidebar_view.html");
+  }
 }
 
 function renderArticleRanking() {
@@ -293,7 +299,7 @@ function renderArticleRanking() {
   const ranked = getRankedArticles();
   if (!ranked.length) {
     summary.textContent =
-      `No articles have every statement with at least ${state.minTotalArticles} support/contradict articles in this dataset.`;
+      `No articles have every statement with at least ${state.minTotalArticles} support/concerns articles in this dataset.`;
     container.innerHTML =
       '<div class="viewer-empty-state">Try lowering the minimum total articles threshold.</div>';
     return;
@@ -301,8 +307,8 @@ function renderArticleRanking() {
 
   summary.textContent =
     state.metric === "max"
-      ? `${ranked.length} articles ranked by the maximum contradiction proportion reached by any statement. Every statement in each ranked article has at least ${state.minTotalArticles} support/contradict articles.`
-      : `${ranked.length} articles ranked by the average contradiction proportion across statements. Every statement in each ranked article has at least ${state.minTotalArticles} support/contradict articles.`;
+      ? `${ranked.length} articles ranked by the maximum concerns proportion reached by any statement. Every statement in each ranked article has at least ${state.minTotalArticles} support/concerns articles.`
+      : `${ranked.length} articles ranked by the average concerns proportion across statements. Every statement in each ranked article has at least ${state.minTotalArticles} support/concerns articles.`;
 
   ranked.forEach((record, index) => {
     const fragment = template.content.cloneNode(true);
@@ -311,14 +317,14 @@ function renderArticleRanking() {
 
     fragment.querySelector(".viewer-statement-card__index").textContent = `Rank ${index + 1}`;
     fragment.querySelector(".viewer-statement-card__totals").textContent =
-      `${state.metric === "max" ? "Maximum statement score" : "Average across statements"} ${formatPercent(metricValue)}`;
+      `${state.metric === "max" ? "Maximum concerns score" : "Average concerns score"} ${formatPercent(metricValue)}`;
     fragment.querySelector(".viewer-ranking-card__source").innerHTML =
       `<strong>Source PMID ${escapeHtml(record.source.pmid)}</strong> • ${escapeHtml(record.source.title)}`;
 
     const metrics = fragment.querySelector(".viewer-article-ranking-card__metrics");
     [
-      `Average across statements ${formatPercent(record.avgProp)}`,
-      `Maximum statement score ${formatPercent(record.maxProp)}`,
+      `Average concerns score ${formatPercent(record.avgProp)}`,
+      `Maximum concerns score ${formatPercent(record.maxProp)}`,
       `${record.rankedStatementCount} ranked statement${record.rankedStatementCount === 1 ? "" : "s"}`,
       `${record.totalEvidenceCount} total articles`,
     ].forEach((label) => {
@@ -329,7 +335,7 @@ function renderArticleRanking() {
     });
 
     fragment.querySelector(".viewer-article-ranking-card__excerpt").textContent =
-      record.maxStatement?.text || "No contradicted statement text available.";
+      record.maxStatement?.text || "No high-concern statement text available.";
 
     card.addEventListener("click", () => {
       window.location.href = buildPageUrl("./index.html", { pmid: record.source.pmid });
