@@ -15,7 +15,7 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_gpt54_medium.json", label: "vitamin b litsense 1000", summaryFile: "./vitb_amd_general_claims_litsense1000_noreviews_summaries.jsonl" },
   { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_plus_systematic_meta_gpt54_medium.json", label: "vitamin b litsense 1000 with systematic reviews", summaryFile: "./vitb_amd_general_claims_litsense1000_noreviews_sys_meta_no_abstract_summaries.jsonl" },
   { file: "./viewer_data_glp1_out2.json", label: "GLP-1 statements", summaryFile: "./glp1_noabstract_summaries.jsonl" },
-  { file: "./viewer_data_glp1_article_snippet_spans_gpt54_medium.json", label: "GLP-1 snippet spans" },
+  { file: "./viewer_data_glp1_comp_out.json", label: "GLP-1 snippet spans" },
   { file: "./viewer_data_covid_eg_out.json", label: "COVID example statements", summaryFile: "./covid_eg_noabstract_summaries.jsonl" },
   { file: "./viewer_data_harris_article_snippet_spans_gpt54_medium.json", label: "Harris snippet spans" },
 ];
