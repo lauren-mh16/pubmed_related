@@ -412,11 +412,13 @@ a {
 .viewer-distribution.sidebar-view-distribution {
   position: relative;
   display: block;
+  width: var(--sidebar-evidence-width, 100%);
   height: 12px;
   margin: 12px 0 8px;
   overflow: visible;
   border: 1px solid var(--sidebar-evidence-border, var(--viewer-border-dark));
   background: var(--viewer-neutral);
+  transition: width 120ms ease;
 }
 
 .viewer-distribution.sidebar-view-distribution--scale .sidebar-view-distribution__track {
@@ -1362,6 +1364,65 @@ a.viewer-statement-card:active,
   width: min(980px, 100%);
 }
 
+.viewer-statement-evidence-dialog.sidebar-view-dialog--snippets {
+  width: min(1280px, 100%);
+}
+
+.sidebar-view-dialog--snippets .references {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 22px;
+}
+
+.sidebar-view-dialog--snippets .references > .title,
+.sidebar-view-dialog--snippets .references > .viewer-section__intro,
+.sidebar-view-dialog--snippets .references > #sidebarEvidenceSummary,
+.sidebar-view-dialog--snippets .references > .sidebar-view-evidence-toolbar {
+  grid-column: 1 / -1;
+}
+
+.sidebar-view-dialog--snippets .viewer-evidence-group {
+  min-width: 0;
+  margin-top: 0;
+}
+
+.sidebar-view-dialog--snippets .viewer-evidence-group + .viewer-evidence-group {
+  margin-top: 0;
+}
+
+.sidebar-view-snippet-card {
+  padding: 14px 16px;
+}
+
+.sidebar-view-snippet-list {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-view-snippet-item {
+  padding-top: 12px;
+  border-top: 1px solid var(--viewer-border);
+}
+
+.sidebar-view-snippet-item__topline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.sidebar-view-snippet-item blockquote {
+  margin: 0;
+  padding: 0 0 0 12px;
+  border-left: 3px solid var(--viewer-border-dark);
+  color: var(--viewer-text);
+  line-height: 1.6;
+}
+
 .viewer-statement-evidence-dialog .viewer-dialog-body {
   margin-top: 0;
 }
@@ -1418,6 +1479,10 @@ a.viewer-statement-card:active,
     position: static;
     max-height: none;
     overflow: visible;
+  }
+
+  .sidebar-view-dialog--snippets .references {
+    grid-template-columns: 1fr;
   }
 }
 

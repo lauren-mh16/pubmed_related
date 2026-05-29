@@ -1,0 +1,267 @@
+{
+  "generated_at": "2026-05-29T16:31:43.590485+00:00",
+  "evidence_mode": "snippets",
+  "source_count": 1,
+  "sources": [
+    {
+      "pmid": "39976981",
+      "title": "Novel Combination Immunotherapy and Clinical Activity in Patients With HPV-Associated Cancers: A Nonrandomized Clinical Trial.",
+      "abstract": "ABSTRACT: IMPORTANCE: Patients who experience progression of advanced human papillomavirus (HPV)-associated cancers and who have previously received first-line systemic treatment have a poor prognosis and limited therapeutic options. OBJECTIVE: To assess the clinical activity of the combination of the HPV type 16 therapeutic vaccine PDS0101, the tumor-targeting interleukin 12 antibody-drug conjugate PDS01ADC, and the bifunctional anti-programmed cell death ligand 1 (PD-L1)/transforming growth factor β (TGF-β) bintrafusp alfa in advanced HPV-associated cancers. DESIGN, SETTING, AND PARTICIPANTS: This nonrandomized clinical trial was phase 1/2 and investigator initiated, and was conducted at a single US cancer research center between June 2020 and July 2022. Patients with advanced or metastatic HPV-associated cancers were eligible, including patients who were both immune checkpoint blockade (ICB) naive and ICB resistant. The cutoff date for data analysis was May 13, 2024. INTERVENTION: Patients received 1 mL of PDS0101 subcutaneously every 4 weeks for 6 doses then every 12 weeks for 2 additional doses, PDS01ADC, 16.8 µg/kg, subcutaneously every 4 weeks or PDS01ADC, 8 µg/kg, subcutaneously every 2 weeks, and bintrafusp alfa, 1200 mg, intravenously every 2 weeks. MAIN OUTCOMES AND MEASURES: Objective response rate (ORR) by Response Evaluation Criteria in Solid Tumors version 1.1 in ICB-naive patients. RESULTS: Of the 50 eligible patients, 26 (52%) were men and the median age was 56 years (range, 28-80 years). The median (IQR) follow-up was 37.7 (30.6-42.0) months. Fourteen patients (28%) were ICB naive, with an ORR of 35.7% (95% CI, 12.8%-64.9%), and median overall survival (OS) 42.4 months (95% CI, 8.3 months-not estimable); in ICB-resistant patients, the ORR was 16.7% (6 of 36 patients; 95% CI, 6.4%-32.8%) and median OS was 15.8 months (95% CI, 9.0-21.3 months). Among patients with HPV-16-positive tumors (37 patients [74%]), in the ICB-naive group (8 patients [21.6%]) the ORR was 62.5% (95% CI, 24.5%-91.5%) and a median OS measure was not reached. Grade 3 and 4 treatment-related adverse events occurred in 26 of 50 patients (52%). There were no treatment-related deaths. CONCLUSIONS AND RELEVANCE: In this trial, the combination of PDS0101, PDS01ADC, and bintrafusp alfa showed an acceptable safety profile and promising antitumor activity and improved OS in patients with HPV-16-positive cancers, in both ICB-naive and ICB-resistant patients, warranting further evaluation of the combination of PDS0101 and PDS01ADC with simultaneous PD-L1/TGF-β inhibition in these populations. TRIAL REGISTRATION: ClinicalTrials.gov Identifier: NCT04287868.",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39976981/",
+      "statements": [
+        {
+          "idx": 0,
+          "text": "The combination of PDS0101, PDS01ADC, and bintrafusp alfa showed an acceptable safety profile in patients with HPV-16-positive cancers.",
+          "text_anchor": "In this trial, the combination of PDS0101, PDS01ADC, and bintrafusp alfa showed an acceptable safety profile and promising antitumor activity and improved OS in patients with HPV-16-positive cancers, in both ICB-naive and ICB-resistant patients, warranting further evaluation of the combination of PDS0101 and PDS01ADC with simultaneous PD-L1/TGF-β inhibition in these populations.",
+          "anchor_match": "exact",
+          "topic": "",
+          "counts": {
+            "support": 0,
+            "neutral": 0,
+            "contradict": 0,
+            "unknown": 0,
+            "total": 0
+          },
+          "evidence": []
+        },
+        {
+          "idx": 1,
+          "text": "The combination of PDS0101, PDS01ADC, and bintrafusp alfa showed promising antitumor activity in patients with HPV-16-positive cancers.",
+          "text_anchor": "In this trial, the combination of PDS0101, PDS01ADC, and bintrafusp alfa showed an acceptable safety profile and promising antitumor activity and improved OS in patients with HPV-16-positive cancers, in both ICB-naive and ICB-resistant patients, warranting further evaluation of the combination of PDS0101 and PDS01ADC with simultaneous PD-L1/TGF-β inhibition in these populations.",
+          "anchor_match": "exact",
+          "topic": "",
+          "counts": {
+            "support": 1,
+            "neutral": 0,
+            "contradict": 0,
+            "unknown": 0,
+            "total": 1
+          },
+          "evidence": [
+            {
+              "related_pmid": "38260854",
+              "title": "Preclinical and clinical studies of a tumor targeting IL-12 immunocytokine.",
+              "abstract": "The clinical success of immune checkpoint inhibitors (ICIs) has demonstrated the promise and challenges of cancer immunotherapy. There is an unmet need to develop novel cancer therapies that can provide clinical benefit for most patients with solid malignancies, which harbor innate or acquired resistance to ICIs. Interleukin-12 (IL-12) is a promising cytokine for cancer therapy given its direct stimulatory effects on innate and adaptive immunity. However, unfavorable pharmacokinetics and a narrow therapeutic index render recombinant IL-12 (rIL-12) less attractive as a cancer therapy. NHS-IL12 is a fusion protein of IL-12 and NHS76 (human IgG1) antibody engineered to target single and double stranded DNA present in necrotic areas solid tumors. In preclinical tumor models, NHS-IL12 elicited significant Th1 immune activation and tumor suppressive effects, primarily mediated by NK and CD8+ T lymphocytes, with engagement of myeloid immunity. NHS-IL12 is currently being evaluated clinically in combination with various therapeutic modalities, including chemotherapy, radiation therapy, immune checkpoint inhibition, vaccines, and epigenetic modulation. Here we review the preclinical and clinical studies involving NHS-IL12 for the treatment of solid malignancies.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38260854/",
+              "retrieval_score": null,
+              "score": 2,
+              "score_label": "Strong support",
+              "bucket": "support",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"An ongoing phase II trial (NCT04287868) is evaluating NHS-IL12 in combination with bintrafusp alfa (αPD-L1/TGFβRII) and the HPV16 E6/E7 vaccine PDS0101 in patients with HPV-associated malignancies. Clinical activity has been reported for patients with advanced immune checkpoint naïve and refractory HPV16+ cancers (59). Objective responses in checkpoint naïve patients were observed in 7/8 patients (88%). Disease reduction was observed in 10/22 (45%) checkpoint-refractory patients, including 6/22 (27%) patients experiencing objective responses.\",\"score\":2,\"rationale\":\"This directly reports clinical activity and objective responses for the PDS0101 + bintrafusp alfa + NHS-IL12 combination in HPV16+ cancers, strongly supporting promising antitumor activity.\"},{\"text\":\"Notably, 5/8 (63%) checkpoint refractory patients receiving 16.8 mcg/kg experienced an objective response versus 1/14 (7%) who received a lower dose (8 mcg/kg), suggesting dose-related response rates, despite similar survival outcomes.\",\"score\":1,\"rationale\":\"This further supports antitumor activity of the combination in HPV16+ checkpoint-refractory patients by reporting objective responses, though it is a more specific subgroup finding.\"}]}",
+              "snippets": [
+                {
+                  "text": "An ongoing phase II trial (NCT04287868) is evaluating NHS-IL12 in combination with bintrafusp alfa (αPD-L1/TGFβRII) and the HPV16 E6/E7 vaccine PDS0101 in patients with HPV-associated malignancies. Clinical activity has been reported for patients with advanced immune checkpoint naïve and refractory HPV16+ cancers (59). Objective responses in checkpoint naïve patients were observed in 7/8 patients (88%). Disease reduction was observed in 10/22 (45%) checkpoint-refractory patients, including 6/22 (27%) patients experiencing objective responses.",
+                  "score": 2,
+                  "score_label": "Strong support",
+                  "bucket": "support",
+                  "rationale": "This directly reports clinical activity and objective responses for the PDS0101 + bintrafusp alfa + NHS-IL12 combination in HPV16+ cancers, strongly supporting promising antitumor activity.",
+                  "start_char": 32745,
+                  "end_char": 33293,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "Notably, 5/8 (63%) checkpoint refractory patients receiving 16.8 mcg/kg experienced an objective response versus 1/14 (7%) who received a lower dose (8 mcg/kg), suggesting dose-related response rates, despite similar survival outcomes.",
+                  "score": 1,
+                  "score_label": "Partial support",
+                  "bucket": "support",
+                  "rationale": "This further supports antitumor activity of the combination in HPV16+ checkpoint-refractory patients by reporting objective responses, though it is a more specific subgroup finding.",
+                  "start_char": 33294,
+                  "end_char": 33529,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 2
+            }
+          ]
+        },
+        {
+          "idx": 2,
+          "text": "The combination of PDS0101, PDS01ADC, and bintrafusp alfa improved overall survival in patients with HPV-16-positive cancers, including ICB-naive and ICB-resistant patients.",
+          "text_anchor": "In this trial, the combination of PDS0101, PDS01ADC, and bintrafusp alfa showed an acceptable safety profile and promising antitumor activity and improved OS in patients with HPV-16-positive cancers, in both ICB-naive and ICB-resistant patients, warranting further evaluation of the combination of PDS0101 and PDS01ADC with simultaneous PD-L1/TGF-β inhibition in these populations.",
+          "anchor_match": "exact",
+          "topic": "",
+          "counts": {
+            "support": 0,
+            "neutral": 0,
+            "contradict": 4,
+            "unknown": 0,
+            "total": 4
+          },
+          "evidence": [
+            {
+              "related_pmid": "39052242",
+              "title": "Bintrafusp Alfa for Recurrent or Metastatic Cervical Cancer After Platinum Failure: A Nonrandomized Controlled Trial.",
+              "abstract": "IMPORTANCE: Cervical cancer is a common and lethal cancer worldwide. Bintrafusp alfa is a first-in-class bifunctional fusion protein composed of the extracellular domain of the human transforming growth factor β receptor II (or transforming growth factor β trap) fused via a flexible linker to the C-terminus of each heavy chain of an immunoglobulin G1 antibody blocking programmed cell death 1 ligand 1. OBJECTIVE: To evaluate the safety and response rates of bintrafusp alfa in patients with recurrent or metastatic cervical cancer. DESIGN, SETTING, AND PARTICIPANTS: This phase 2 nonrandomized controlled trial evaluated bintrafusp alfa monotherapy in patients with recurrent or metastatic cervical cancer with disease progression during or after platinum-based chemotherapy. Data were collected from March 2020 to February 2022. INTERVENTION: Patients received bintrafusp alfa, 1200 mg, intravenously once every 2 weeks. MAIN OUTCOMES AND MEASURES: The primary end point was confirmed objective response rate per Response Evaluation Criteria in Solid Tumors version 1.1 by an independent review committee. RESULTS: At data cutoff, 146 of 203 screened patients received 1 or more doses of bintrafusp alfa; of these, the median (range) age was 53 (24-79) years. The study met its primary end point of a 95% CI above the objective response rate benchmark of 15%, with a confirmed objective response rate of 21.9% (95% CI, 15.5-29.5) per the independent review committee. Of these patients, 19 (59.4%) had a durable response of 6 months or more. At data cutoff, responses were ongoing in 13 of 32 responders (40.6%). The most common treatment-related adverse events were anemia (25 [17.1%]), rash (21 [14.4%]), hypothyroidism (15 [10.3%]), and pruritus (15 [10.3%]). Any-cause adverse events of special interest included anemia (82[56.2%]), bleeding events (81 [55.5%]), and immune-related adverse events (49 [33.6%]). CONCLUSIONS AND RELEVANCE: This phase 2 nonrandomized controlled trial of bintrafusp alfa met its primary end point, which may support the potential of a bispecific therapy targeting transforming growth factor β and programmed cell death 1 ligand 1 in patients with recurrent or metastatic cervical cancer. TRIAL REGISTRATION: ClinicalTrials.gov Identifier: NCT04246489.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39052242/",
+              "retrieval_score": null,
+              "score": -2,
+              "score_label": "Strong contradiction",
+              "bucket": "contradict",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"There was no limit on the number of previous courses of therapy allowed, but prior PD-1 inhibitor therapy was not permitted.\",\"score\":-2,\"rationale\":\"Directly refutes the claim that the studied patients included ICB-resistant/prior checkpoint inhibitor-treated patients.\"},{\"text\":\"While this study focused on patients with recurrent or metastatic cervical cancer with disease progression during or after platinum-containing chemotherapy, the effects of bintrafusp alfa on patients who received checkpoint inhibitors as first-line treatment remains unexplored.\",\"score\":-2,\"rationale\":\"Explicitly states that outcomes in patients previously treated with checkpoint inhibitors were not evaluated, contradicting the claim that benefit was shown in ICB-resistant patients.\"}]}",
+              "snippets": [
+                {
+                  "text": "There was no limit on the number of previous courses of therapy allowed, but prior PD-1 inhibitor therapy was not permitted.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "Directly refutes the claim that the studied patients included ICB-resistant/prior checkpoint inhibitor-treated patients.",
+                  "start_char": 9448,
+                  "end_char": 9572,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "While this study focused on patients with recurrent or metastatic cervical cancer with disease progression during or after platinum-containing chemotherapy, the effects of bintrafusp alfa on patients who received checkpoint inhibitors as first-line treatment remains unexplored.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "Explicitly states that outcomes in patients previously treated with checkpoint inhibitors were not evaluated, contradicting the claim that benefit was shown in ICB-resistant patients.",
+                  "start_char": 29151,
+                  "end_char": 29429,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 2
+            },
+            {
+              "related_pmid": "40156838",
+              "title": "Tri-Ad5 vaccine plus bintrafusp alfa for newly diagnosed, advanced-stage head and neck cancer not associated with human papillomavirus infection.",
+              "abstract": "BACKGROUND: Newly diagnosed, advanced-stage head and neck cancer (HNSCC) not associated with human papillomavirus (HPV) infection has poor survival and functional outcomes despite surgical management. Neoadjuvant immunotherapy is of interest to improve long-term outcomes. METHODS: Individuals with untreated intermediate/high risk, p16-negative (if oropharyngeal) HNSCC were eligible and underwent pre- and post-treatment tumor biopsies. Primary endpoint was pathologic complete response or clinical-to-pathological downstaging (CPD). Treatment regimen: 5 × 1011 viral particles once, subcutaneously of each component of the Tri-Ad5 vaccine (ETBX-011, ETBX-061, and ETBX-051 targeting tumor-associated antigens (TAA): carcinoembryonic antigen [CEA], MUC-1, and brachyury, respectively) plus 1200 mg IV of bintrafusp alfa (anti-PD-L1 and anti-transforming growth factor-β) every 2 weeks for 2 doses. Participants returned to referring physicians for standard surgery ± adjuvant treatment if indicated. RESULTS: Of 6 HNSCC patients, 2 (33.3%) had CPD. There were no pathologic complete responses. 2-year recurrence free survival (RFS) was 83.3% (95% CI, 27.3%-97.5%). Adverse events were consistent with known safety profiles of each agent. There were no surgical delays. CONCLUSIONS: In this small study, Tri-Ad5 vaccine plus bintrafusp alfa resulted in CPD in 2/6 patients. Participants also had favorable 2-year RFS compared to historical values. Ongoing tissue and peripheral immunome analyses may provide mechanistic insight. (ClincalTrials.gov Identifier: NCT04247282; IRB Approved.).",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40156838/",
+              "retrieval_score": null,
+              "score": -2,
+              "score_label": "Strong contradiction",
+              "bucket": "contradict",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"Tri-Ad5 vaccine plus bintrafusp alfa for newly diagnosed, advanced-stage head and neck cancer not associated with human papillomavirus infection.\",\"score\":-2,\"rationale\":\"This directly contradicts the claim’s setting and treatment: the study is about Tri-Ad5 plus bintrafusp alfa in HPV-unrelated cancer, not PDS0101/PDS01ADC in HPV-16-positive cancers.\"},{\"text\":\"Individuals with untreated intermediate/high risk, p16-negative (if oropharyngeal) HNSCC were eligible and underwent pre- and post-treatment tumor biopsies.\",\"score\":-2,\"rationale\":\"The enrolled population was p16-negative/HPV-unrelated HNSCC, which opposes the claim about HPV-16-positive cancers.\"},{\"text\":\"Treatment regimen: 5 × 1011 viral particles once, subcutaneously of each component of the Tri-Ad5 vaccine (ETBX-011, ETBX-061, and ETBX-051 targeting tumor-associated antigens (TAA): carcinoembryonic antigen [CEA], MUC-1, and brachyury, respectively) plus 1200 mg IV of bintrafusp alfa (anti-PD-L1 and anti-transforming growth factor-β) every 2 weeks for 2 doses.\",\"score\":-2,\"rationale\":\"This explicitly describes a different combination therapy than the claim, using Tri-Ad5 components rather than PDS0101 and PDS01ADC.\"}]}",
+              "snippets": [
+                {
+                  "text": "Tri-Ad5 vaccine plus bintrafusp alfa for newly diagnosed, advanced-stage head and neck cancer not associated with human papillomavirus infection.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This directly contradicts the claim’s setting and treatment: the study is about Tri-Ad5 plus bintrafusp alfa in HPV-unrelated cancer, not PDS0101/PDS01ADC in HPV-16-positive cancers.",
+                  "start_char": 0,
+                  "end_char": 145,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "Individuals with untreated intermediate/high risk, p16-negative (if oropharyngeal) HNSCC were eligible and underwent pre- and post-treatment tumor biopsies.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "The enrolled population was p16-negative/HPV-unrelated HNSCC, which opposes the claim about HPV-16-positive cancers.",
+                  "start_char": 428,
+                  "end_char": 584,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "Treatment regimen: 5 × 1011 viral particles once, subcutaneously of each component of the Tri-Ad5 vaccine (ETBX-011, ETBX-061, and ETBX-051 targeting tumor-associated antigens (TAA): carcinoembryonic antigen [CEA], MUC-1, and brachyury, respectively) plus 1200 mg IV of bintrafusp alfa (anti-PD-L1 and anti-transforming growth factor-β) every 2 weeks for 2 doses.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This explicitly describes a different combination therapy than the claim, using Tri-Ad5 components rather than PDS0101 and PDS01ADC.",
+                  "start_char": 682,
+                  "end_char": 1045,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 3
+            },
+            {
+              "related_pmid": "32554612",
+              "title": "Immunomodulation to enhance the efficacy of an HPV therapeutic vaccine.",
+              "abstract": "BACKGROUND: While prophylactic human papillomavirus (HPV) vaccines will certainly reduce the incidence of HPV-associated cancers, these malignancies remain a major health issue. PDS0101 is a liposomal-based HPV therapeutic vaccine consisting of the immune activating cationic lipid R-DOTAP and HLA-unrestricted HPV16 peptides that has shown in vivo CD8+ T cell induction and safety in a phase I study. In this report, we have employed the PDS0101 vaccine with two immune modulators previously characterized in preclinical studies and which are currently in phase II clinical trials. Bintrafusp alfa (M7824) is a first-in-class bifunctional fusion protein composed of the extracellular domains of the transforming growth factor-β receptor type II (TGFβRII) fused to a human IgG1 monoclonal antibody blocking programmed cell death protein-1 ligand (PDL1), designed both as a checkpoint inhibitor and to bring the TGFβRII 'trap' to the tumor microenvironment (TME). NHS-interleukin-12 (NHS-IL12) is a tumor targeting immunocytokine designed to bring IL-12 to the TME and thus enhance the inflammatory Th1 response. METHODS: We employed TC-1 carcinoma (expressing HPV16 E6 and E7 and devoid of PDL1 expression) in a syngeneic mouse model in monotherapy and combination therapy studies to analyze antitumor effects and changes in immune cell types in the spleen and the TME. RESULTS: As a monotherapy, the PDS0101 vaccine generated HPV-specific T cells and antitumor activity in mice bearing HPV-expressing mEER oropharyngeal and TC-1 lung carcinomas. When used as a monotherapy in the TC-1 model, NHS-IL12 elicited antitumor effects as well as an increase in CD8+ T cells in the TME. When used as a monotherapy, bintrafusp alfa did not elicit antitumor effects or any increase in T cells in the TME. When all three agents were used in combination, maximum antitumor effects were observed, which correlated with increases in T cells and T-cell clonality in the TME. CONCLUSION: These studies provide the rationale for the potential clinical use of combinations of agents that can (1) induce tumor-associated T-cell responses, (2) potentiate immune responses in the TME and (3) reduce immunosuppressive entities in the TME.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32554612/",
+              "retrieval_score": null,
+              "score": -1,
+              "score_label": "Partial contradiction",
+              "bucket": "contradict",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"In the study reported here, we have investigated in preclinical studies whether antitumor efficacy against HPV-associated cancer could be enhanced if PDS0101 is used in combination with two novel immunomodulatory agents: bintrafusp alfa and NHS-interleukin-12 (NHS-IL12).\",\"score\":-1,\"rationale\":\"This describes a preclinical study and a different third agent (NHS-IL12, not PDS01ADC), which conflicts with the claim about patient overall survival from PDS0101 + PDS01ADC + bintrafusp alfa.\"},{\"text\":\"We employed TC-1 carcinoma (expressing HPV16 E6 and E7 and devoid of PDL1 expression) in a syngeneic mouse model in monotherapy and combination therapy studies to analyze antitumor effects and changes in immune cell types in the spleen and the TME.\",\"score\":-1,\"rationale\":\"The study was conducted in a mouse model and measured antitumor/immune effects, not overall survival in patients.\"},{\"text\":\"When all three agents were used in combination, maximum antitumor effects were observed, which correlated with increases in T cells and T-cell clonality in the TME.\",\"score\":-1,\"rationale\":\"The reported benefit is antitumor effect in the tumor microenvironment, not improved overall survival in patients; the three agents in this study are not the same as in the claim.\"},{\"text\":\"Finally, the combination of all three agents, PDS0101, bintrafusp alfa and NHS-IL12, was evaluated, employing the same schedules described above. The triple combination most effectively reduced the rate of tumor growth (figure 1E), and compared with all the other treatment groups resulted in the lowest average tumor weight at the end of study (figure 1F, p<0.001 vs PBS control).\",\"score\":-1,\"rationale\":\"This specifies the triple combination actually studied was PDS0101 + bintrafusp alfa + NHS-IL12, and the outcome was reduced tumor growth/tumor weight rather than patient overall survival.\"},{\"text\":\"In conclusion, the studies reported here help to provide the rationale for further preclinical and clinical studies employing combinations of an HPV therapeutic vaccine with one or more immunomodulatory agents.\",\"score\":-1,\"rationale\":\"This indicates the current work provides rationale for future studies rather than evidence of improved overall survival in patients.\"}]}",
+              "snippets": [
+                {
+                  "text": "In the study reported here, we have investigated in preclinical studies whether antitumor efficacy against HPV-associated cancer could be enhanced if PDS0101 is used in combination with two novel immunomodulatory agents: bintrafusp alfa and NHS-interleukin-12 (NHS-IL12).",
+                  "score": -1,
+                  "score_label": "Partial contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This describes a preclinical study and a different third agent (NHS-IL12, not PDS01ADC), which conflicts with the claim about patient overall survival from PDS0101 + PDS01ADC + bintrafusp alfa.",
+                  "start_char": 6421,
+                  "end_char": 6692,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "We employed TC-1 carcinoma (expressing HPV16 E6 and E7 and devoid of PDL1 expression) in a syngeneic mouse model in monotherapy and combination therapy studies to analyze antitumor effects and changes in immune cell types in the spleen and the TME.",
+                  "score": -1,
+                  "score_label": "Partial contradiction",
+                  "bucket": "contradict",
+                  "rationale": "The study was conducted in a mouse model and measured antitumor/immune effects, not overall survival in patients.",
+                  "start_char": 1202,
+                  "end_char": 1450,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "When all three agents were used in combination, maximum antitumor effects were observed, which correlated with increases in T cells and T-cell clonality in the TME.",
+                  "score": -1,
+                  "score_label": "Partial contradiction",
+                  "bucket": "contradict",
+                  "rationale": "The reported benefit is antitumor effect in the tumor microenvironment, not improved overall survival in patients; the three agents in this study are not the same as in the claim.",
+                  "start_char": 1878,
+                  "end_char": 2042,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "Finally, the combination of all three agents, PDS0101, bintrafusp alfa and NHS-IL12, was evaluated, employing the same schedules described above. The triple combination most effectively reduced the rate of tumor growth (figure 1E), and compared with all the other treatment groups resulted in the lowest average tumor weight at the end of study (figure 1F, p<0.001 vs PBS control).",
+                  "score": -1,
+                  "score_label": "Partial contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This specifies the triple combination actually studied was PDS0101 + bintrafusp alfa + NHS-IL12, and the outcome was reduced tumor growth/tumor weight rather than patient overall survival.",
+                  "start_char": 22005,
+                  "end_char": 22386,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "In conclusion, the studies reported here help to provide the rationale for further preclinical and clinical studies employing combinations of an HPV therapeutic vaccine with one or more immunomodulatory agents.",
+                  "score": -1,
+                  "score_label": "Partial contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This indicates the current work provides rationale for future studies rather than evidence of improved overall survival in patients.",
+                  "start_char": 40299,
+                  "end_char": 40509,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 5
+            },
+            {
+              "related_pmid": "38260854",
+              "title": "Preclinical and clinical studies of a tumor targeting IL-12 immunocytokine.",
+              "abstract": "The clinical success of immune checkpoint inhibitors (ICIs) has demonstrated the promise and challenges of cancer immunotherapy. There is an unmet need to develop novel cancer therapies that can provide clinical benefit for most patients with solid malignancies, which harbor innate or acquired resistance to ICIs. Interleukin-12 (IL-12) is a promising cytokine for cancer therapy given its direct stimulatory effects on innate and adaptive immunity. However, unfavorable pharmacokinetics and a narrow therapeutic index render recombinant IL-12 (rIL-12) less attractive as a cancer therapy. NHS-IL12 is a fusion protein of IL-12 and NHS76 (human IgG1) antibody engineered to target single and double stranded DNA present in necrotic areas solid tumors. In preclinical tumor models, NHS-IL12 elicited significant Th1 immune activation and tumor suppressive effects, primarily mediated by NK and CD8+ T lymphocytes, with engagement of myeloid immunity. NHS-IL12 is currently being evaluated clinically in combination with various therapeutic modalities, including chemotherapy, radiation therapy, immune checkpoint inhibition, vaccines, and epigenetic modulation. Here we review the preclinical and clinical studies involving NHS-IL12 for the treatment of solid malignancies.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38260854/",
+              "retrieval_score": null,
+              "score": -1,
+              "score_label": "Partial contradiction",
+              "bucket": "contradict",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"Notably, 5/8 (63%) checkpoint refractory patients receiving 16.8 mcg/kg experienced an objective response versus 1/14 (7%) who received a lower dose (8 mcg/kg), suggesting dose-related response rates, despite similar survival outcomes.\",\"score\":-1,\"rationale\":\"This reports higher response rates but explicitly says survival outcomes were similar, which argues against a claim of improved overall survival.\"}]}",
+              "snippets": [
+                {
+                  "text": "Notably, 5/8 (63%) checkpoint refractory patients receiving 16.8 mcg/kg experienced an objective response versus 1/14 (7%) who received a lower dose (8 mcg/kg), suggesting dose-related response rates, despite similar survival outcomes.",
+                  "score": -1,
+                  "score_label": "Partial contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This reports higher response rates but explicitly says survival outcomes were similar, which argues against a claim of improved overall survival.",
+                  "start_char": 33294,
+                  "end_char": 33529,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

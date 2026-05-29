@@ -15,7 +15,9 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_gpt54_medium.json", label: "vitamin b litsense 1000", summaryFile: "./vitb_amd_general_claims_litsense1000_noreviews_summaries.jsonl" },
   { file: "./viewer_data_vitb_amd_general_claims_litsense1000_noreviews_plus_systematic_meta_gpt54_medium.json", label: "vitamin b litsense 1000 with systematic reviews", summaryFile: "./vitb_amd_general_claims_litsense1000_noreviews_sys_meta_no_abstract_summaries.jsonl" },
   { file: "./viewer_data_glp1_out2.json", label: "GLP-1 statements", summaryFile: "./glp1_noabstract_summaries.jsonl" },
+  { file: "./viewer_data_glp1_article_snippet_spans_gpt54_medium.json", label: "GLP-1 snippet spans" },
   { file: "./viewer_data_covid_eg_out.json", label: "COVID example statements", summaryFile: "./covid_eg_noabstract_summaries.jsonl" },
+  { file: "./viewer_data_harris_article_snippet_spans_gpt54_medium.json", label: "Harris snippet spans" },
 ];
 
 const state = {
@@ -166,6 +168,13 @@ function scoreLabel(item) {
   return `${formatConcernLabel(item.score_label || "Score")} (${item.score ?? "?"})`;
 }
 
+function hasSnippetEvidence(statement = getCurrentStatement()) {
+  return Boolean(
+    state.data?.evidence_mode === "snippets" ||
+      (statement?.evidence || []).some((item) => Array.isArray(item.snippets))
+  );
+}
+
 function getScoreBreakdown(statement) {
   const breakdown = {
     supportStrong: 0,
@@ -259,19 +268,29 @@ function buildContradictionStyle(profile) {
 }
 
 function getAnchorContradictionProfile(statements, statementIndexes) {
+  const normalizedIndexes = normalizeStatementIndexes(statementIndexes, statements || []);
+  const hasHoveredStatement = state.hoveredStatementIndex !== null && state.hoveredStatementIndex !== undefined;
+  const hoveredIndex = hasHoveredStatement ? Number(state.hoveredStatementIndex) : null;
+  if (hasHoveredStatement && normalizedIndexes.includes(hoveredIndex) && statements?.[hoveredIndex]) {
+    return getContradictionProfile(statements[hoveredIndex]);
+  }
+
   const hasSelectedStatement = state.statementIndex !== null && state.statementIndex !== undefined;
   const selectedIndex = hasSelectedStatement ? Number(state.statementIndex) : null;
-  const matchingStatements = (statements || []).filter((_, index) => statementIndexes.includes(index));
-  const selectedStatement = hasSelectedStatement
-    ? statements?.[selectedIndex]
-    : null;
-  if (selectedStatement && statementIndexes.includes(selectedIndex)) {
-    const selectedProfile = getContradictionProfile(selectedStatement);
-    if (selectedProfile.denominator > 0) {
-      return selectedProfile;
-    }
+  if (hasSelectedStatement && normalizedIndexes.includes(selectedIndex) && statements?.[selectedIndex]) {
+    return getContradictionProfile(statements[selectedIndex]);
   }
-  return getAggregateContradictionProfile(matchingStatements);
+
+  const firstEvidenceIndex = normalizedIndexes.find((index) => {
+    const statement = statements?.[index];
+    return statement && getContradictionProfile(statement).denominator > 0;
+  });
+  const firstIndex = firstEvidenceIndex ?? normalizedIndexes[0];
+  if (statements?.[firstIndex]) {
+    return getContradictionProfile(statements[firstIndex]);
+  }
+
+  return getAggregateContradictionProfile([]);
 }
 
 function normalizeStatementIndexes(indexes, statements = getCurrentSource()?.statements || []) {
@@ -297,9 +316,16 @@ function getStatementIndexesFromElement(element) {
 
 function updateAnchorActiveState() {
   const activeIndexes = state.activeAnchorStatementIndexes;
+  const selectedIndex = state.statementIndex !== null && state.statementIndex !== undefined
+    ? Number(state.statementIndex)
+    : null;
+  const statements = getCurrentSource()?.statements || [];
   for (const mark of document.querySelectorAll(".viewer-source-highlight[data-statement-indexes]")) {
     const indexes = getStatementIndexesFromElement(mark);
-    mark.classList.toggle("is-active", statementIndexSetsEqual(indexes, activeIndexes));
+    const active = statementIndexSetsEqual(indexes, activeIndexes) ||
+      (selectedIndex !== null && indexes.includes(selectedIndex));
+    mark.classList.toggle("is-active", active);
+    mark.setAttribute("style", buildContradictionStyle(getAnchorContradictionProfile(statements, indexes)));
   }
 }
 
@@ -314,12 +340,19 @@ function clearSidebarStatementFilter() {
   render();
 }
 
+function firstStatementIndexWithEvidence(indexes, statements = getCurrentSource()?.statements || []) {
+  return indexes.find((index) => {
+    const statement = statements?.[index];
+    return statement && getContradictionProfile(statement).denominator > 0;
+  });
+}
+
 function setSidebarStatementFilter(indexes) {
   const normalized = normalizeStatementIndexes(indexes);
   state.sidebarStatementFilterIndexes = normalized.length ? normalized : null;
   state.activeAnchorStatementIndexes = normalized.length ? normalized : null;
   if (normalized.length && !normalized.includes(state.statementIndex)) {
-    state.statementIndex = normalized[0];
+    state.statementIndex = firstStatementIndexWithEvidence(normalized) ?? normalized[0];
   }
   state.filter = "all";
   closeEvidenceOverlay(false);
@@ -328,19 +361,39 @@ function setSidebarStatementFilter(indexes) {
 
 function updateAnchorHoverState() {
   const hoveredIndex = state.hoveredStatementIndex;
+  const statements = getCurrentSource()?.statements || [];
   for (const mark of document.querySelectorAll(".viewer-source-highlight[data-statement-indexes]")) {
     const indexes = getStatementIndexesFromElement(mark);
     mark.classList.toggle("is-statement-hovered", indexes.includes(hoveredIndex));
+    mark.setAttribute("style", buildContradictionStyle(getAnchorContradictionProfile(statements, indexes)));
   }
 }
 
-function renderDistributionBar(statement) {
+function getStatementEvidenceTotal(statement) {
+  return getContradictionProfile(statement).denominator;
+}
+
+function getMaxStatementEvidenceTotal(statements) {
+  return Math.max(0, ...(statements || []).map((statement) => getStatementEvidenceTotal(statement)));
+}
+
+function buildDistributionBarStyle(profile, maxEvidenceTotal) {
+  const widthPercent = maxEvidenceTotal > 0
+    ? (profile.denominator / maxEvidenceTotal) * 100
+    : 0;
+  return [
+    buildContradictionStyle(profile),
+    `--sidebar-evidence-width: ${Math.max(0, Math.min(100, widthPercent)).toFixed(2)}%`,
+  ].join("; ");
+}
+
+function renderDistributionBar(statement, maxEvidenceTotal) {
   const profile = getContradictionProfile(statement);
   const ariaLabel = profile.denominator
-    ? `${profile.label}: ${profile.contradict} concerns and ${profile.support} support articles`
+    ? `${profile.label}: ${profile.contradict} concerns and ${profile.support} support articles, scaled to ${profile.denominator} of ${maxEvidenceTotal || profile.denominator} evidence articles`
     : profile.label;
   return `
-    <div class="viewer-distribution sidebar-view-distribution sidebar-view-distribution--scale ${profile.denominator ? "" : "is-empty"}" style="${buildContradictionStyle(profile)}" role="img" aria-label="${escapeHtml(ariaLabel)}">
+    <div class="viewer-distribution sidebar-view-distribution sidebar-view-distribution--scale ${profile.denominator ? "" : "is-empty"}" style="${buildDistributionBarStyle(profile, maxEvidenceTotal)}" role="img" aria-label="${escapeHtml(ariaLabel)}">
       <span class="sidebar-view-distribution__track"></span>
       ${profile.denominator ? '<span class="sidebar-view-distribution__marker"></span>' : ""}
     </div>
@@ -627,15 +680,53 @@ function renderEvidenceCard(item) {
   `;
 }
 
+function renderSnippetEvidenceCard(item) {
+  const metaParts = [];
+  if (item.related_pmid) {
+    metaParts.push(`PMID ${item.related_pmid}`);
+  }
+
+  const snippets = Array.isArray(item.snippets) ? item.snippets : [];
+  const snippetHtml = snippets.length
+    ? snippets.map((snippet) => `
+        <li class="sidebar-view-snippet-item">
+          <div class="sidebar-view-snippet-item__topline">
+            <span class="viewer-score-pill ${scoreClass(snippet)}">${escapeHtml(scoreLabel(snippet))}</span>
+          </div>
+          <blockquote>${escapeHtml(snippet.text || "")}</blockquote>
+        </li>
+      `).join("")
+    : '<li class="sidebar-view-snippet-item">No exact snippet text was captured.</li>';
+
+  return `
+    <article class="viewer-evidence-card sidebar-view-snippet-card">
+      <div class="viewer-evidence-card__header">
+        <div>
+          <h4 class="viewer-evidence-card__title">
+            ${item.pubmed_url
+              ? `<a href="${escapeHtml(item.pubmed_url)}" target="_blank" rel="noreferrer">${escapeHtml(item.title || "Related article")}</a>`
+              : escapeHtml(item.title || "Related article")}
+          </h4>
+          <div class="viewer-evidence-card__meta">${escapeHtml(metaParts.join(" - "))}</div>
+        </div>
+      </div>
+      <ol class="sidebar-view-snippet-list">
+        ${snippetHtml}
+      </ol>
+    </article>
+  `;
+}
+
 function renderEvidenceList(statement, bucket) {
   const items = (statement.evidence || []).filter((item) => item.bucket === bucket);
   const bucketLabel = bucket === "contradict" ? "concerns" : bucket;
   if (!items.length) {
     return `<div class="viewer-empty-state">No ${bucketLabel} evidence in this scored output.</div>`;
   }
+  const renderer = hasSnippetEvidence(statement) ? renderSnippetEvidenceCard : renderEvidenceCard;
   return `
     <div class="viewer-card-list sidebar-view-evidence-list">
-      ${items.map((item) => renderEvidenceCard(item)).join("")}
+      ${items.map((item) => renderer(item)).join("")}
     </div>
   `;
 }
@@ -670,6 +761,9 @@ function renderFilters(statement) {
 }
 
 function renderStatementSummary(statement) {
+  if (hasSnippetEvidence(statement)) {
+    return "";
+  }
   const summary = statement.summary;
   if (!summary) {
     return '<p class="glp1-related-empty">No summary file entry was found for this statement.</p>';
@@ -704,6 +798,7 @@ function renderSidebar() {
         .map((statement, index) => ({ statement, index }))
         .filter((entry) => filteredIndexSet.has(entry.index))
     : statements.map((statement, index) => ({ statement, index }));
+  const maxEvidenceTotal = getMaxStatementEvidenceTotal(statements);
   const clearFilterButton = filteredIndexes.length
     ? '<button class="sidebar-view-clear-filter" type="button" id="clearSidebarStatementFilter">Show all statements</button>'
     : "";
@@ -724,7 +819,7 @@ function renderSidebar() {
             <span class="glp1-map-pill">${total} articles</span>
           </span>
           <span class="glp1-statement-card__text">${escapeHtml(statement.text)}</span>
-          ${renderDistributionBar(statement)}
+          ${renderDistributionBar(statement, maxEvidenceTotal)}
         </button>
       </article>
     `;
@@ -801,16 +896,23 @@ function renderEvidenceOverlay() {
   const supportList = document.getElementById("sidebarSupportEvidenceList");
   const contradictList = document.getElementById("sidebarContradictEvidenceList");
   const filterRow = document.getElementById("sidebarFilterRow");
+  const filterToolbar = document.querySelector(".sidebar-view-evidence-toolbar");
   const supportSection = document.getElementById("sidebarSupportSection");
   const contradictSection = document.getElementById("sidebarContradictSection");
   const supportTitle = document.getElementById("sidebarSupportTitle");
   const contradictTitle = document.getElementById("sidebarContradictTitle");
+  const dialog = document.querySelector(".sidebar-view-dialog");
 
   if (!statement) {
+    dialog?.classList.toggle("sidebar-view-dialog--snippets", false);
     title.textContent = "Support/Concerns related studies";
     subtitle.textContent = "Choose a statement to inspect its related studies.";
+    subtitle.hidden = false;
     summary.innerHTML = "";
     filterRow.innerHTML = "";
+    if (filterToolbar) {
+      filterToolbar.hidden = false;
+    }
     supportTitle.textContent = "Support";
     contradictTitle.textContent = "Concerns";
     supportSection.hidden = false;
@@ -822,14 +924,29 @@ function renderEvidenceOverlay() {
 
   const supportCount = statement.counts?.support || 0;
   const contradictCount = statement.counts?.contradict || 0;
+  const snippetMode = hasSnippetEvidence(statement);
+  dialog?.classList.toggle("sidebar-view-dialog--snippets", snippetMode);
   title.textContent = statement.text;
   subtitle.textContent = `Statement ${statement.idx + 1} - ${supportCount} support / ${contradictCount} concerns related studies`;
+  subtitle.hidden = snippetMode;
   supportTitle.textContent = `Support (${supportCount})`;
   contradictTitle.textContent = `Concerns (${contradictCount})`;
   summary.innerHTML = renderStatementSummary(statement);
-  renderFilters(statement);
-  supportSection.hidden = state.filter === "contradict";
-  contradictSection.hidden = state.filter === "support";
+  if (snippetMode) {
+    filterRow.innerHTML = "";
+    if (filterToolbar) {
+      filterToolbar.hidden = true;
+    }
+    supportSection.hidden = false;
+    contradictSection.hidden = false;
+  } else {
+    if (filterToolbar) {
+      filterToolbar.hidden = false;
+    }
+    renderFilters(statement);
+    supportSection.hidden = state.filter === "contradict";
+    contradictSection.hidden = state.filter === "support";
+  }
   supportList.innerHTML = renderEvidenceList(statement, "support");
   contradictList.innerHTML = renderEvidenceList(statement, "contradict");
 }

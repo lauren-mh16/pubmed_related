@@ -1,0 +1,654 @@
+{
+  "generated_at": "2026-05-29T17:56:41.282979+00:00",
+  "evidence_mode": "snippets",
+  "source_count": 7,
+  "sources": [
+    {
+      "pmid": "glp1_claim_01",
+      "title": "GLP-1 RAs, diabetes, obesity, and early dry AMD",
+      "abstract": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/glp1_claim_01/",
+      "statements": [
+        {
+          "idx": 0,
+          "text": "In diabetic obese populations, GLP-1 RAs are associated with a significantly reduced risk of developing early, nonexudative (dry) AMD.",
+          "text_anchor": "",
+          "anchor_match": "",
+          "topic": "GLP-1 RAs, diabetes, obesity, and early dry AMD",
+          "counts": {
+            "support": 0,
+            "neutral": 0,
+            "contradict": 0,
+            "unknown": 0,
+            "total": 0
+          },
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "pmid": "glp1_claim_02",
+      "title": "GLP-1 RAs, non-diabetic obesity, and early dry AMD",
+      "abstract": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/glp1_claim_02/",
+      "statements": [
+        {
+          "idx": 0,
+          "text": "In non-diabetic obese populations, GLP-1 RAs are associated with a significantly reduced risk of developing early, nonexudative (dry) AMD.",
+          "text_anchor": "",
+          "anchor_match": "",
+          "topic": "GLP-1 RAs, non-diabetic obesity, and early dry AMD",
+          "counts": {
+            "support": 2,
+            "neutral": 0,
+            "contradict": 0,
+            "unknown": 0,
+            "total": 2
+          },
+          "evidence": [
+            {
+              "related_pmid": "41129133",
+              "title": "Glucagon-Like Peptide-1 Receptor Agonists and Age-Related Macular Degeneration.",
+              "abstract": "IMPORTANCE: Glucagon-like peptide-1 receptor agonists (GLP-1RAs) are increasingly used for weight loss, but their ocular effects in nondiabetic individuals remain unclear. Prior studies suggest GLP-1RA use reduced age-related macular degeneration (AMD) risk in patients with diabetes, but applicability to nondiabetic populations is unknown. OBJECTIVE: To evaluate the risk of developing nonexudative AMD and its progression to exudative AMD among patients with obesity but not diabetes prescribed GLP-1RAs compared with those prescribed other weight-loss drugs (OWLDs). DESIGN, SETTING, AND PARTICIPANTS: This retrospective cohort study used electronic health record data obtained from the multicenter TriNetX Global Collaborative Network on patients aged 55 years or older diagnosed with overweight or obesity but not diabetes from January 2004 to July 2025. For the primary analysis, patients with preexisting nonexudative AMD were excluded. For the secondary analysis, patients with preexisting nonexudative AMD were included, while those with preexisting exudative AMD were excluded. Propensity score matching balanced baseline demographics and comorbidities. Data were analyzed on March 21, 2025, and August 2, 2025. EXPOSURES: Patients were prescribed either the GLP-1RAs liraglutide or semaglutide or OWLDs including lorcaserin, sibutramine, setmelanotide, fenfluramine, mazindol, orlistat, phentermine, and diethylpropion. MAIN OUTCOMES AND MEASURES: The primary outcome was development of nonexudative AMD at 5, 7, and 10 years. The secondary outcome was progression to exudative AMD at 10 years. Risk ratios (RRs) with 95% CIs were calculated. Standardized mean differences were used to assess covariate balance after matching. RESULTS: A total of 91 408 patients were included. After propensity score matching for the primary analysis, 45 704 patients remained in each of the GLP-1RA and OWLD cohorts. The GLP-1RA cohort included 35 753 (78.2%) females and 7852 (17.2%) males with a mean (SD) age of 61.1 (5.76) years, while the OWLD cohort included 35 732 (78.2%) females and 7815 (17.1%) males with a mean [SD] age of 61.0 (5.86) years. Covariate balance was achieved across all variables for the GLP-1RA and OWLD cohorts in the primary analysis. GLP-1RA use was associated with reduced risk of nonexudative AMD compared with OWLDs at 5 years (RR, 0.16; 95% CI, 0.10-0.28; P < .001), 7 years (RR, 0.13; 95% CI, 0.08-0.22; P < .001), and 10 years (RR, 0.09; 95% CI, 0.05-0.16; P < .001). No differences were observed in progression to exudative AMD. CONCLUSIONS AND RELEVANCE: In this cohort study, GLP-1RA use was associated with reduced risk of developing nonexudative AMD but was not associated with progression to exudative AMD among individuals with nonexudative AMD. These findings may inform future randomized trials evaluating the ocular effects of GLP-1RAs in nondiabetic populations.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41129133/",
+              "retrieval_score": null,
+              "score": 2,
+              "score_label": "Strong support",
+              "bucket": "support",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"GLP-1RA use was associated with reduced risk of nonexudative AMD compared with OWLDs at 5 years (RR, 0.16; 95% CI, 0.10-0.28; P < .001), 7 years (RR, 0.13; 95% CI, 0.08-0.22; P < .001), and 10 years (RR, 0.09; 95% CI, 0.05-0.16; P < .001).\",\"score\":2,\"rationale\":\"Directly reports a statistically significant reduced risk of developing nonexudative AMD among GLP-1RA users.\"},{\"text\":\"In this cohort study, GLP-1RA use was associated with reduced risk of developing nonexudative AMD but was not associated with progression to exudative AMD among individuals with nonexudative AMD.\",\"score\":2,\"rationale\":\"The study conclusion explicitly supports that GLP-1RA use is associated with reduced risk of developing nonexudative AMD.\"},{\"text\":\"OBJECTIVE: To evaluate the risk of developing nonexudative AMD and its progression to exudative AMD among patients with obesity but not diabetes prescribed GLP-1RAs compared with those prescribed other weight-loss drugs (OWLDs).\",\"score\":1,\"rationale\":\"This identifies the exact non-diabetic obese population and outcome relevant to the claim, providing contextual support though not the result itself.\"}]}",
+              "snippets": [
+                {
+                  "text": "GLP-1RA use was associated with reduced risk of nonexudative AMD compared with OWLDs at 5 years (RR, 0.16; 95% CI, 0.10-0.28; P < .001), 7 years (RR, 0.13; 95% CI, 0.08-0.22; P < .001), and 10 years (RR, 0.09; 95% CI, 0.05-0.16; P < .001).",
+                  "score": 2,
+                  "score_label": "Strong support",
+                  "bucket": "support",
+                  "rationale": "Directly reports a statistically significant reduced risk of developing nonexudative AMD among GLP-1RA users.",
+                  "start_char": 2341,
+                  "end_char": 2580,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "In this cohort study, GLP-1RA use was associated with reduced risk of developing nonexudative AMD but was not associated with progression to exudative AMD among individuals with nonexudative AMD.",
+                  "score": 2,
+                  "score_label": "Strong support",
+                  "bucket": "support",
+                  "rationale": "The study conclusion explicitly supports that GLP-1RA use is associated with reduced risk of developing nonexudative AMD.",
+                  "start_char": 2670,
+                  "end_char": 2865,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "OBJECTIVE: To evaluate the risk of developing nonexudative AMD and its progression to exudative AMD among patients with obesity but not diabetes prescribed GLP-1RAs compared with those prescribed other weight-loss drugs (OWLDs).",
+                  "score": 1,
+                  "score_label": "Partial support",
+                  "bucket": "support",
+                  "rationale": "This identifies the exact non-diabetic obese population and outcome relevant to the claim, providing contextual support though not the result itself.",
+                  "start_char": 422,
+                  "end_char": 650,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 3
+            },
+            {
+              "related_pmid": "41453515",
+              "title": "Rate of Age-Related Macular Degeneration in Patients Prescribed Glucagon-Like Peptide-1 Receptor Agonists or Other Weight Loss Therapies.",
+              "abstract": "PURPOSE: To compare the hazard of age-related macular degeneration (AMD) among nondiabetic, weight loss-eligible adults prescribed glucagon-like peptide-1 receptor agonists (GLP-1 RAs; semaglutide or liraglutide) versus other weight loss (OWL) pharmacotherapies (phentermine, orlistat, setmelanotide, phentermine-topiramate, or bupropion-naltrexone). DESIGN: Retrospective cohort study. PARTICIPANTS: Adults aged ≥50 years without diabetes who met the criteria for weight loss pharmacotherapy and were prescribed GLP-1 RAs or OWL medications were included. Before matching, 60 336 patients were included in the GLP-1 RA group and 21 609 in the OWL cohort; after matching, 20 959 patients remained in each cohort. METHODS: Cohorts were constructed using de-identified data from the TriNetX Research Network (June 2021-October 2025). Nondiabetic status was defined as the absence of a diabetes mellitus diagnosis, hemoglobin A1c ≥6.5%, or metformin or insulin use. Patients met criteria for weight loss pharmacotherapy with documentation of an obesity diagnosis, body mass index (BMI) ≥30 kg/m2, or BMI ≥27 kg/m2 with dyslipidemia or hypertension, recorded within 1 year before initiation. Inclusion required ≥2 prescriptions for a single study medication ≥6 months apart. Patients with recorded medication cross-exposure or outcome diagnoses before index were excluded. Cohorts were matched for demographics, established AMD risk factors, covariates influencing treatment allocation, access to ophthalmic care, and proxies for social determinants of health using 1:1 propensity score matching. Outcomes were assessed using Cox proportional hazards models. MAIN OUTCOME MEASURES: Hazard ratios (HRs) of nonexudative AMD, exudative AMD, and any AMD (exudative, nonexudative, or unspecified). Changes in BMI and hemoglobin A1c were analyzed to contextualize findings. RESULTS: Compared with OWL pharmacotherapies, GLP-1 RAs were associated with a lower hazard of nonexudative AMD (HR, 0.47; 95% confidence interval [CI], 0.28-0.78) and any AMD (HR, 0.61; 95% CI, 0.43-0.85), with no difference for exudative AMD (HR, 0.63; 95% CI, 0.30-1.32). Body mass index and hemoglobin A1c were similar over follow-up. CONCLUSIONS: Among nondiabetic adults aged ≥50 years eligible for weight loss pharmacotherapy, prescriptions for GLP-1 RAs were associated with a lower incidence of nonexudative and any (nonexudative, exudative, or unspecified) AMD diagnoses compared with OWL medications. The difference in new exudative AMD diagnoses was not statistically significant. FINANCIAL DISCLOSURE(S): Proprietary or commercial disclosure may be found in the Footnotes and Disclosures at the end of this article.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41453515/",
+              "retrieval_score": null,
+              "score": 2,
+              "score_label": "Strong support",
+              "bucket": "support",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"Compared with other weight loss pharmacotherapies, GLP-1 RAs were associated with a lower hazard of nonexudative AMD (HR, 0.47; 95% CI, 0.28–0.78) and any AMD (HR, 0.61; 95% CI, 0.43–0.85), with no difference for exudative AMD (HR, 0.63; 95% CI, 0.30–1.32).\",\"score\":2,\"rationale\":\"Directly reports a statistically significant lower hazard of nonexudative AMD in the GLP-1 RA group versus other weight-loss drugs.\"},{\"text\":\"Among non-diabetic adults ≥ 50 years old eligible for weight loss pharmacotherapy, prescriptions for GLP-1 RAs were associated with a lower incidence of nonexudative and any (nonexudative, exudative, or unspecified) AMD diagnoses compared with other weight loss medications.\",\"score\":2,\"rationale\":\"Conclusion explicitly supports reduced incidence of nonexudative AMD among non-diabetic adults receiving GLP-1 RAs.\"},{\"text\":\"Among adults ≥ 50 years old who met criteria for weight loss pharmacotherapy and did not have diabetes, those prescribed GLP-1 RAs had a significantly lower rate of nonexudative and any (nonexudative, exudative, or unspecified) AMD diagnoses compared with those prescribed OWL pharmacotherapy, but not for exudative AMD.\",\"score\":2,\"rationale\":\"Explicitly states a significant reduction in nonexudative AMD among non-diabetic, weight-loss-eligible adults prescribed GLP-1 RAs.\"}]}",
+              "snippets": [
+                {
+                  "text": "Compared with other weight loss pharmacotherapies, GLP-1 RAs were associated with a lower hazard of nonexudative AMD (HR, 0.47; 95% CI, 0.28–0.78) and any AMD (HR, 0.61; 95% CI, 0.43–0.85), with no difference for exudative AMD (HR, 0.63; 95% CI, 0.30–1.32).",
+                  "score": 2,
+                  "score_label": "Strong support",
+                  "bucket": "support",
+                  "rationale": "Directly reports a statistically significant lower hazard of nonexudative AMD in the GLP-1 RA group versus other weight-loss drugs.",
+                  "start_char": 1995,
+                  "end_char": 2252,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "Among non-diabetic adults ≥ 50 years old eligible for weight loss pharmacotherapy, prescriptions for GLP-1 RAs were associated with a lower incidence of nonexudative and any (nonexudative, exudative, or unspecified) AMD diagnoses compared with other weight loss medications.",
+                  "score": 2,
+                  "score_label": "Strong support",
+                  "bucket": "support",
+                  "rationale": "Conclusion explicitly supports reduced incidence of nonexudative AMD among non-diabetic adults receiving GLP-1 RAs.",
+                  "start_char": 2320,
+                  "end_char": 2594,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "Among adults ≥ 50 years old who met criteria for weight loss pharmacotherapy and did not have diabetes, those prescribed GLP-1 RAs had a significantly lower rate of nonexudative and any (nonexudative, exudative, or unspecified) AMD diagnoses compared with those prescribed OWL pharmacotherapy, but not for exudative AMD.",
+                  "score": 2,
+                  "score_label": "Strong support",
+                  "bucket": "support",
+                  "rationale": "Explicitly states a significant reduction in nonexudative AMD among non-diabetic, weight-loss-eligible adults prescribed GLP-1 RAs.",
+                  "start_char": 13941,
+                  "end_char": 14261,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pmid": "glp1_claim_03",
+      "title": "GLP-1 RAs, non-diabetic obesity, and dry AMD progression",
+      "abstract": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/glp1_claim_03/",
+      "statements": [
+        {
+          "idx": 0,
+          "text": "In non-diabetic obese populations, GLP-1 RAs may slow the progression of dry AMD.",
+          "text_anchor": "",
+          "anchor_match": "",
+          "topic": "GLP-1 RAs, non-diabetic obesity, and dry AMD progression",
+          "counts": {
+            "support": 0,
+            "neutral": 0,
+            "contradict": 1,
+            "unknown": 0,
+            "total": 1
+          },
+          "evidence": [
+            {
+              "related_pmid": "41453515",
+              "title": "Rate of Age-Related Macular Degeneration in Patients Prescribed Glucagon-Like Peptide-1 Receptor Agonists or Other Weight Loss Therapies.",
+              "abstract": "PURPOSE: To compare the hazard of age-related macular degeneration (AMD) among nondiabetic, weight loss-eligible adults prescribed glucagon-like peptide-1 receptor agonists (GLP-1 RAs; semaglutide or liraglutide) versus other weight loss (OWL) pharmacotherapies (phentermine, orlistat, setmelanotide, phentermine-topiramate, or bupropion-naltrexone). DESIGN: Retrospective cohort study. PARTICIPANTS: Adults aged ≥50 years without diabetes who met the criteria for weight loss pharmacotherapy and were prescribed GLP-1 RAs or OWL medications were included. Before matching, 60 336 patients were included in the GLP-1 RA group and 21 609 in the OWL cohort; after matching, 20 959 patients remained in each cohort. METHODS: Cohorts were constructed using de-identified data from the TriNetX Research Network (June 2021-October 2025). Nondiabetic status was defined as the absence of a diabetes mellitus diagnosis, hemoglobin A1c ≥6.5%, or metformin or insulin use. Patients met criteria for weight loss pharmacotherapy with documentation of an obesity diagnosis, body mass index (BMI) ≥30 kg/m2, or BMI ≥27 kg/m2 with dyslipidemia or hypertension, recorded within 1 year before initiation. Inclusion required ≥2 prescriptions for a single study medication ≥6 months apart. Patients with recorded medication cross-exposure or outcome diagnoses before index were excluded. Cohorts were matched for demographics, established AMD risk factors, covariates influencing treatment allocation, access to ophthalmic care, and proxies for social determinants of health using 1:1 propensity score matching. Outcomes were assessed using Cox proportional hazards models. MAIN OUTCOME MEASURES: Hazard ratios (HRs) of nonexudative AMD, exudative AMD, and any AMD (exudative, nonexudative, or unspecified). Changes in BMI and hemoglobin A1c were analyzed to contextualize findings. RESULTS: Compared with OWL pharmacotherapies, GLP-1 RAs were associated with a lower hazard of nonexudative AMD (HR, 0.47; 95% confidence interval [CI], 0.28-0.78) and any AMD (HR, 0.61; 95% CI, 0.43-0.85), with no difference for exudative AMD (HR, 0.63; 95% CI, 0.30-1.32). Body mass index and hemoglobin A1c were similar over follow-up. CONCLUSIONS: Among nondiabetic adults aged ≥50 years eligible for weight loss pharmacotherapy, prescriptions for GLP-1 RAs were associated with a lower incidence of nonexudative and any (nonexudative, exudative, or unspecified) AMD diagnoses compared with OWL medications. The difference in new exudative AMD diagnoses was not statistically significant. FINANCIAL DISCLOSURE(S): Proprietary or commercial disclosure may be found in the Footnotes and Disclosures at the end of this article.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41453515/",
+              "retrieval_score": null,
+              "score": -1,
+              "score_label": "Partial contradiction",
+              "bucket": "contradict",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"The difference in new diagnoses of exudative AMD between weight loss groups when allowing pre-existing cases of nonexudative or unspecified AMD was not statistically significant (HR 1.21, 95% CI 0.69 to 2.11, n = 27 GLP-1 RA, 23 OWL) (Table S4 [available at https://www.ophthalmologyretina.org/]).\",\"score\":-1,\"rationale\":\"This sensitivity analysis indirectly addresses progression from pre-existing nonexudative/unspecified AMD toward exudative AMD and found no significant benefit of GLP-1 RAs, which weighs against the claim.\"},{\"text\":\"Patients prescribed GLP-1 RAs had similar rates of exudative AMD as those prescribed OWL medications with or without inclusion of pre-index nonexudative or unspecified AMD diagnoses.\",\"score\":-1,\"rationale\":\"This summarizes the study's finding that GLP-1 RAs did not reduce later exudative AMD rates, providing indirect evidence against a progression-slowing effect for dry AMD.\"}]}",
+              "snippets": [
+                {
+                  "text": "The difference in new diagnoses of exudative AMD between weight loss groups when allowing pre-existing cases of nonexudative or unspecified AMD was not statistically significant (HR 1.21, 95% CI 0.69 to 2.11, n = 27 GLP-1 RA, 23 OWL) (Table S4 [available at https://www.ophthalmologyretina.org/]).",
+                  "score": -1,
+                  "score_label": "Partial contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This sensitivity analysis indirectly addresses progression from pre-existing nonexudative/unspecified AMD toward exudative AMD and found no significant benefit of GLP-1 RAs, which weighs against the claim.",
+                  "start_char": 17890,
+                  "end_char": 18187,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "Patients prescribed GLP-1 RAs had similar rates of exudative AMD as those prescribed OWL medications with or without inclusion of pre-index nonexudative or unspecified AMD diagnoses.",
+                  "score": -1,
+                  "score_label": "Partial contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This summarizes the study's finding that GLP-1 RAs did not reduce later exudative AMD rates, providing indirect evidence against a progression-slowing effect for dry AMD.",
+                  "start_char": 19610,
+                  "end_char": 19792,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pmid": "glp1_claim_04",
+      "title": "GLP-1 RAs, diabetes, obesity, and dry AMD progression",
+      "abstract": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/glp1_claim_04/",
+      "statements": [
+        {
+          "idx": 0,
+          "text": "In diabetic obese populations, GLP-1 RAs may slow the progression of dry AMD.",
+          "text_anchor": "",
+          "anchor_match": "",
+          "topic": "GLP-1 RAs, diabetes, obesity, and dry AMD progression",
+          "counts": {
+            "support": 0,
+            "neutral": 0,
+            "contradict": 0,
+            "unknown": 0,
+            "total": 0
+          },
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "pmid": "glp1_claim_05",
+      "title": "GLP-1 RAs and exudative AMD progression",
+      "abstract": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/glp1_claim_05/",
+      "statements": [
+        {
+          "idx": 0,
+          "text": "There is a reduced risk of exudative AMD progression for GLP-1RA users.",
+          "text_anchor": "",
+          "anchor_match": "",
+          "topic": "GLP-1 RAs and exudative AMD progression",
+          "counts": {
+            "support": 2,
+            "neutral": 0,
+            "contradict": 3,
+            "unknown": 0,
+            "total": 5
+          },
+          "evidence": [
+            {
+              "related_pmid": "40712124",
+              "title": "IMPACT OF GLP-1 RECEPTOR AGONISTS FOR TYPE 2 DIABETES MELLITUS ON THE DEVELOPMENT AND PROGRESSION OF AGE-RELATED MACULAR DEGENERATION.",
+              "abstract": "PURPOSE: To evaluate whether GLP-1 receptor agonist (GLP-1RA) therapy reduces the risk of age-related macular degeneration (AMD) in type 2 diabetes mellitus (T2DM) patients. METHODS: A retrospective cohort study using a global health research network matched T2DM patients on GLP-1RA versus non-GLP-1RA therapy. AMD incidence was determined over the first 1 to 10 years of treatment. Patients with baseline early or intermediate nonexudative AMD were also matched and assessed for progression to advanced AMD. Measures of association analysis was used to calculate risk, risk difference, and risk ratio. RESULTS: Among 600,816 matched patients without a history of AMD, GLP-1RA users had a 15% relative risk reduction in incidence of nonexudative AMD (RR, 0.851; 95% CI, 0.801-0.905; P < 0.0001) versus those who received alternative therapy. These patients also had a 20% relative risk reduction in incidence of exudative AMD (RR, 0.80; 95% CI, 0.808-0.989; P < 0.0001). To assess progression, 4,450 patients with early or intermediate AMD were matched between the cohorts. GLP-1RA use was associated with 29% relative risk reduction in progression to advanced nonexudative AMD (RR, 0.715; 95% CI, 0.529-0.967; P = 0.028) and a 27% relative risk reduction in progression to exudative AMD (RR, 0.729; 95% CI, 0.601-0.883; P = 0.001). CONCLUSION: GLP-1RA use may reduce both the risk and progression of AMD and progression of early and intermediate AMD to advanced AMD in adults with T2DM. GLP-1RAs have been shown to promote neuronal survival and reduce inflammation, which may provide a pathophysiological explanation of the potential beneficial role of GLP-1RAs.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40712124/",
+              "retrieval_score": null,
+              "score": 2,
+              "score_label": "Strong support",
+              "bucket": "support",
+              "rationale": "",
+              "raw_output": "{\n  \"snippets\": [\n    {\n      \"text\": \"To assess progression, 4,450 patients with early or intermediate AMD were matched between the cohorts. GLP-1RA use was associated with 29% relative risk reduction in progression to advanced nonexudative AMD (RR, 0.715; 95% CI, 0.529-0.967; P = 0.028) and a 27% relative risk reduction in progression to exudative AMD (RR, 0.729; 95% CI, 0.601-0.883; P = 0.001).\",\n      \"score\": 2,\n      \"rationale\": \"Directly reports a statistically significant reduction in progression to exudative AMD among GLP-1RA users.\"\n    },\n    {\n      \"text\": \"CONCLUSION: GLP-1RA use may reduce both the risk and progression of AMD and progression of early and intermediate AMD to advanced AMD in adults with T2DM.\",\n      \"score\": 1,\n      \"rationale\": \"Supports reduced AMD progression with GLP-1RA use, though it does not specifically isolate exudative AMD progression.\"\n    }\n  ]\n}",
+              "snippets": [
+                {
+                  "text": "To assess progression, 4,450 patients with early or intermediate AMD were matched between the cohorts. GLP-1RA use was associated with 29% relative risk reduction in progression to advanced nonexudative AMD (RR, 0.715; 95% CI, 0.529-0.967; P = 0.028) and a 27% relative risk reduction in progression to exudative AMD (RR, 0.729; 95% CI, 0.601-0.883; P = 0.001).",
+                  "score": 2,
+                  "score_label": "Strong support",
+                  "bucket": "support",
+                  "rationale": "Directly reports a statistically significant reduction in progression to exudative AMD among GLP-1RA users.",
+                  "start_char": 1107,
+                  "end_char": 1468,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "CONCLUSION: GLP-1RA use may reduce both the risk and progression of AMD and progression of early and intermediate AMD to advanced AMD in adults with T2DM.",
+                  "score": 1,
+                  "score_label": "Partial support",
+                  "bucket": "support",
+                  "rationale": "Supports reduced AMD progression with GLP-1RA use, though it does not specifically isolate exudative AMD progression.",
+                  "start_char": 1469,
+                  "end_char": 1623,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 2
+            },
+            {
+              "related_pmid": "41501669",
+              "title": "GLP-1 receptor agonists in eye disease: a comprehensive review of current research and future potential.",
+              "abstract": "OBJECTIVE: To synthesize the current preclinical and clinical evidence on the utility and potential mechanisms of glucagon-like peptide-1 receptor agonists (GLP-1RAs) as a therapeutic strategy for major ophthalmic diseases, including diabetic retinopathy, glaucoma, and age-related macular degeneration. METHODS: A comprehensive literature search was conducted to synthesize the current preclinical and clinical evidence. Electronic databases including PubMed, Embase, and Web of Science were searched from inception until August 2025 using keywords such as “GLP-1 receptor agonist,” “diabetic retinopathy,” “glaucoma,” “age-related macular degeneration,” “ocular disease,” and “neuroprotection.” The search focused on identifying preclinical studies, large-scale retrospective cohort studies, and post-hoc analyses of major clinical trials that evaluated the utility and potential mechanisms of GLP-1RAs in ophthalmic diseases. Studies were screened for relevance based on title and abstract, and full texts were retrieved for detailed assessment. RESULTS: Despite heterogeneity in study designs and populations, a largely consistent association was found between GLP-1RA use and a reduced incidence of glaucoma. For diabetic retinopathy, the evidence was nuanced, indicating potential long-term neurovascular protection but also a risk of transient early worsening. For age-related macular degeneration, findings were dichotomous, suggesting a protective effect against non-exudative forms but a potential increased risk for neovascular disease. CONCLUSION: GLP-1RAs show significant promise as a potential disease-modifying therapy for neurodegenerative and inflammatory eye diseases, acting through both systemic metabolic improvements and direct ocular mechanisms, representing a paradigm shift beyond their metabolic indications.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41501669/",
+              "retrieval_score": null,
+              "score": -2,
+              "score_label": "Strong contradiction",
+              "bucket": "contradict",
+              "rationale": "",
+              "raw_output": "{\n  \"snippets\": [\n    {\n      \"text\": \"For age-related macular degeneration, findings were dichotomous, suggesting a protective effect against non-exudative forms but a potential increased risk for neovascular disease.\",\n      \"score\": -2,\n      \"rationale\": \"This directly contradicts the claim by stating GLP-1RA use may increase, not reduce, risk for neovascular/exudative AMD.\"\n    },\n    {\n      \"text\": \"However, this potential protective mechanism is overshadowed by alarming findings in nAMD. Another large-scale cohort study demonstrated that long-term GLP-1RA use was associated with a more than twofold, exposure-dependent increase in the risk of developing nAMD.\",\n      \"score\": -2,\n      \"rationale\": \"This explicitly reports increased risk of neovascular (exudative) AMD with GLP-1RA use, directly refuting a reduced-risk claim.\"\n    },\n    {\n      \"text\": \"·Long-term, exposure-dependent use was associated with a more than 2-fold increased risk of developing neovascular AMD.\",\n      \"score\": -2,\n      \"rationale\": \"This table summary clearly states the opposite of the claim: GLP-1RA use was linked to increased, not reduced, neovascular/exudative AMD risk.\"\n    }\n  ]\n}",
+              "snippets": [
+                {
+                  "text": "For age-related macular degeneration, findings were dichotomous, suggesting a protective effect against non-exudative forms but a potential increased risk for neovascular disease.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This directly contradicts the claim by stating GLP-1RA use may increase, not reduce, risk for neovascular/exudative AMD.",
+                  "start_char": 1483,
+                  "end_char": 1662,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "However, this potential protective mechanism is overshadowed by alarming findings in nAMD. Another large-scale cohort study demonstrated that long-term GLP-1RA use was associated with a more than twofold, exposure-dependent increase in the risk of developing nAMD.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This explicitly reports increased risk of neovascular (exudative) AMD with GLP-1RA use, directly refuting a reduced-risk claim.",
+                  "start_char": 37850,
+                  "end_char": 38114,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "·Long-term, exposure-dependent use was associated with a more than 2-fold increased risk of developing neovascular AMD.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This table summary clearly states the opposite of the claim: GLP-1RA use was linked to increased, not reduced, neovascular/exudative AMD risk.",
+                  "start_char": 43211,
+                  "end_char": 43330,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 3
+            },
+            {
+              "related_pmid": "41197713",
+              "title": "Glucagon-Like Peptide-1 Receptor Agonist Use and Risk of Neovascular Age-Related Macular Degeneration in a National Cohort Study.",
+              "abstract": "PURPOSE: To investigate the risk of neovascular age-related macular degeneration (AMD) in patients taking glucagon-like peptide-1 receptor agonists (GLP-1RAs). DESIGN: A retrospective cohort study. PARTICIPANTS: This study used the TriNetX network, a large aggregated electronic health records platform from health care organizations across the United States. Adults over the age of 60 years with ≥1, 2, or 3 years of ophthalmology follow-up and medication prescription documentation were included. METHODS: Patients were grouped into those taking GLP-1RAs, alternate glucose-lowering medications, and alternate lipid-lowering medications. Cohorts were propensity matched on demographics, chronic disease prevalence, and disease severity indicators. MAIN OUTCOME MEASURES: The primary outcomes were risk of developing nonneovascular and neovascular AMD at 1, 2, and 3 years after initial medication prescription. A secondary analysis evaluated the risk of neovascular AMD in patients with nonneovascular AMD at baseline. Significance was defined as P < 0.05 and hazard ratio (HR) threshold >1.1 or <0.9 to minimize noise in large data sets. RESULTS: Patients prescribed GLP-1RA had greater baseline chronic disease burden and worse disease severity metrics than comparator groups. Propensity matching effectively matched chronic disease prevalence at baseline. Glucagon-like peptide-1 receptor agonist prescription was associated with a significant reduction in risk of nonneovascular AMD compared with glucose-lowering medications over 1 (HR, 0.79; 95% confidence interval [CI], 0.66-0.94), 2 (HR, 0.75; 95% CI, 0.64-0.88), and 3 (HR, 0.77; 95% CI, 0.66-0.91) years. Similar protective effects were observed when compared with lipid-lowering medications after 2 (HR, 0.84; 95% CI, 0.71-0.99) and 3 (HR, 0.8; 95% CI, 0.68-0.94) years. There was a significant reduction in risk of neovascular AMD with GLP-1RA prescription across all time points compared with both alternate glucose-lowering and lipid-lowering medications. However, there was no significant impact of GLP-1RA on the risk of conversion from nonneovascular AMD at baseline to neovascular AMD. CONCLUSIONS: These findings suggest that GLP-1RAs may provide protective effects against nonneovascular AMD and, importantly, did not show an increased risk of neovascular AMD. Future prospective trials are needed to validate these findings. FINANCIAL DISCLOSURE(S): Proprietary or commercial disclosure may be found in the Footnotes and Disclosures at the end of this article.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41197713/",
+              "retrieval_score": null,
+              "score": -2,
+              "score_label": "Strong contradiction",
+              "bucket": "contradict",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"However, there was no significant impact of GLP-1RA on the risk of conversion from nonneovascular AMD at baseline to neovascular AMD.\",\"score\":-2,\"rationale\":\"This directly refutes the claim of a reduced risk of exudative/neovascular AMD progression among GLP-1RA users, stating there was no significant effect on conversion to neovascular AMD.\"}]}",
+              "snippets": [
+                {
+                  "text": "However, there was no significant impact of GLP-1RA on the risk of conversion from nonneovascular AMD at baseline to neovascular AMD.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This directly refutes the claim of a reduced risk of exudative/neovascular AMD progression among GLP-1RA users, stating there was no significant effect on conversion to neovascular AMD.",
+                  "start_char": 2153,
+                  "end_char": 2286,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 1
+            },
+            {
+              "related_pmid": "41129133",
+              "title": "Glucagon-Like Peptide-1 Receptor Agonists and Age-Related Macular Degeneration.",
+              "abstract": "IMPORTANCE: Glucagon-like peptide-1 receptor agonists (GLP-1RAs) are increasingly used for weight loss, but their ocular effects in nondiabetic individuals remain unclear. Prior studies suggest GLP-1RA use reduced age-related macular degeneration (AMD) risk in patients with diabetes, but applicability to nondiabetic populations is unknown. OBJECTIVE: To evaluate the risk of developing nonexudative AMD and its progression to exudative AMD among patients with obesity but not diabetes prescribed GLP-1RAs compared with those prescribed other weight-loss drugs (OWLDs). DESIGN, SETTING, AND PARTICIPANTS: This retrospective cohort study used electronic health record data obtained from the multicenter TriNetX Global Collaborative Network on patients aged 55 years or older diagnosed with overweight or obesity but not diabetes from January 2004 to July 2025. For the primary analysis, patients with preexisting nonexudative AMD were excluded. For the secondary analysis, patients with preexisting nonexudative AMD were included, while those with preexisting exudative AMD were excluded. Propensity score matching balanced baseline demographics and comorbidities. Data were analyzed on March 21, 2025, and August 2, 2025. EXPOSURES: Patients were prescribed either the GLP-1RAs liraglutide or semaglutide or OWLDs including lorcaserin, sibutramine, setmelanotide, fenfluramine, mazindol, orlistat, phentermine, and diethylpropion. MAIN OUTCOMES AND MEASURES: The primary outcome was development of nonexudative AMD at 5, 7, and 10 years. The secondary outcome was progression to exudative AMD at 10 years. Risk ratios (RRs) with 95% CIs were calculated. Standardized mean differences were used to assess covariate balance after matching. RESULTS: A total of 91 408 patients were included. After propensity score matching for the primary analysis, 45 704 patients remained in each of the GLP-1RA and OWLD cohorts. The GLP-1RA cohort included 35 753 (78.2%) females and 7852 (17.2%) males with a mean (SD) age of 61.1 (5.76) years, while the OWLD cohort included 35 732 (78.2%) females and 7815 (17.1%) males with a mean [SD] age of 61.0 (5.86) years. Covariate balance was achieved across all variables for the GLP-1RA and OWLD cohorts in the primary analysis. GLP-1RA use was associated with reduced risk of nonexudative AMD compared with OWLDs at 5 years (RR, 0.16; 95% CI, 0.10-0.28; P < .001), 7 years (RR, 0.13; 95% CI, 0.08-0.22; P < .001), and 10 years (RR, 0.09; 95% CI, 0.05-0.16; P < .001). No differences were observed in progression to exudative AMD. CONCLUSIONS AND RELEVANCE: In this cohort study, GLP-1RA use was associated with reduced risk of developing nonexudative AMD but was not associated with progression to exudative AMD among individuals with nonexudative AMD. These findings may inform future randomized trials evaluating the ocular effects of GLP-1RAs in nondiabetic populations.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41129133/",
+              "retrieval_score": null,
+              "score": -2,
+              "score_label": "Strong contradiction",
+              "bucket": "contradict",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"No differences were observed in progression to exudative AMD.\",\"score\":-2,\"rationale\":\"This directly states that GLP-1RA use did not reduce progression to exudative AMD.\"},{\"text\":\"In this cohort study, GLP-1RA use was associated with reduced risk of developing nonexudative AMD but was not associated with progression to exudative AMD among individuals with nonexudative AMD.\",\"score\":-2,\"rationale\":\"This explicitly contradicts the claim by stating there was no association with progression to exudative AMD.\"}]}",
+              "snippets": [
+                {
+                  "text": "No differences were observed in progression to exudative AMD.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This directly states that GLP-1RA use did not reduce progression to exudative AMD.",
+                  "start_char": 2581,
+                  "end_char": 2642,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "In this cohort study, GLP-1RA use was associated with reduced risk of developing nonexudative AMD but was not associated with progression to exudative AMD among individuals with nonexudative AMD.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This explicitly contradicts the claim by stating there was no association with progression to exudative AMD.",
+                  "start_char": 2670,
+                  "end_char": 2865,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 2
+            },
+            {
+              "related_pmid": "39863057",
+              "title": "Glucagon-like Peptide-1 Receptor Agonist Impact on Chronic Ocular Disease Including Age-Related Macular Degeneration.",
+              "abstract": "PURPOSE: Glucagon-like peptide-1 receptor agonists (GLP-1RAs) have been shown to exert neuroprotective and anti-inflammatory effects across multiple organ systems. This study investigated whether GLP-1RAs influence the risk for age-related ocular diseases. DESIGN: Retrospective cohort study. PARTICIPANTS: This study used an electronic health records platform of patients in the United States. Patients > 60 years with at least 5 years of ophthalmology follow-up and medication prescription documentation were included. There were 5 medication groups: GLP-1RA, metformin, insulin, statin, or aspirin users. Cohorts were propensity matched (1:1) on demographics and chronic disease risk factors. MAIN OUTCOME MEASURES: Outcomes of cataract, ocular hypertension, primary open-angle glaucoma, nonexudative age-related macular degeneration (AMD), and exudative AMD were compared 5 years after initial medication prescription. We then examined earlier time points within the 5-year period. Significance was defined as P < 0.05 with a hazard ratio (HR) threshold of > 1.1 or < 0.9. RESULTS: Of the 9669 patients taking GLP-1RAs, 84.4% had a diagnosis of diabetes with an average body mass index (BMI) of 36.2 kg/m2. Propensity-matched cohorts demonstrated that GLP-1RAs were associated with a reduced hazard of nonexudative AMD compared with metformin (HR, 0.68; 95% CI, 0.56-0.84), insulin (HR, 0.72; 95% CI, 0.58-0.89), and statins (HR, 0.70; 95% CI, 0.57-0.87). These findings were validated compared with aspirin and in an independent older cohort of patients. This significant reduction appeared after 3 years compared with metformin (HR, 0.69; 95% CI, 0.52-0.91), insulin (HR, 0.66; 95% CI, 0.5-0.87), and statins (HR, 0.67; 95% CI, 0.51-0.88). Time course results were validated using independent cohorts of propensity-matched patients taking medications for 3 years. Notably, GLP-1RAs also significantly reduced the risk of exudative AMD (HR, 0.70; 95% CI, 0.58-0.84) and primary open-angle glaucoma (HR, 0.58; 95% CI, 0.45-0.76) compared with insulin after 3 years. Use of GLP-1RAs showed no persistent impact on the risk of cataract formation or ocular hypertension compared with other medications. CONCLUSIONS: This study suggests that GLP-1RAs may reduce the risk of multiple age-related ocular diseases and the need for future prospective studies to validate these findings. FINANCIAL DISCLOSURE(S): Proprietary or commercial disclosure may be found in the Footnotes and Disclosures at the end of this article.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39863057/",
+              "retrieval_score": null,
+              "score": 1,
+              "score_label": "Partial support",
+              "bucket": "support",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"Notably, GLP-1RAs also significantly reduced the risk of exudative AMD (HR, 0.70; 95% CI, 0.58-0.84) and primary open-angle glaucoma (HR, 0.58; 95% CI, 0.45-0.76) compared with insulin after 3 years.\",\"score\":1,\"rationale\":\"This supports a reduced risk of exudative AMD among GLP-1RA users, but the study reports risk/incidence rather than AMD progression specifically.\"}]}",
+              "snippets": [
+                {
+                  "text": "Notably, GLP-1RAs also significantly reduced the risk of exudative AMD (HR, 0.70; 95% CI, 0.58-0.84) and primary open-angle glaucoma (HR, 0.58; 95% CI, 0.45-0.76) compared with insulin after 3 years.",
+                  "score": 1,
+                  "score_label": "Partial support",
+                  "bucket": "support",
+                  "rationale": "This supports a reduced risk of exudative AMD among GLP-1RA users, but the study reports risk/incidence rather than AMD progression specifically.",
+                  "start_char": 1988,
+                  "end_char": 2187,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pmid": "glp1_claim_06",
+      "title": "GLP-1 RAs and exudative AMD progression",
+      "abstract": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/glp1_claim_06/",
+      "statements": [
+        {
+          "idx": 0,
+          "text": "There is no significant difference in risk of exudative AMD progression for GLP-1RA users.",
+          "text_anchor": "",
+          "anchor_match": "",
+          "topic": "GLP-1 RAs and exudative AMD progression",
+          "counts": {
+            "support": 1,
+            "neutral": 0,
+            "contradict": 3,
+            "unknown": 0,
+            "total": 4
+          },
+          "evidence": [
+            {
+              "related_pmid": "41129133",
+              "title": "Glucagon-Like Peptide-1 Receptor Agonists and Age-Related Macular Degeneration.",
+              "abstract": "IMPORTANCE: Glucagon-like peptide-1 receptor agonists (GLP-1RAs) are increasingly used for weight loss, but their ocular effects in nondiabetic individuals remain unclear. Prior studies suggest GLP-1RA use reduced age-related macular degeneration (AMD) risk in patients with diabetes, but applicability to nondiabetic populations is unknown. OBJECTIVE: To evaluate the risk of developing nonexudative AMD and its progression to exudative AMD among patients with obesity but not diabetes prescribed GLP-1RAs compared with those prescribed other weight-loss drugs (OWLDs). DESIGN, SETTING, AND PARTICIPANTS: This retrospective cohort study used electronic health record data obtained from the multicenter TriNetX Global Collaborative Network on patients aged 55 years or older diagnosed with overweight or obesity but not diabetes from January 2004 to July 2025. For the primary analysis, patients with preexisting nonexudative AMD were excluded. For the secondary analysis, patients with preexisting nonexudative AMD were included, while those with preexisting exudative AMD were excluded. Propensity score matching balanced baseline demographics and comorbidities. Data were analyzed on March 21, 2025, and August 2, 2025. EXPOSURES: Patients were prescribed either the GLP-1RAs liraglutide or semaglutide or OWLDs including lorcaserin, sibutramine, setmelanotide, fenfluramine, mazindol, orlistat, phentermine, and diethylpropion. MAIN OUTCOMES AND MEASURES: The primary outcome was development of nonexudative AMD at 5, 7, and 10 years. The secondary outcome was progression to exudative AMD at 10 years. Risk ratios (RRs) with 95% CIs were calculated. Standardized mean differences were used to assess covariate balance after matching. RESULTS: A total of 91 408 patients were included. After propensity score matching for the primary analysis, 45 704 patients remained in each of the GLP-1RA and OWLD cohorts. The GLP-1RA cohort included 35 753 (78.2%) females and 7852 (17.2%) males with a mean (SD) age of 61.1 (5.76) years, while the OWLD cohort included 35 732 (78.2%) females and 7815 (17.1%) males with a mean [SD] age of 61.0 (5.86) years. Covariate balance was achieved across all variables for the GLP-1RA and OWLD cohorts in the primary analysis. GLP-1RA use was associated with reduced risk of nonexudative AMD compared with OWLDs at 5 years (RR, 0.16; 95% CI, 0.10-0.28; P < .001), 7 years (RR, 0.13; 95% CI, 0.08-0.22; P < .001), and 10 years (RR, 0.09; 95% CI, 0.05-0.16; P < .001). No differences were observed in progression to exudative AMD. CONCLUSIONS AND RELEVANCE: In this cohort study, GLP-1RA use was associated with reduced risk of developing nonexudative AMD but was not associated with progression to exudative AMD among individuals with nonexudative AMD. These findings may inform future randomized trials evaluating the ocular effects of GLP-1RAs in nondiabetic populations.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41129133/",
+              "retrieval_score": null,
+              "score": 2,
+              "score_label": "Strong support",
+              "bucket": "support",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"No differences were observed in progression to exudative AMD.\",\"score\":2,\"rationale\":\"This directly states that there was no significant difference in progression to exudative AMD between groups.\"},{\"text\":\"In this cohort study, GLP-1RA use was associated with reduced risk of developing nonexudative AMD but was not associated with progression to exudative AMD among individuals with nonexudative AMD.\",\"score\":2,\"rationale\":\"This conclusion explicitly supports the claim that GLP-1RA use was not associated with exudative AMD progression.\"}]}",
+              "snippets": [
+                {
+                  "text": "No differences were observed in progression to exudative AMD.",
+                  "score": 2,
+                  "score_label": "Strong support",
+                  "bucket": "support",
+                  "rationale": "This directly states that there was no significant difference in progression to exudative AMD between groups.",
+                  "start_char": 2581,
+                  "end_char": 2642,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "In this cohort study, GLP-1RA use was associated with reduced risk of developing nonexudative AMD but was not associated with progression to exudative AMD among individuals with nonexudative AMD.",
+                  "score": 2,
+                  "score_label": "Strong support",
+                  "bucket": "support",
+                  "rationale": "This conclusion explicitly supports the claim that GLP-1RA use was not associated with exudative AMD progression.",
+                  "start_char": 2670,
+                  "end_char": 2865,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 2
+            },
+            {
+              "related_pmid": "41501669",
+              "title": "GLP-1 receptor agonists in eye disease: a comprehensive review of current research and future potential.",
+              "abstract": "OBJECTIVE: To synthesize the current preclinical and clinical evidence on the utility and potential mechanisms of glucagon-like peptide-1 receptor agonists (GLP-1RAs) as a therapeutic strategy for major ophthalmic diseases, including diabetic retinopathy, glaucoma, and age-related macular degeneration. METHODS: A comprehensive literature search was conducted to synthesize the current preclinical and clinical evidence. Electronic databases including PubMed, Embase, and Web of Science were searched from inception until August 2025 using keywords such as “GLP-1 receptor agonist,” “diabetic retinopathy,” “glaucoma,” “age-related macular degeneration,” “ocular disease,” and “neuroprotection.” The search focused on identifying preclinical studies, large-scale retrospective cohort studies, and post-hoc analyses of major clinical trials that evaluated the utility and potential mechanisms of GLP-1RAs in ophthalmic diseases. Studies were screened for relevance based on title and abstract, and full texts were retrieved for detailed assessment. RESULTS: Despite heterogeneity in study designs and populations, a largely consistent association was found between GLP-1RA use and a reduced incidence of glaucoma. For diabetic retinopathy, the evidence was nuanced, indicating potential long-term neurovascular protection but also a risk of transient early worsening. For age-related macular degeneration, findings were dichotomous, suggesting a protective effect against non-exudative forms but a potential increased risk for neovascular disease. CONCLUSION: GLP-1RAs show significant promise as a potential disease-modifying therapy for neurodegenerative and inflammatory eye diseases, acting through both systemic metabolic improvements and direct ocular mechanisms, representing a paradigm shift beyond their metabolic indications.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41501669/",
+              "retrieval_score": null,
+              "score": -2,
+              "score_label": "Strong contradiction",
+              "bucket": "contradict",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"For age-related macular degeneration, findings were dichotomous, suggesting a protective effect against non-exudative forms but a potential increased risk for neovascular disease.\",\"score\":-1,\"rationale\":\"This review summary indicates possible increased risk for neovascular (exudative) AMD, which conflicts with the claim of no significant difference, though the wording is somewhat tentative.\"},{\"text\":\"Another large-scale cohort study demonstrated that long-term GLP-1RA use was associated with a more than twofold, exposure-dependent increase in the risk of developing nAMD.\",\"score\":-2,\"rationale\":\"This directly contradicts the claim by stating a substantial increased risk of neovascular/exudative AMD among GLP-1RA users.\"},{\"text\":\"·Long-term, exposure-dependent use was associated with a more than 2-fold increased risk of developing neovascular AMD.\",\"score\":-2,\"rationale\":\"This table summary explicitly states increased risk of neovascular (exudative) AMD, strongly refuting the claim that there is no significant difference in risk.\"}]}",
+              "snippets": [
+                {
+                  "text": "For age-related macular degeneration, findings were dichotomous, suggesting a protective effect against non-exudative forms but a potential increased risk for neovascular disease.",
+                  "score": -1,
+                  "score_label": "Partial contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This review summary indicates possible increased risk for neovascular (exudative) AMD, which conflicts with the claim of no significant difference, though the wording is somewhat tentative.",
+                  "start_char": 1483,
+                  "end_char": 1662,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "Another large-scale cohort study demonstrated that long-term GLP-1RA use was associated with a more than twofold, exposure-dependent increase in the risk of developing nAMD.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This directly contradicts the claim by stating a substantial increased risk of neovascular/exudative AMD among GLP-1RA users.",
+                  "start_char": 37941,
+                  "end_char": 38114,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "·Long-term, exposure-dependent use was associated with a more than 2-fold increased risk of developing neovascular AMD.",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This table summary explicitly states increased risk of neovascular (exudative) AMD, strongly refuting the claim that there is no significant difference in risk.",
+                  "start_char": 43211,
+                  "end_char": 43330,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 3
+            },
+            {
+              "related_pmid": "40712124",
+              "title": "IMPACT OF GLP-1 RECEPTOR AGONISTS FOR TYPE 2 DIABETES MELLITUS ON THE DEVELOPMENT AND PROGRESSION OF AGE-RELATED MACULAR DEGENERATION.",
+              "abstract": "PURPOSE: To evaluate whether GLP-1 receptor agonist (GLP-1RA) therapy reduces the risk of age-related macular degeneration (AMD) in type 2 diabetes mellitus (T2DM) patients. METHODS: A retrospective cohort study using a global health research network matched T2DM patients on GLP-1RA versus non-GLP-1RA therapy. AMD incidence was determined over the first 1 to 10 years of treatment. Patients with baseline early or intermediate nonexudative AMD were also matched and assessed for progression to advanced AMD. Measures of association analysis was used to calculate risk, risk difference, and risk ratio. RESULTS: Among 600,816 matched patients without a history of AMD, GLP-1RA users had a 15% relative risk reduction in incidence of nonexudative AMD (RR, 0.851; 95% CI, 0.801-0.905; P < 0.0001) versus those who received alternative therapy. These patients also had a 20% relative risk reduction in incidence of exudative AMD (RR, 0.80; 95% CI, 0.808-0.989; P < 0.0001). To assess progression, 4,450 patients with early or intermediate AMD were matched between the cohorts. GLP-1RA use was associated with 29% relative risk reduction in progression to advanced nonexudative AMD (RR, 0.715; 95% CI, 0.529-0.967; P = 0.028) and a 27% relative risk reduction in progression to exudative AMD (RR, 0.729; 95% CI, 0.601-0.883; P = 0.001). CONCLUSION: GLP-1RA use may reduce both the risk and progression of AMD and progression of early and intermediate AMD to advanced AMD in adults with T2DM. GLP-1RAs have been shown to promote neuronal survival and reduce inflammation, which may provide a pathophysiological explanation of the potential beneficial role of GLP-1RAs.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40712124/",
+              "retrieval_score": null,
+              "score": -2,
+              "score_label": "Strong contradiction",
+              "bucket": "contradict",
+              "rationale": "",
+              "raw_output": "{\n  \"snippets\": [\n    {\n      \"text\": \"GLP-1RA use was associated with 29% relative risk reduction in progression to advanced nonexudative AMD (RR, 0.715; 95% CI, 0.529-0.967; P = 0.028) and a 27% relative risk reduction in progression to exudative AMD (RR, 0.729; 95% CI, 0.601-0.883; P = 0.001).\",\n      \"score\": -2,\n      \"rationale\": \"This directly reports a statistically significant reduction in progression to exudative AMD among GLP-1RA users, contradicting the claim of no significant difference.\"\n    },\n    {\n      \"text\": \"CONCLUSION: GLP-1RA use may reduce both the risk and progression of AMD and progression of early and intermediate AMD to advanced AMD in adults with T2DM.\",\n      \"score\": -1,\n      \"rationale\": \"The conclusion broadly states that GLP-1RA use may reduce AMD progression, which is inconsistent with the claim, though it is less specific about exudative AMD progression.\"\n    }\n  ]\n}",
+              "snippets": [
+                {
+                  "text": "GLP-1RA use was associated with 29% relative risk reduction in progression to advanced nonexudative AMD (RR, 0.715; 95% CI, 0.529-0.967; P = 0.028) and a 27% relative risk reduction in progression to exudative AMD (RR, 0.729; 95% CI, 0.601-0.883; P = 0.001).",
+                  "score": -2,
+                  "score_label": "Strong contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This directly reports a statistically significant reduction in progression to exudative AMD among GLP-1RA users, contradicting the claim of no significant difference.",
+                  "start_char": 1210,
+                  "end_char": 1468,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "CONCLUSION: GLP-1RA use may reduce both the risk and progression of AMD and progression of early and intermediate AMD to advanced AMD in adults with T2DM.",
+                  "score": -1,
+                  "score_label": "Partial contradiction",
+                  "bucket": "contradict",
+                  "rationale": "The conclusion broadly states that GLP-1RA use may reduce AMD progression, which is inconsistent with the claim, though it is less specific about exudative AMD progression.",
+                  "start_char": 1469,
+                  "end_char": 1623,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 2
+            },
+            {
+              "related_pmid": "39863057",
+              "title": "Glucagon-like Peptide-1 Receptor Agonist Impact on Chronic Ocular Disease Including Age-Related Macular Degeneration.",
+              "abstract": "PURPOSE: Glucagon-like peptide-1 receptor agonists (GLP-1RAs) have been shown to exert neuroprotective and anti-inflammatory effects across multiple organ systems. This study investigated whether GLP-1RAs influence the risk for age-related ocular diseases. DESIGN: Retrospective cohort study. PARTICIPANTS: This study used an electronic health records platform of patients in the United States. Patients > 60 years with at least 5 years of ophthalmology follow-up and medication prescription documentation were included. There were 5 medication groups: GLP-1RA, metformin, insulin, statin, or aspirin users. Cohorts were propensity matched (1:1) on demographics and chronic disease risk factors. MAIN OUTCOME MEASURES: Outcomes of cataract, ocular hypertension, primary open-angle glaucoma, nonexudative age-related macular degeneration (AMD), and exudative AMD were compared 5 years after initial medication prescription. We then examined earlier time points within the 5-year period. Significance was defined as P < 0.05 with a hazard ratio (HR) threshold of > 1.1 or < 0.9. RESULTS: Of the 9669 patients taking GLP-1RAs, 84.4% had a diagnosis of diabetes with an average body mass index (BMI) of 36.2 kg/m2. Propensity-matched cohorts demonstrated that GLP-1RAs were associated with a reduced hazard of nonexudative AMD compared with metformin (HR, 0.68; 95% CI, 0.56-0.84), insulin (HR, 0.72; 95% CI, 0.58-0.89), and statins (HR, 0.70; 95% CI, 0.57-0.87). These findings were validated compared with aspirin and in an independent older cohort of patients. This significant reduction appeared after 3 years compared with metformin (HR, 0.69; 95% CI, 0.52-0.91), insulin (HR, 0.66; 95% CI, 0.5-0.87), and statins (HR, 0.67; 95% CI, 0.51-0.88). Time course results were validated using independent cohorts of propensity-matched patients taking medications for 3 years. Notably, GLP-1RAs also significantly reduced the risk of exudative AMD (HR, 0.70; 95% CI, 0.58-0.84) and primary open-angle glaucoma (HR, 0.58; 95% CI, 0.45-0.76) compared with insulin after 3 years. Use of GLP-1RAs showed no persistent impact on the risk of cataract formation or ocular hypertension compared with other medications. CONCLUSIONS: This study suggests that GLP-1RAs may reduce the risk of multiple age-related ocular diseases and the need for future prospective studies to validate these findings. FINANCIAL DISCLOSURE(S): Proprietary or commercial disclosure may be found in the Footnotes and Disclosures at the end of this article.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39863057/",
+              "retrieval_score": null,
+              "score": -1,
+              "score_label": "Partial contradiction",
+              "bucket": "contradict",
+              "rationale": "",
+              "raw_output": "{\"snippets\":[{\"text\":\"Notably, GLP-1RAs also significantly reduced the risk of exudative AMD (HR, 0.70; 95% CI, 0.58-0.84) and primary open-angle glaucoma (HR, 0.58; 95% CI, 0.45-0.76) compared with insulin after 3 years.\",\"score\":-1,\"rationale\":\"This reports a statistically significant reduction in exudative AMD risk for GLP-1RA users versus insulin, which contradicts the claim of no significant difference, though it is comparator-specific rather than a general statement about all users.\"}]}",
+              "snippets": [
+                {
+                  "text": "Notably, GLP-1RAs also significantly reduced the risk of exudative AMD (HR, 0.70; 95% CI, 0.58-0.84) and primary open-angle glaucoma (HR, 0.58; 95% CI, 0.45-0.76) compared with insulin after 3 years.",
+                  "score": -1,
+                  "score_label": "Partial contradiction",
+                  "bucket": "contradict",
+                  "rationale": "This reports a statistically significant reduction in exudative AMD risk for GLP-1RA users versus insulin, which contradicts the claim of no significant difference, though it is comparator-specific rather than a general statement about all users.",
+                  "start_char": 1988,
+                  "end_char": 2187,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pmid": "glp1_claim_07",
+      "title": "GLP-1 RAs, diabetes, and incident neovascular AMD",
+      "abstract": "",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/glp1_claim_07/",
+      "statements": [
+        {
+          "idx": 0,
+          "text": "There is an increased risk of incident neovascular AMD in diabetic patients treated with GLP-1 RAs.",
+          "text_anchor": "",
+          "anchor_match": "",
+          "topic": "GLP-1 RAs, diabetes, and incident neovascular AMD",
+          "counts": {
+            "support": 1,
+            "neutral": 0,
+            "contradict": 0,
+            "unknown": 0,
+            "total": 1
+          },
+          "evidence": [
+            {
+              "related_pmid": "40471562",
+              "title": "Glucagon-Like Peptide-1 Receptor Agonists and Risk of Neovascular Age-Related Macular Degeneration.",
+              "abstract": "IMPORTANCE: Glucagon-like peptide-1 receptor agonists (GLP-1 RAs) are extensively used in treating diabetes and obesity, yet little is known about the long-term ocular effects of systemic prolonged exposure. OBJECTIVE: To evaluate the risk of developing neovascular age-related macular degeneration (nAMD) associated with the use of GLP-1 RAs in patients with diabetes. DESIGN, SETTING, AND PARTICIPANTS: This population-based, retrospective cohort study was conducted from January 2020 to November 2023, with a follow-up period of 3 years. Data analysis was performed from August 2024 to October 2024. The investigators used comprehensive administrative health and demographic data from patients in Ontario, Canada, which were collected by the Institute for Clinical Evaluative Sciences in the context of a universal public health care system. Inclusion criteria were patients aged 66 years or older with a diagnosis of diabetes and a minimum follow-up period of 12 months following initial diabetes diagnosis. Patients with incomplete Ontario Health Insurance Plan or Ontario Drug Benefit data or patients exposed to GLP-1 RA for less than 6 months were excluded. Of 1 119 517 eligible patients, a 1:2 matched cohort of 139 002 patients was created, including 46 334 patients who were exposed to GLP-1 RAs and 92 668 unexposed matched patients. Systemic comorbidities that were associated with any kind of AMD and socioeconomic status were used to calculate propensity scores. EXPOSURE: GLP-1 RA use for 6 months or longer. MAIN OUTCOMES AND MEASURES: The primary outcome was the incidence and time to event of nAMD during the follow-up period. RESULTS: Among 139 002 matched patients, mean (SD) patient age was 66.2 (7.5) years, and 64 775 patients (46.6%) were women. The incidence of nAMD was higher among the exposed cohort than among the unexposed cohort. Cox proportional hazard models, both unadjusted (crude) and adjusted, estimated hazard ratios for nAMD development of greater than 2.0 among patients exposed to GLP-1 RAs (exposed, 0.2% vs unexposed, 0.1%; difference, 0.1%; crude: HR, 2.11; 95% CI, 1.58-2.82; adjusted: HR, 2.21; 95% CI, 1.65-2.96). CONCLUSIONS AND RELEVANCE: In this cohort study, the use of GLP-1 RAs among patients with diabetes was associated with a 2-fold higher risk of incident nAMD development than among similar patients with diabetes who did not receive a GLP-1 RA. Further research is needed to elucidate the exact pathophysiological mechanisms involved and to understand the trade-offs between the benefits and risks of GLP-1 RAs.",
+              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40471562/",
+              "retrieval_score": null,
+              "score": 2,
+              "score_label": "Strong support",
+              "bucket": "support",
+              "rationale": "",
+              "raw_output": "{\n  \"snippets\": [\n    {\n      \"text\": \"The incidence of nAMD was higher among the exposed cohort than among the unexposed cohort. Cox proportional hazard models, both unadjusted (crude) and adjusted, estimated hazard ratios for nAMD development of greater than 2.0 among patients exposed to GLP-1 RAs (exposed, 0.2% vs unexposed, 0.1%; difference, 0.1%; crude: HR, 2.11; 95% CI, 1.58-2.82; adjusted: HR, 2.21; 95% CI, 1.65-2.96).\",\n      \"score\": 2,\n      \"rationale\": \"Directly reports a higher incidence and more than twofold increased hazard of neovascular AMD among diabetic patients exposed to GLP-1 RAs.\"\n    },\n    {\n      \"text\": \"In this cohort study, the use of GLP-1 RAs among patients with diabetes was associated with a 2-fold higher risk of incident nAMD development than among similar patients with diabetes who did not receive a GLP-1 RA.\",\n      \"score\": 2,\n      \"rationale\": \"Explicit conclusion that GLP-1 RA use in diabetic patients is associated with increased risk of incident neovascular AMD.\"\n    }\n  ]\n}",
+              "snippets": [
+                {
+                  "text": "The incidence of nAMD was higher among the exposed cohort than among the unexposed cohort. Cox proportional hazard models, both unadjusted (crude) and adjusted, estimated hazard ratios for nAMD development of greater than 2.0 among patients exposed to GLP-1 RAs (exposed, 0.2% vs unexposed, 0.1%; difference, 0.1%; crude: HR, 2.11; 95% CI, 1.58-2.82; adjusted: HR, 2.21; 95% CI, 1.65-2.96).",
+                  "score": 2,
+                  "score_label": "Strong support",
+                  "bucket": "support",
+                  "rationale": "Directly reports a higher incidence and more than twofold increased hazard of neovascular AMD among diabetic patients exposed to GLP-1 RAs.",
+                  "start_char": 1872,
+                  "end_char": 2262,
+                  "anchor_match": "exact"
+                },
+                {
+                  "text": "In this cohort study, the use of GLP-1 RAs among patients with diabetes was associated with a 2-fold higher risk of incident nAMD development than among similar patients with diabetes who did not receive a GLP-1 RA.",
+                  "score": 2,
+                  "score_label": "Strong support",
+                  "bucket": "support",
+                  "rationale": "Explicit conclusion that GLP-1 RA use in diabetic patients is associated with increased risk of incident neovascular AMD.",
+                  "start_char": 2290,
+                  "end_char": 2505,
+                  "anchor_match": "exact"
+                }
+              ],
+              "snippet_count": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sidebar_source": {
+    "combine_sources": true,
+    "pmid": "glp1_evidence_synthesis",
+    "title": "GLP-1 receptor agonists and age-related macular degeneration",
+    "text_label": "Evidence synthesis text",
+    "abstract": "Human observational studies present heterogeneous, context-dependent evidence regarding the effect of GLP-1 receptor agonists (GLP-1 RAs) and similar weight-loss drugs on age-related macular degeneration (AMD) (PMID:41683853). In both diabetic and non-diabetic obese populations, GLP-1 RAs are consistently associated with a significantly reduced risk of developing early, nonexudative (dry) AMD and may slow its progression (PMID:41129133; PMID:40712124; PMID:39863057). However, evidence regarding exudative (neovascular) AMD is conflicting. While some studies report a reduced risk or no significant difference in exudative AMD progression (PMID:40712124; PMID:39863057; PMID:41129133; PMID:41453515), one large cohort study found a 2-fold increased risk of incident neovascular AMD in diabetic patients treated with GLP-1 RAs (PMID:40471562). Consequently, while GLP-1 RAs show promise for early AMD, their long-term ocular safety, particularly concerning neovascular AMD, requires individualized assessment and monitoring (PMID:41857480; PMID:41683853).",
+    "statement_anchors": {
+      "glp1_claim_01::0": "In both diabetic and non-diabetic obese populations, GLP-1 RAs are consistently associated with a significantly reduced risk of developing early, nonexudative (dry) AMD and may slow its progression",
+      "glp1_claim_02::0": "In both diabetic and non-diabetic obese populations, GLP-1 RAs are consistently associated with a significantly reduced risk of developing early, nonexudative (dry) AMD and may slow its progression",
+      "glp1_claim_03::0": "In both diabetic and non-diabetic obese populations, GLP-1 RAs are consistently associated with a significantly reduced risk of developing early, nonexudative (dry) AMD and may slow its progression",
+      "glp1_claim_04::0": "In both diabetic and non-diabetic obese populations, GLP-1 RAs are consistently associated with a significantly reduced risk of developing early, nonexudative (dry) AMD and may slow its progression",
+      "glp1_claim_05::0": "While some studies report a reduced risk or no significant difference in exudative AMD progression",
+      "glp1_claim_06::0": "While some studies report a reduced risk or no significant difference in exudative AMD progression",
+      "glp1_claim_07::0": "one large cohort study found a 2-fold increased risk of incident neovascular AMD in diabetic patients treated with GLP-1 RAs"
+    }
+  }
+}
