@@ -168,6 +168,52 @@ function scoreLabel(item) {
   return `${formatConcernLabel(item.score_label || "Score")} (${item.score ?? "?"})`;
 }
 
+function snippetScoreClass(snippet) {
+  const score = Number(snippet?.score ?? snippet?.extracted_score);
+  if (score >= 2) {
+    return "sidebar-view-snippet-quote--strong-support";
+  }
+  if (score > 0) {
+    return "sidebar-view-snippet-quote--partial-support";
+  }
+  if (score <= -2) {
+    return "sidebar-view-snippet-quote--strong-contradict";
+  }
+  if (score < 0) {
+    return "sidebar-view-snippet-quote--partial-contradict";
+  }
+  return "sidebar-view-snippet-quote--unknown";
+}
+
+function normalizeTextFragment(text) {
+  return String(text || "").replace(/\s+/g, " ").trim();
+}
+
+function encodeTextFragment(text) {
+  return encodeURIComponent(text)
+    .replace(/%2F/gi, "/")
+    .replace(/-/g, "%2D");
+}
+
+function buildSnippetContextUrl(item, snippet) {
+  const text = normalizeTextFragment(snippet?.text || "");
+  if (!text) {
+    return "";
+  }
+
+  const pmcid = String(item?.pmcid || "").trim();
+  const pmid = String(item?.related_pmid || "").trim();
+  const hasFullText = Boolean(item?.fulltext_available && pmcid);
+  const baseUrl = hasFullText
+    ? `https://pmc.ncbi.nlm.nih.gov/articles/${encodeURIComponent(pmcid)}/`
+    : item?.pubmed_url || (pmid ? `https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(pmid)}/` : "");
+
+  if (!baseUrl) {
+    return "";
+  }
+  return `${baseUrl}#:~:text=${encodeTextFragment(text)}`;
+}
+
 function hasSnippetEvidence(statement = getCurrentStatement()) {
   return Boolean(
     state.data?.evidence_mode === "snippets" ||
@@ -370,17 +416,38 @@ function updateAnchorHoverState() {
 }
 
 function getStatementEvidenceTotal(statement) {
-  return getContradictionProfile(statement).denominator;
+  const articleKeys = new Set();
+  let unkeyedArticles = 0;
+  for (const item of statement?.evidence || []) {
+    if (item.bucket !== "support" && item.bucket !== "contradict") {
+      continue;
+    }
+    const key = String(item.related_pmid || item.title || "").trim();
+    if (key) {
+      articleKeys.add(key);
+    } else {
+      unkeyedArticles += 1;
+    }
+  }
+  return articleKeys.size + unkeyedArticles;
 }
 
 function getMaxStatementEvidenceTotal(statements) {
   return Math.max(0, ...(statements || []).map((statement) => getStatementEvidenceTotal(statement)));
 }
 
-function buildDistributionBarStyle(profile, maxEvidenceTotal) {
-  const widthPercent = maxEvidenceTotal > 0
-    ? (profile.denominator / maxEvidenceTotal) * 100
-    : 0;
+function getLogScaledEvidenceWidth(evidenceTotal, maxEvidenceTotal) {
+  const total = Math.max(0, Number(evidenceTotal) || 0);
+  const maxTotal = Math.max(0, Number(maxEvidenceTotal) || 0);
+  if (!total || !maxTotal) {
+    return 0;
+  }
+  const logRatio = Math.log1p(total) / Math.log1p(maxTotal);
+  return Math.max(25, Math.min(100, logRatio * 100));
+}
+
+function buildDistributionBarStyle(profile, maxEvidenceTotal, evidenceTotal = profile.denominator) {
+  const widthPercent = getLogScaledEvidenceWidth(evidenceTotal, maxEvidenceTotal);
   return [
     buildContradictionStyle(profile),
     `--sidebar-evidence-width: ${Math.max(0, Math.min(100, widthPercent)).toFixed(2)}%`,
@@ -389,11 +456,12 @@ function buildDistributionBarStyle(profile, maxEvidenceTotal) {
 
 function renderDistributionBar(statement, maxEvidenceTotal) {
   const profile = getContradictionProfile(statement);
+  const evidenceTotal = getStatementEvidenceTotal(statement);
   const ariaLabel = profile.denominator
-    ? `${profile.label}: ${profile.contradict} concerns and ${profile.support} support articles, scaled to ${profile.denominator} of ${maxEvidenceTotal || profile.denominator} evidence articles`
+    ? `${profile.label}: ${profile.contradict} concerns and ${profile.support} support articles, log-scaled to ${evidenceTotal} of ${maxEvidenceTotal || evidenceTotal} evidence articles`
     : profile.label;
   return `
-    <div class="viewer-distribution sidebar-view-distribution sidebar-view-distribution--scale ${profile.denominator ? "" : "is-empty"}" style="${buildDistributionBarStyle(profile, maxEvidenceTotal)}" role="img" aria-label="${escapeHtml(ariaLabel)}">
+    <div class="viewer-distribution sidebar-view-distribution sidebar-view-distribution--scale ${profile.denominator ? "" : "is-empty"}" style="${buildDistributionBarStyle(profile, maxEvidenceTotal, evidenceTotal)}" role="img" aria-label="${escapeHtml(ariaLabel)}">
       <span class="sidebar-view-distribution__track"></span>
       ${profile.denominator ? '<span class="sidebar-view-distribution__marker"></span>' : ""}
     </div>
@@ -687,13 +755,11 @@ function renderSnippetEvidenceCard(item) {
   }
 
   const snippets = Array.isArray(item.snippets) ? item.snippets : [];
+  const contextUrl = snippets.map((snippet) => buildSnippetContextUrl(item, snippet)).find(Boolean) || "";
   const snippetHtml = snippets.length
     ? snippets.map((snippet) => `
         <li class="sidebar-view-snippet-item">
-          <div class="sidebar-view-snippet-item__topline">
-            <span class="viewer-score-pill ${scoreClass(snippet)}">${escapeHtml(scoreLabel(snippet))}</span>
-          </div>
-          <blockquote>${escapeHtml(snippet.text || "")}</blockquote>
+          <blockquote class="${snippetScoreClass(snippet)}">${escapeHtml(snippet.text || "")}</blockquote>
         </li>
       `).join("")
     : '<li class="sidebar-view-snippet-item">No exact snippet text was captured.</li>';
@@ -707,7 +773,10 @@ function renderSnippetEvidenceCard(item) {
               ? `<a href="${escapeHtml(item.pubmed_url)}" target="_blank" rel="noreferrer">${escapeHtml(item.title || "Related article")}</a>`
               : escapeHtml(item.title || "Related article")}
           </h4>
-          <div class="viewer-evidence-card__meta">${escapeHtml(metaParts.join(" - "))}</div>
+          <div class="sidebar-view-snippet-card__meta-row">
+            <span class="viewer-evidence-card__meta">${escapeHtml(metaParts.join(" - "))}</span>
+            ${contextUrl ? `<a class="sidebar-view-snippet-context-link" href="${escapeHtml(contextUrl)}" target="_blank" rel="noreferrer">Show context</a>` : ""}
+          </div>
         </div>
       </div>
       <ol class="sidebar-view-snippet-list">
@@ -929,8 +998,8 @@ function renderEvidenceOverlay() {
   title.textContent = statement.text;
   subtitle.textContent = `Statement ${statement.idx + 1} - ${supportCount} support / ${contradictCount} concerns related studies`;
   subtitle.hidden = snippetMode;
-  supportTitle.textContent = `Support (${supportCount})`;
-  contradictTitle.textContent = `Concerns (${contradictCount})`;
+  supportTitle.textContent = `Studies with similar results (${supportCount})`;
+  contradictTitle.textContent = `Studies with different results (${contradictCount})`;
   summary.innerHTML = renderStatementSummary(statement);
   if (snippetMode) {
     filterRow.innerHTML = "";

@@ -1394,6 +1394,10 @@ a.viewer-statement-card:active,
   padding: 14px 16px;
 }
 
+.sidebar-view-snippet-card .viewer-evidence-card__header > div {
+  width: 100%;
+}
+
 .sidebar-view-snippet-list {
   margin: 14px 0 0;
   padding: 0;
@@ -1408,19 +1412,79 @@ a.viewer-statement-card:active,
   border-top: 1px solid var(--viewer-border);
 }
 
-.sidebar-view-snippet-item__topline {
+.sidebar-view-snippet-card__meta-row {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.sidebar-view-snippet-card__meta-row .viewer-evidence-card__meta {
+  min-width: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .sidebar-view-snippet-item blockquote {
   margin: 0;
-  padding: 0 0 0 12px;
-  border-left: 3px solid var(--viewer-border-dark);
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
   color: var(--viewer-text);
   line-height: 1.6;
+}
+
+.sidebar-view-snippet-item blockquote.sidebar-view-snippet-quote--strong-support {
+  background: #9bd2ad;
+  border-color: #9bd2ad;
+  color: #000;
+}
+
+.sidebar-view-snippet-item blockquote.sidebar-view-snippet-quote--partial-support {
+  background: #dff3e6;
+  border-color: transparent;
+  color: #000;
+}
+
+.sidebar-view-snippet-item blockquote.sidebar-view-snippet-quote--partial-contradict {
+  background: #fde2e2;
+  border-color: transparent;
+  color: #000;
+}
+
+.sidebar-view-snippet-item blockquote.sidebar-view-snippet-quote--strong-contradict {
+  background: #f0a3a6;
+  border-color: #f0a3a6;
+  color: #000;
+}
+
+.sidebar-view-snippet-item blockquote.sidebar-view-snippet-quote--unknown {
+  background: #f4f6f8;
+  border-color: var(--viewer-border);
+}
+
+.sidebar-view-snippet-context-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 13px;
+  border: 1px solid var(--viewer-border-dark);
+  border-radius: 999px;
+  color: var(--viewer-link);
+  background: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.sidebar-view-snippet-context-link:hover,
+.sidebar-view-snippet-context-link:focus {
+  border-color: var(--viewer-blue);
+  box-shadow: 0 0 0 2px rgba(41, 97, 161, 0.12);
 }
 
 .viewer-statement-evidence-dialog .viewer-dialog-body {
