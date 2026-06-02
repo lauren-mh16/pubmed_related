@@ -16,11 +16,11 @@
           "anchor_match": "exact",
           "topic": "",
           "counts": {
-            "support": 6,
+            "support": 5,
             "neutral": 0,
             "contradict": 0,
             "unknown": 0,
-            "total": 6
+            "total": 5
           },
           "evidence": [
             {
@@ -106,33 +106,6 @@
                 }
               ],
               "snippet_count": 3
-            },
-            {
-              "related_pmid": "40601621",
-              "pmcid": "",
-              "fulltext_available": false,
-              "title": "GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.",
-              "abstract": "",
-              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40601621/",
-              "retrieval_score": null,
-              "score": 1,
-              "score_label": "Partial support",
-              "bucket": "support",
-              "rationale": "",
-              "raw_output": "{\"snippets\":[{\"text\":\"GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.\",\"score\":1,\"rationale\":\"This supports one context-specific direction of association (higher risk), which is consistent with the claim that the human observational evidence is not uniform and can vary by context.\"}]}",
-              "snippets": [
-                {
-                  "text": "GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.",
-                  "score": 1,
-                  "score_label": "Partial support",
-                  "bucket": "support",
-                  "rationale": "This supports one context-specific direction of association (higher risk), which is consistent with the claim that the human observational evidence is not uniform and can vary by context.",
-                  "start_char": 0,
-                  "end_char": 70,
-                  "anchor_match": "exact"
-                }
-              ],
-              "snippet_count": 1
             },
             {
               "related_pmid": "42186202",
@@ -286,9 +259,9 @@
           "counts": {
             "support": 6,
             "neutral": 0,
-            "contradict": 3,
+            "contradict": 2,
             "unknown": 0,
-            "total": 9
+            "total": 8
           },
           "evidence": [
             {
@@ -534,33 +507,6 @@
               "snippet_count": 2
             },
             {
-              "related_pmid": "40601621",
-              "pmcid": "",
-              "fulltext_available": false,
-              "title": "GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.",
-              "abstract": "",
-              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40601621/",
-              "retrieval_score": null,
-              "score": -1,
-              "score_label": "Partial contradiction",
-              "bucket": "contradict",
-              "rationale": "",
-              "raw_output": "{\"snippets\":[{\"text\":\"GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.\",\"score\":-1,\"rationale\":\"This directly opposes the claim’s direction of effect by stating GLP-1 drugs are linked to a higher, not reduced, risk of age-related macular degeneration, though it does not specify early nonexudative AMD.\"}]}",
-              "snippets": [
-                {
-                  "text": "GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.",
-                  "score": -1,
-                  "score_label": "Partial contradiction",
-                  "bucket": "contradict",
-                  "rationale": "This directly opposes the claim’s direction of effect by stating GLP-1 drugs are linked to a higher, not reduced, risk of age-related macular degeneration, though it does not specify early nonexudative AMD.",
-                  "start_char": 0,
-                  "end_char": 70,
-                  "anchor_match": "exact"
-                }
-              ],
-              "snippet_count": 1
-            },
-            {
               "related_pmid": "41129133",
               "pmcid": "",
               "fulltext_available": false,
@@ -623,11 +569,11 @@
           "anchor_match": "exact",
           "topic": "",
           "counts": {
-            "support": 13,
+            "support": 12,
             "neutral": 0,
             "contradict": 1,
             "unknown": 0,
-            "total": 14
+            "total": 13
           },
           "evidence": [
             {
@@ -967,33 +913,6 @@
               "snippet_count": 3
             },
             {
-              "related_pmid": "40601621",
-              "pmcid": "",
-              "fulltext_available": false,
-              "title": "GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.",
-              "abstract": "",
-              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40601621/",
-              "retrieval_score": null,
-              "score": 1,
-              "score_label": "Partial support",
-              "bucket": "support",
-              "rationale": "",
-              "raw_output": "{\"snippets\":[{\"text\":\"GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.\",\"score\":1,\"rationale\":\"This directly supports the claim's component that GLP-1 receptor agonists were associated with an increased risk of macular degeneration, though it does not specify diabetic patients or neovascular AMD.\"}]}",
-              "snippets": [
-                {
-                  "text": "GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.",
-                  "score": 1,
-                  "score_label": "Partial support",
-                  "bucket": "support",
-                  "rationale": "This directly supports the claim's component that GLP-1 receptor agonists were associated with an increased risk of macular degeneration, though it does not specify diabetic patients or neovascular AMD.",
-                  "start_char": 0,
-                  "end_char": 70,
-                  "anchor_match": "exact"
-                }
-              ],
-              "snippet_count": 1
-            },
-            {
               "related_pmid": "41857480",
               "pmcid": "",
               "fulltext_available": false,
@@ -1197,11 +1116,11 @@
           "anchor_match": "exact",
           "topic": "",
           "counts": {
-            "support": 6,
+            "support": 5,
             "neutral": 0,
             "contradict": 0,
             "unknown": 0,
-            "total": 6
+            "total": 5
           },
           "evidence": [
             {
@@ -1347,33 +1266,6 @@
                   "rationale": "This supports the claim's cautionary component by noting a reported increased risk of neovascular age-related macular degeneration and that long-term safety data are lacking, but it does not address GLP-1s showing promise for early age-related macular degeneration or explicitly discuss individualized monitoring.",
                   "start_char": 14388,
                   "end_char": 14988,
-                  "anchor_match": "exact"
-                }
-              ],
-              "snippet_count": 1
-            },
-            {
-              "related_pmid": "40601621",
-              "pmcid": "",
-              "fulltext_available": false,
-              "title": "GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.",
-              "abstract": "",
-              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40601621/",
-              "retrieval_score": null,
-              "score": 1,
-              "score_label": "Partial support",
-              "bucket": "support",
-              "rationale": "",
-              "raw_output": "{\"snippets\":[{\"text\":\"GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.\",\"score\":1,\"rationale\":\"This supports the claim's cautionary component by indicating a potential ocular safety concern related to age-related macular degeneration, but it does not address early AMD benefit, neovascular AMD specifically, or individualized monitoring.\"}]}",
-              "snippets": [
-                {
-                  "text": "GLP-1 Drugs Linked to Higher Risk of Age-Related Macular Degeneration.",
-                  "score": 1,
-                  "score_label": "Partial support",
-                  "bucket": "support",
-                  "rationale": "This supports the claim's cautionary component by indicating a potential ocular safety concern related to age-related macular degeneration, but it does not address early AMD benefit, neovascular AMD specifically, or individualized monitoring.",
-                  "start_char": 0,
-                  "end_char": 70,
                   "anchor_match": "exact"
                 }
               ],
