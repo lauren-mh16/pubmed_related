@@ -755,13 +755,20 @@ function renderSnippetEvidenceCard(item) {
   }
 
   const snippets = Array.isArray(item.snippets) ? item.snippets : [];
-  const contextUrl = snippets.map((snippet) => buildSnippetContextUrl(item, snippet)).find(Boolean) || "";
   const snippetHtml = snippets.length
-    ? snippets.map((snippet) => `
-        <li class="sidebar-view-snippet-item">
-          <blockquote class="${snippetScoreClass(snippet)}">${escapeHtml(snippet.text || "")}</blockquote>
-        </li>
-      `).join("")
+    ? snippets.map((snippet) => {
+        const contextUrl = buildSnippetContextUrl(item, snippet);
+        return `
+          <li class="sidebar-view-snippet-item">
+            <blockquote class="${snippetScoreClass(snippet)}">${escapeHtml(snippet.text || "")}</blockquote>
+            ${contextUrl ? `
+              <div class="sidebar-view-snippet-item__actions">
+                <a class="sidebar-view-snippet-context-link" href="${escapeHtml(contextUrl)}" target="_blank" rel="noreferrer">Show context</a>
+              </div>
+            ` : ""}
+          </li>
+        `;
+      }).join("")
     : '<li class="sidebar-view-snippet-item">No exact snippet text was captured.</li>';
 
   return `
@@ -775,7 +782,6 @@ function renderSnippetEvidenceCard(item) {
           </h4>
           <div class="sidebar-view-snippet-card__meta-row">
             <span class="viewer-evidence-card__meta">${escapeHtml(metaParts.join(" - "))}</span>
-            ${contextUrl ? `<a class="sidebar-view-snippet-context-link" href="${escapeHtml(contextUrl)}" target="_blank" rel="noreferrer">Show context</a>` : ""}
           </div>
         </div>
       </div>
