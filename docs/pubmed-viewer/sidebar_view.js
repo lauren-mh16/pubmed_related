@@ -18,6 +18,7 @@ const DATASET_OPTIONS = [
   { file: "./viewer_data_glp1_comp_out.json", label: "GLP-1 snippet spans" },
   { file: "./viewer_data_covid_eg_out.json", label: "COVID example statements", summaryFile: "./covid_eg_noabstract_summaries.jsonl" },
   { file: "./viewer_data_harris_article_snippet_spans_gpt54_medium.json", label: "Harris snippet spans" },
+  { file: "./viewer_data_cell_out.json", label: "Cell snippet spans" },
 ];
 
 const state = {
