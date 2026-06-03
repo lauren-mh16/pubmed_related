@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-02T19:04:44.299415+00:00",
+  "generated_at": "2026-06-03T12:50:15.847598+00:00",
   "evidence_mode": "snippets",
   "source_count": 1,
   "sources": [
@@ -618,9 +618,9 @@
           "counts": {
             "support": 3,
             "neutral": 0,
-            "contradict": 16,
+            "contradict": 15,
             "unknown": 0,
-            "total": 19
+            "total": 18
           },
           "evidence": [
             {
@@ -961,43 +961,6 @@
               "snippet_count": 1
             },
             {
-              "related_pmid": "25784874",
-              "pmcid": "PMC4345837",
-              "fulltext_available": true,
-              "title": "Intrinsically disordered proteins and their (disordered) proteomes in neurodegenerative disorders.",
-              "abstract": "",
-              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25784874/",
-              "retrieval_score": null,
-              "score": -1,
-              "score_label": "Partial contradiction",
-              "bucket": "contradict",
-              "rationale": "",
-              "raw_output": "{\"snippets\":[{\"text\":\"Recent studies revealed that the pathological aggregation of α-synuclein in oligodendroglia is dramatically accelerated by TPPP/p25 (Hasegawa et al., 2010), which is a highly disordered and widely expressed protein that possesses multiple PTM sites, and is involved in a multitude of interactions with unrelated partners.\",\"score\":-1,\"rationale\":\"This contradicts the claim's description of TPPP/p25 as having a well-folded core domain by describing it instead as highly disordered; however, it does not directly address large conformational changes or amyloid formation by TPPP/p25 itself.\"},{\"text\":\"Structural analysis revealed that TPPP/p25 is a typical IDP that partially folds as a result of Zn2+ binding (Zotter et al., 2011).\",\"score\":-1,\"rationale\":\"This opposes the claim that TPPP/p25 has a well-folded core domain, describing it instead as a typical intrinsically disordered protein that only partially folds under certain conditions.\"}]}",
-              "snippets": [
-                {
-                  "text": "Recent studies revealed that the pathological aggregation of α-synuclein in oligodendroglia is dramatically accelerated by TPPP/p25 (Hasegawa et al., 2010), which is a highly disordered and widely expressed protein that possesses multiple PTM sites, and is involved in a multitude of interactions with unrelated partners.",
-                  "score": -1,
-                  "score_label": "Partial contradiction",
-                  "bucket": "contradict",
-                  "rationale": "This contradicts the claim's description of TPPP/p25 as having a well-folded core domain by describing it instead as highly disordered; however, it does not directly address large conformational changes or amyloid formation by TPPP/p25 itself.",
-                  "start_char": 15456,
-                  "end_char": 15777,
-                  "anchor_match": "exact"
-                },
-                {
-                  "text": "Structural analysis revealed that TPPP/p25 is a typical IDP that partially folds as a result of Zn2+ binding (Zotter et al., 2011).",
-                  "score": -1,
-                  "score_label": "Partial contradiction",
-                  "bucket": "contradict",
-                  "rationale": "This opposes the claim that TPPP/p25 has a well-folded core domain, describing it instead as a typical intrinsically disordered protein that only partially folds under certain conditions.",
-                  "start_char": 15778,
-                  "end_char": 15909,
-                  "anchor_match": "exact"
-                }
-              ],
-              "snippet_count": 2
-            },
-            {
               "related_pmid": "22484033",
               "pmcid": "",
               "fulltext_available": false,
@@ -1235,11 +1198,11 @@
           "anchor_match": "exact",
           "topic": "",
           "counts": {
-            "support": 8,
+            "support": 7,
             "neutral": 0,
             "contradict": 11,
             "unknown": 0,
-            "total": 19
+            "total": 18
           },
           "evidence": [
             {
@@ -1372,33 +1335,6 @@
                 }
               ],
               "snippet_count": 3
-            },
-            {
-              "related_pmid": "39577904",
-              "pmcid": "",
-              "fulltext_available": false,
-              "title": "A new seed amplification assay to diagnose multiple system atrophy.",
-              "abstract": "",
-              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39577904/",
-              "retrieval_score": null,
-              "score": 1,
-              "score_label": "Partial support",
-              "bucket": "support",
-              "rationale": "",
-              "raw_output": "{\"snippets\":[{\"text\":\"A new seed amplification assay to diagnose multiple system atrophy.\",\"score\":1,\"rationale\":\"The title indicates the article reports a seed amplification assay for diagnosing multiple system atrophy, which partially supports the claim, but it does not mention the minimized CORE monomer, TPPP/p25 amyloid seeds, cerebrospinal fluid, or differentiation from Parkinson's disease and other neurodegenerative diseases.\"}]}",
-              "snippets": [
-                {
-                  "text": "A new seed amplification assay to diagnose multiple system atrophy.",
-                  "score": 1,
-                  "score_label": "Partial support",
-                  "bucket": "support",
-                  "rationale": "The title indicates the article reports a seed amplification assay for diagnosing multiple system atrophy, which partially supports the claim, but it does not mention the minimized CORE monomer, TPPP/p25 amyloid seeds, cerebrospinal fluid, or differentiation from Parkinson's disease and other neurodegenerative diseases.",
-                  "start_char": 0,
-                  "end_char": 67,
-                  "anchor_match": "exact"
-                }
-              ],
-              "snippet_count": 1
             },
             {
               "related_pmid": "37526295",

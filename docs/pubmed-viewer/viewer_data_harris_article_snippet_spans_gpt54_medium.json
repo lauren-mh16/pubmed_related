@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T12:21:26.048286+00:00",
+  "generated_at": "2026-06-03T12:50:16.997145+00:00",
   "evidence_mode": "snippets",
   "source_count": 2,
   "sources": [
@@ -109,40 +109,13 @@
           "anchor_match": "exact",
           "topic": "",
           "counts": {
-            "support": 1,
+            "support": 0,
             "neutral": 0,
             "contradict": 1,
             "unknown": 0,
-            "total": 2
+            "total": 1
           },
           "evidence": [
-            {
-              "related_pmid": "37666801",
-              "pmcid": "PMC10477273",
-              "fulltext_available": true,
-              "title": "From Tpex to Tex: a journey through CD8+ T cell responses in cancer immunotherapy.",
-              "abstract": "",
-              "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37666801/",
-              "retrieval_score": null,
-              "score": 1,
-              "score_label": "Partial support",
-              "bucket": "support",
-              "rationale": "",
-              "raw_output": "{\"snippets\":[{\"text\":\"Expansion of activated CD8+ T cells in the blood has been associated with clinical responses to ICB in various tumor entities. After ICB treatment, Tpex cells were detected in the blood and in the primary tumor tissue only at low levels, implying that the overall decreased frequency of Tpex in treated uiLN is not caused by cell egress from the LNs. Instead, circulating Tex-int and terminally differentiated CD8+ effector memory cells with enhanced proliferation were detected in the blood and significantly increased after neoadjuvant ICB.\",\"score\":1,\"rationale\":\"This indirectly supports the claim by linking increased circulating activated/proliferating CD8+ T cells after immune checkpoint blockade with clinical responses, but it does not specifically address tremelimumab, biliary tract cancer, or T-cell receptor repertoire expansion.\"}]}",
-              "snippets": [
-                {
-                  "text": "Expansion of activated CD8+ T cells in the blood has been associated with clinical responses to ICB in various tumor entities. After ICB treatment, Tpex cells were detected in the blood and in the primary tumor tissue only at low levels, implying that the overall decreased frequency of Tpex in treated uiLN is not caused by cell egress from the LNs. Instead, circulating Tex-int and terminally differentiated CD8+ effector memory cells with enhanced proliferation were detected in the blood and significantly increased after neoadjuvant ICB.",
-                  "score": 1,
-                  "score_label": "Partial support",
-                  "bucket": "support",
-                  "rationale": "This indirectly supports the claim by linking increased circulating activated/proliferating CD8+ T cells after immune checkpoint blockade with clinical responses, but it does not specifically address tremelimumab, biliary tract cancer, or T-cell receptor repertoire expansion.",
-                  "start_char": 2387,
-                  "end_char": 2929,
-                  "anchor_match": "exact"
-                }
-              ],
-              "snippet_count": 1
-            },
             {
               "related_pmid": "29180535",
               "pmcid": "PMC6020019",
